@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="aboutus">SOBRE NOSOTROS</string>
+    <string name="add_sport">ADD SPORT</string>
+    <string name="app_name">TP3HCI</string>
+    <string name="delete_sport">DELETE SPORT</string>
+    <string name="edit_profile">Editar Perfil</string>
+    <string name="get_all_sports">GET ALL SPORTS</string>
+    <string name="get_current_sport">GET CURRENT SPORT</string>
+    <string name="get_current_user">GET CURRENT USER</string>
+    <string name="home_screen">Inicio</string>
+    <string name="log_out_profile">Cerrar Sesión</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="login_mail">Correo Electronico</string>
+    <string name="login_name">Nombre Completo</string>
+    <string name="login_password">Contraseña</string>
+    <string name="login_repassword">Repetir Contraseña</string>
+    <string name="logout">LOGOUT</string>
+    <string name="modify_sport">MODIFY SPORT</string>
+    <string name="profile_screen">PERFIL</string>
+    <string name="register">Registrarse</string>
+    <string name="resend">REENVIAR CODIGO</string>
+    <string name="search_bar">Buscar</string>
+    <string name="search_screen">Busqueda</string>
+    <string name="seccode">Codigo de Seguridad</string>
+    <string name="signin">Ingresar</string>
+    <string name="slogan">NOS DEDICAMOS A ACOMPAÑARTE  HACIA UNA VERSION MAS FUERTE  Y SALUDABLE DE TI MISMO</string>
+    <string name="sucreg">TE HAS REGISTRADO</string>
+    <string name="ver">VERIFICAR</string>
+    <string name="veremail">VERIFIQUE SU CORREO ELECTRONICO INGRESANDO EL CODIGO QUE HA SIDO ENVIADO A SU MAIL</string>
+</resources>

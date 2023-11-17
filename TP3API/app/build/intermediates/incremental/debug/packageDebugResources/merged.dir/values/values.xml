@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="aboutus">ABOUT US</string>
+    <string name="add_sport">ADD SPORT</string>
+    <string name="app_name">TP3HCI</string>
+    <string name="delete_sport">DELETE SPORT</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="get_all_sports">GET ALL SPORTS</string>
+    <string name="get_current_sport">GET CURRENT SPORT</string>
+    <string name="get_current_user">GET CURRENT USER</string>
+    <string name="home_screen">Home</string>
+    <string name="log_out_profile">Log Out</string>
+    <string name="login">Log In</string>
+    <string name="login_mail">Email</string>
+    <string name="login_name">Full Name</string>
+    <string name="login_password">Password</string>
+    <string name="login_repassword">Repeat Password</string>
+    <string name="logout">LOGOUT</string>
+    <string name="modify_sport">MODIFY SPORT</string>
+    <string name="profile_screen">PROFILE</string>
+    <string name="register">Register</string>
+    <string name="resend">RESEND  CODE</string>
+    <string name="search_bar">Search</string>
+    <string name="search_screen">Search</string>
+    <string name="seccode">Security Code</string>
+    <string name="signin">Sign In</string>
+    <string name="slogan">WE WILL TAKE YOU TO A HEALTHIER AND STRONGER VERSION OF YOUR SELF </string>
+    <string name="sucreg">YOU HAVE REGISTERED</string>
+    <string name="ver">VERIFY</string>
+    <string name="veremail">VERIFY YOUR EMAIL WRITING THE CODE THAT HAS BEEN SEND TO YOUR EMAIL</string>
+    <style name="Theme.Api" parent="android:Theme.Material.Light.NoActionBar"/>
+</resources>
