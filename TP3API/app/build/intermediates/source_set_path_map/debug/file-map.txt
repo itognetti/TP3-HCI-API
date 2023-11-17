@@ -43,9 +43,9 @@ ar.edu.itba.example.api.app-activity-1.8.0-41 /Users/axelcastro/.gradle/caches/t
 ar.edu.itba.example.api.app-animation-1.4.0-42 /Users/axelcastro/.gradle/caches/transforms-3/f48ca57512f3a1ac66a155e7082d6e71/transformed/animation-1.4.0/res
 ar.edu.itba.example.api.app-lifecycle-viewmodel-ktx-2.6.2-43 /Users/axelcastro/.gradle/caches/transforms-3/f99ee789d41ef3eea90db31c96dc96af/transformed/lifecycle-viewmodel-ktx-2.6.2/res
 ar.edu.itba.example.api.app-runtime-1.4.0-44 /Users/axelcastro/.gradle/caches/transforms-3/fc7fd10c45733103d04fb4271344b429/transformed/runtime-1.4.0/res
-ar.edu.itba.example.api.app-resValues-45 /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/build/generated/res/resValues/debug
-ar.edu.itba.example.api.app-packageDebugResources-46 /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
-ar.edu.itba.example.api.app-packageDebugResources-47 /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
-ar.edu.itba.example.api.app-merged_res-48 /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/build/intermediates/merged_res/debug
-ar.edu.itba.example.api.app-debug-49 /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/debug/res
-ar.edu.itba.example.api.app-main-50 /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/res
+ar.edu.itba.example.api.app-resValues-45 /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/generated/res/resValues/debug
+ar.edu.itba.example.api.app-packageDebugResources-46 /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir
+ar.edu.itba.example.api.app-packageDebugResources-47 /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/incremental/debug/packageDebugResources/stripped.dir
+ar.edu.itba.example.api.app-merged_res-48 /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/merged_res/debug
+ar.edu.itba.example.api.app-debug-49 /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/debug/res
+ar.edu.itba.example.api.app-main-50 /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/res

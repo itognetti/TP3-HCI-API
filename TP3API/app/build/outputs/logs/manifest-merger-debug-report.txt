@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:2:1-36:12
-INJECTED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:2:1-36:12
-INJECTED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:2:1-36:12
-INJECTED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:2:1-36:12
+ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:2:1-36:12
+INJECTED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:2:1-36:12
+INJECTED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:2:1-36:12
+INJECTED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:2:1-36:12
 MERGED from [androidx.compose.material3:material3:1.0.0] /Users/axelcastro/.gradle/caches/transforms-3/95307028250a3d1c2707ec3c5d80d07c/transformed/material3-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.accompanist:accompanist-swiperefresh:0.27.0] /Users/axelcastro/.gradle/caches/transforms-3/8bed120defd3a70c684b3af29ce563ed/transformed/accompanist-swiperefresh-0.27.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.compose.material:material-ripple:1.4.0] /Users/axelcastro/.gradle/caches/transforms-3/147ed7aeca9e612e95fbea5432397395/transformed/material-ripple-1.4.0/AndroidManifest.xml:17:1-22:12
@@ -55,22 +55,22 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/axelcastro/.gradle/ca
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/axelcastro/.gradle/caches/transforms-3/8a2b479ce30b6b6bd7226d107ea57c8f/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/axelcastro/.gradle/caches/transforms-3/3b5783fb3316066eb173d7b3117dcd92/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
 	package
-		INJECTED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml
 	xmlns:tools
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:3:5-51
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:3:5-51
 	android:versionCode
-		INJECTED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:5:5-67
+ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:5:22-64
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:5:22-64
 application
-ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:11:5-34:19
-INJECTED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:11:5-34:19
+ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:11:5-34:19
+INJECTED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:11:5-34:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.4.0] /Users/axelcastro/.gradle/caches/transforms-3/c9080c18d7bb1791d6d9d36604bc482e/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-test-manifest:1.4.0] /Users/axelcastro/.gradle/caches/transforms-3/c9080c18d7bb1791d6d9d36604bc482e/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.compose.ui:ui-tooling:1.4.0] /Users/axelcastro/.gradle/caches/transforms-3/2543e48c3370cd230fcfec1060dacb64/transformed/ui-tooling-1.4.0/AndroidManifest.xml:22:5-26:19
@@ -88,55 +88,55 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/axel
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/axelcastro/.gradle/caches/transforms-3/8a2b479ce30b6b6bd7226d107ea57c8f/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/axelcastro/.gradle/caches/transforms-3/8a2b479ce30b6b6bd7226d107ea57c8f/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
 	android:extractNativeLibs
-		INJECTED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] /Users/axelcastro/.gradle/caches/transforms-3/e060ddb424a06ecfb8e75da3d70f4c48/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:19:9-35
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:19:9-35
 	android:label
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:16:9-41
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:16:9-41
 	android:fullBackupContent
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:14:9-54
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:14:9-54
 	android:roundIcon
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:18:9-54
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:18:9-54
 	tools:targetApi
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:22:9-29
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:22:9-29
 	android:icon
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:15:9-43
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:15:9-43
 	android:allowBackup
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:12:9-35
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:12:9-35
 	android:theme
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:20:9-41
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:20:9-41
 	android:dataExtractionRules
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:13:9-65
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:13:9-65
 	android:usesCleartextTraffic
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:21:9-44
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:21:9-44
 	android:name
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:17:9-46
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:17:9-46
 activity#ar.edu.itba.example.api.ui.main.MainActivity
-ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:23:9-33:20
+ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:23:9-33:20
 	android:label
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:26:13-45
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:26:13-45
 	android:exported
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:25:13-36
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:25:13-36
 	android:theme
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:27:13-45
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:27:13-45
 	android:name
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:24:13-49
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:24:13-49
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:28:13-32:29
+ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:28:13-32:29
 action#android.intent.action.MAIN
-ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:29:17-69
+ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:29:17-69
 	android:name
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:29:25-66
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:29:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:31:17-77
+ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:31:17-77
 	android:name
-		ADDED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml:31:27-74
+		ADDED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml:31:27-74
 uses-sdk
-INJECTED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml
-INJECTED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml
+INJECTED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml
+INJECTED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml
 MERGED from [androidx.compose.material3:material3:1.0.0] /Users/axelcastro/.gradle/caches/transforms-3/95307028250a3d1c2707ec3c5d80d07c/transformed/material3-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.compose.material3:material3:1.0.0] /Users/axelcastro/.gradle/caches/transforms-3/95307028250a3d1c2707ec3c5d80d07c/transformed/material3-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.accompanist:accompanist-swiperefresh:0.27.0] /Users/axelcastro/.gradle/caches/transforms-3/8bed120defd3a70c684b3af29ce563ed/transformed/accompanist-swiperefresh-0.27.0/AndroidManifest.xml:20:5-22:41
@@ -238,9 +238,9 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/axelcastro/.gradle/c
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/axelcastro/.gradle/caches/transforms-3/3b5783fb3316066eb173d7b3117dcd92/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] /Users/axelcastro/.gradle/caches/transforms-3/3b5783fb3316066eb173d7b3117dcd92/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
 	android:targetSdkVersion
-		INJECTED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/axelcastro/Downloads/TP - Ejemplo de Acceso al API con Retrofit/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/AndroidManifest.xml
 activity#androidx.activity.ComponentActivity
 ADDED from [androidx.compose.ui:ui-test-manifest:1.4.0] /Users/axelcastro/.gradle/caches/transforms-3/c9080c18d7bb1791d6d9d36604bc482e/transformed/ui-test-manifest-1.4.0/AndroidManifest.xml:23:9-25:39
 	android:exported
