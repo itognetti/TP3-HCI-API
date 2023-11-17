@@ -37,7 +37,7 @@ data class MainUiState(
     val userRoutines: List<Routine>? = null,
     val routineCycles: List<Cycle> = emptyList(),
     val cycleExercises: List<CycleExercise> = emptyList(),
-    val cycleDataList: List<CycleData> = emptyList(),
+    var cycleDataList: List<CycleData> = emptyList(),
     val orderBy: Int = 0,
     val filters: List<FilterVariant> = listOf(
         FilterVariant.DateAsc,
