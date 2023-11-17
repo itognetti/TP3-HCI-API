@@ -21,7 +21,6 @@ class SportRepository(
                 this.sports = result.content.map { it.asModel() }
             }
         }
-
         return sportsMutex.withLock { this.sports }
     }
 

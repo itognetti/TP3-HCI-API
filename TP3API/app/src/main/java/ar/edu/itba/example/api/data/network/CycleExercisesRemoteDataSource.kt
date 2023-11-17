@@ -4,7 +4,7 @@ import ar.edu.itba.example.api.data.network.api.ApiCycleExercisesService
 import ar.edu.itba.example.api.data.network.model.NetworkCycleExercise
 import ar.edu.itba.example.api.data.network.model.NetworkPagedContent
 
-class CycleExercisesRemoteService (
+class CycleExercisesRemoteDataSource (
     private val cycleExerciseService : ApiCycleExercisesService
 ) : RemoteDataSource() {
 
