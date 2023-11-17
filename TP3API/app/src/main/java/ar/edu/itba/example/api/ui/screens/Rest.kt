@@ -34,13 +34,9 @@ import androidx.compose.ui.unit.dp
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.theme.FOrange
 
-
-@Preview(showSystemUi = true)
 @Composable
 fun Rest() {
     var isTimerPaused by remember { mutableStateOf(false) }
-
-
 
     Box(
         modifier = Modifier
@@ -74,8 +70,6 @@ fun Rest() {
                 modifier = Modifier.size(300.dp)
             )
         }
-
-
 
         Row(
             modifier = Modifier

@@ -7,6 +7,17 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
+    <string name="Desc1">Description 1</string>
+    <string name="Desc2">Description 2</string>
+    <string name="Desc3">Description 3</string>
+    <string name="Exercise1">Exercise 1</string>
+    <string name="Exercise2">Exercise 2</string>
+    <string name="Exercise3">Exercise 3</string>
+    <string name="Myroutines">MY ROUTINES</string>
+    <string name="Rout1">Routine 1</string>
+    <string name="Rout2">Routine 2</string>
+    <string name="Rout3">Routine 3</string>
+    <string name="StartRoutine">START ROUTINE</string>
     <string name="aboutus">ABOUT US</string>
     <string name="add_sport">ADD SPORT</string>
     <string name="app_name">TP3HCI</string>

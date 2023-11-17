@@ -30,8 +30,6 @@ import ar.edu.itba.example.api.ui.components.CardItem
 import ar.edu.itba.example.api.ui.components.SearchBar
 import ar.edu.itba.example.api.ui.theme.Black
 import ar.edu.itba.example.api.ui.theme.FOrange
-@Preview(showSystemUi = true)
-
 @Composable
 fun SearchScreen() {
     var searchQuery by remember { mutableStateOf("") }
@@ -70,14 +68,33 @@ fun SearchScreen() {
             })
             // Agrega el icono a la izquierda de la barra de búsqueda
 
-
         }
 
         // Lista de tarjetas
-        CardItem(imageResId = R.drawable.gym1, title = "Tarjeta 1", description = "Descripción de la tarjeta 1")
-        CardItem(imageResId = R.drawable.gym2, title = "Tarjeta 2", description = "Descripción de la tarjeta 2")
-        CardItem(imageResId = R.drawable.gym3, title = "Tarjeta 3", description = "Descripción de la tarjeta 3")
-        CardItem(imageResId = R.drawable.gym4, title = "Tarjeta 4", description = "Descripción de la tarjeta 4")
-        CardItem(imageResId = R.drawable.gym5, title = "Tarjeta 5", description = "Descripción de la tarjeta 5")
+        CardItem(
+            imageResId = R.drawable.gym1,
+            title = "Tarjeta 1",
+            description = "Descripción de la tarjeta 1"
+        )
+        CardItem(
+            imageResId = R.drawable.gym2,
+            title = "Tarjeta 2",
+            description = "Descripción de la tarjeta 2"
+        )
+        CardItem(
+            imageResId = R.drawable.gym3,
+            title = "Tarjeta 3",
+            description = "Descripción de la tarjeta 3"
+        )
+        CardItem(
+            imageResId = R.drawable.gym4,
+            title = "Tarjeta 4",
+            description = "Descripción de la tarjeta 4"
+        )
+        CardItem(
+            imageResId = R.drawable.gym5,
+            title = "Tarjeta 5",
+            description = "Descripción de la tarjeta 5"
+        )
     }
 }

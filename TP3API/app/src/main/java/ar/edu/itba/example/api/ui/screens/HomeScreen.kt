@@ -1,15 +1,87 @@
 package ar.edu.itba.example.api.ui.screens
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import ar.edu.itba.example.api.R
+import ar.edu.itba.example.api.ui.components.CardItem
+import ar.edu.itba.example.api.ui.theme.Black
+import ar.edu.itba.example.api.ui.theme.FOrange
+
+@Composable
+fun HomeScreen() {
+    var searchQuery by remember { mutableStateOf("") }
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = Black)
+            .padding(5.dp)
+            .verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.logotext),
+            contentDescription = null,
+            modifier = Modifier.size(80.dp)
+        )
+        Text(
+            text = stringResource(id = R.string.Myroutines),
+            fontSize = 20.sp,
+            fontWeight = FontWeight.Black,
+            color = FOrange
+        )
+
+        // Lista de tarjetas
+        CardItem(imageResId = R.drawable.gym1, title = "Tarjeta 1", description = "Descripción de la tarjeta 1")
+        CardItem(imageResId = R.drawable.gym2, title = "Tarjeta 2", description = "Descripción de la tarjeta 2")
+        CardItem(imageResId = R.drawable.gym3, title = "Tarjeta 3", description = "Descripción de la tarjeta 3")
+        CardItem(imageResId = R.drawable.gym4, title = "Tarjeta 4", description = "Descripción de la tarjeta 4")
+        CardItem(imageResId = R.drawable.gym5, title = "Tarjeta 5", description = "Descripción de la tarjeta 5")
+    }
+}
+
+/*Home Viejo
+package com.example.tp3hci.ui.screens
+
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ar.edu.itba.example.api.R
+import com.example.tp3hci.R
+import com.example.tp3hci.ui.theme.FOrange
+
 
 @Composable
 //@Preview
@@ -24,9 +96,14 @@ fun HomeScreen() {
             fontSize = 30.sp
         )
     }
-}
 
-/*
+}
+*/
+
+
+/*COSAS DE LA CLASE
+
+
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
@@ -38,7 +115,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             stiffness = Spring.StiffnessLow
         )
     )
-    Surface(color = Osc,
+    Surface(color = FOrange,
         modifier = Modifier.padding(vertical=4.dp,horizontal=8.dp)
     ) {
         Row ( modifier = Modifier
@@ -46,9 +123,9 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             Column (modifier = Modifier
                 .weight(1f)
                 .padding(bottom = extraPadding)){//le agrego este padding que hace que le hace un recuadro mas grande a la frase
-                Text(text = "EJERCICIO",color = Orange)
-                Text(text=name ,color = Orange,
-                    style =MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.ExtraBold))
+                Text(text = "EJERCICIO",color = FOrange)
+                Text(text=name ,color = FOrange,
+                    style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.ExtraBold))
             }
             ElevatedButton(
                 onClick = { expanded=!expanded}) {
@@ -69,13 +146,13 @@ fun Greetings(modifier: Modifier= Modifier, names:List<String> =List(20){"$it" }
 
 @Composable
 fun OnboardingScreen(modifier: Modifier=Modifier, onContinueClicked:() ->Unit){
-    Surface (color = Osc){
+    Surface (color = Black){
         Column(
             modifier=modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Text("FINSPO",color = Orange)
+            Text("FINSPO",color = FOrange)
             ElevatedButton(
                 modifier= Modifier.padding(vertical=24.dp),
                 onClick = onContinueClicked) {
@@ -100,21 +177,21 @@ fun MyApp(modifier: Modifier= Modifier) {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun MyAppPreview() {
-    MyApplicationTheme  {
+
         MyApp()
-    }
+
 }
 
 @Composable
 fun OnboardingScreen2(modifier: Modifier=Modifier, onContinueClicked:() ->Unit){
-    Surface (color = Osc){
+    Surface (color = Black){
         Column(
             modifier=modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
 
         ) {
-            Text("FINSPO",color = Orange)
+            Text("FINSPO",color = FOrange)
             ElevatedButton(
                 modifier= Modifier.padding(vertical=24.dp),
                 onClick = onContinueClicked) {
@@ -129,12 +206,11 @@ fun OnboardingScreen2(modifier: Modifier=Modifier, onContinueClicked:() ->Unit){
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
+//@Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun OnboardingPreview() {
-    MyApplicationTheme  {
-        OnboardingScreen2(onContinueClicked = {})
-    }
-}
 
- */
+        OnboardingScreen2(onContinueClicked = {})
+
+}
+*/

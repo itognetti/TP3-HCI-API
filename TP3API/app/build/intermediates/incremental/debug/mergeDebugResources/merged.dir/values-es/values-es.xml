@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="Desc1">Descripcion 1</string>
+    <string name="Desc2">Descripcion 2</string>
+    <string name="Desc3">Descripcion 3</string>
+    <string name="Exercise1">Ejercicio 1</string>
+    <string name="Exercise2">Ejercicio 2</string>
+    <string name="Exercise3">Ejercicio 3</string>
+    <string name="Myroutines">MIS RUTINAS</string>
+    <string name="Rout1">Rutina 1</string>
+    <string name="Rout2">Rutina 2</string>
+    <string name="Rout3">Rutina 3</string>
+    <string name="StartRoutine">COMENZAR RUTINA</string>
     <string name="aboutus">SOBRE NOSOTROS</string>
     <string name="add_sport">ADD SPORT</string>
     <string name="app_name">TP3HCI</string>

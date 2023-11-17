@@ -22,6 +22,17 @@ drawable register
 drawable sentado
 mipmap ic_launcher
 mipmap ic_launcher_round
+string Desc1
+string Desc2
+string Desc3
+string Exercise1
+string Exercise2
+string Exercise3
+string Myroutines
+string Rout1
+string Rout2
+string Rout3
+string StartRoutine
 string aboutus
 string add_sport
 string app_name

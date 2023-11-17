@@ -206,6 +206,17 @@ int layout notification_template_part_chronometer 0x7f070007
 int layout notification_template_part_time 0x7f070008
 int mipmap ic_launcher 0x7f080000
 int mipmap ic_launcher_round 0x7f080001
+int string Desc1 0x7f09003f
+int string Desc2 0x7f090040
+int string Desc3 0x7f090041
+int string Exercise1 0x7f090042
+int string Exercise2 0x7f090043
+int string Exercise3 0x7f090044
+int string Myroutines 0x7f090045
+int string Rout1 0x7f090046
+int string Rout2 0x7f090047
+int string Rout3 0x7f090048
+int string StartRoutine 0x7f090049
 int string aboutus 0x7f090000
 int string add_sport 0x7f090001
 int string androidx_startup 0x7f090002

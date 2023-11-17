@@ -28,6 +28,20 @@
     <string name="aboutus">SOBRE NOSOTROS</string>
     <string name="slogan">NOS DEDICAMOS A ACOMPAÑARTE  HACIA UNA VERSION MAS FUERTE  Y SALUDABLE DE TI MISMO</string>
     <string name="resend">REENVIAR CODIGO</string>
+    <string name="Myroutines">MIS RUTINAS</string>
+    <string name="StartRoutine">COMENZAR RUTINA</string>
+    <string name="Exercise1">Ejercicio 1</string>
+    <string name="Exercise2">Ejercicio 2</string>
+    <string name="Exercise3">Ejercicio 3</string>
+    <string name="Desc1">Descripcion 1</string>
+    <string name="Desc2">Descripcion 2</string>
+    <string name="Desc3">Descripcion 3</string>
+    <string name="Rout1">Rutina 1</string>
+    <string name="Rout2">Rutina 2</string>
+    <string name="Rout3">Rutina 3</string>
+
+
+
     <string name="date_asc">Fecha Ascendente</string>
     <string name="date_desc">Fecha Descendente</string>
     <string name="rating_asc">Puntuación Ascendente</string>
