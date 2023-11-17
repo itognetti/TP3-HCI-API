@@ -29,5 +29,12 @@
     <string name="slogan">WE WILL TAKE YOU TO A HEALTHIER AND STRONGER VERSION OF YOUR SELF </string>
     <string name="resend">RESEND  CODE</string>
 
+    <!-- Habria que ordenar por view/utilidad-->
+    <string name="date_asc">Ascending Date</string>
+    <string name="date_desc">Descending Date</string>
+    <string name="rating_asc">Ascending Rating</string>
+    <string name="rating_desc">Descending Rating</string>
+    <string name="difficulty_asc">Ascending Difficulty</string>
+    <string name="difficulty_desc">Descending Difficulty</string>
 
 </resources>

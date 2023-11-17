@@ -3,7 +3,11 @@
     <string name="aboutus">SOBRE NOSOTROS</string>
     <string name="add_sport">ADD SPORT</string>
     <string name="app_name">TP3HCI</string>
+    <string name="date_asc">Fecha Ascendente</string>
+    <string name="date_desc">Fecha Descendente</string>
     <string name="delete_sport">DELETE SPORT</string>
+    <string name="difficulty_asc">Dificultad Ascendente</string>
+    <string name="difficulty_desc">Dificultad Descendente</string>
     <string name="edit_profile">Editar Perfil</string>
     <string name="get_all_sports">GET ALL SPORTS</string>
     <string name="get_current_sport">GET CURRENT SPORT</string>
@@ -18,6 +22,8 @@
     <string name="logout">LOGOUT</string>
     <string name="modify_sport">MODIFY SPORT</string>
     <string name="profile_screen">PERFIL</string>
+    <string name="rating_asc">Puntuación Ascendente</string>
+    <string name="rating_desc">Puntuación Descendente</string>
     <string name="register">Registrarse</string>
     <string name="resend">REENVIAR CODIGO</string>
     <string name="search_bar">Buscar</string>

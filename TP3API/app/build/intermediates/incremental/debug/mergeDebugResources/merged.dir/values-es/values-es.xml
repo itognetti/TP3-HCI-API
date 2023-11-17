@@ -13,10 +13,14 @@
     <string msgid="406453423630273620" name="close_drawer">"Cerrar menú de navegación"</string>
     <string msgid="7573152094250666567" name="close_sheet">"Cerrar hoja"</string>
     <string msgid="5389587048670450460" name="collapsed">"Contraído"</string>
+    <string name="date_asc">Fecha Ascendente</string>
+    <string name="date_desc">Fecha Descendente</string>
     <string msgid="8038256446254964252" name="default_error_message">"Entrada no válida"</string>
     <string msgid="6312721426453364202" name="default_popup_window_title">"Ventana emergente"</string>
     <string name="delete_sport">DELETE SPORT</string>
     <string msgid="4057925834421392736" name="dialog">"Cuadro de diálogo"</string>
+    <string name="difficulty_asc">Dificultad Ascendente</string>
+    <string name="difficulty_desc">Dificultad Descendente</string>
     <string msgid="1890207353314751437" name="dropdown_menu">"Menú desplegable"</string>
     <string name="edit_profile">Editar Perfil</string>
     <string msgid="5974471714631304645" name="expanded">"Desplegado"</string>
@@ -41,6 +45,8 @@
     <string name="profile_screen">PERFIL</string>
     <string msgid="5941395253238309765" name="range_end">"Fin del intervalo"</string>
     <string msgid="7097486360902471446" name="range_start">"Inicio del intervalo"</string>
+    <string name="rating_asc">Puntuación Ascendente</string>
+    <string name="rating_desc">Puntuación Descendente</string>
     <string name="register">Registrarse</string>
     <string name="resend">REENVIAR CODIGO</string>
     <string name="search_bar">Buscar</string>

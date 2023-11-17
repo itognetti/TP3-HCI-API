@@ -28,4 +28,10 @@
     <string name="aboutus">SOBRE NOSOTROS</string>
     <string name="slogan">NOS DEDICAMOS A ACOMPAÑARTE  HACIA UNA VERSION MAS FUERTE  Y SALUDABLE DE TI MISMO</string>
     <string name="resend">REENVIAR CODIGO</string>
+    <string name="date_asc">Fecha Ascendente</string>
+    <string name="date_desc">Fecha Descendente</string>
+    <string name="rating_asc">Puntuación Ascendente</string>
+    <string name="rating_desc">Puntuación Descendente</string>
+    <string name="difficulty_asc">Dificultad Ascendente</string>
+    <string name="difficulty_desc">Dificultad Descendente</string>
 </resources>

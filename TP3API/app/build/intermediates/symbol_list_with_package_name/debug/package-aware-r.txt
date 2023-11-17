@@ -221,10 +221,14 @@ string call_notification_screening_text
 string close_drawer
 string close_sheet
 string collapsed
+string date_asc
+string date_desc
 string default_error_message
 string default_popup_window_title
 string delete_sport
 string dialog
+string difficulty_asc
+string difficulty_desc
 string dropdown_menu
 string edit_profile
 string expanded
@@ -249,6 +253,8 @@ string on
 string profile_screen
 string range_end
 string range_start
+string rating_asc
+string rating_desc
 string register
 string resend
 string search_bar

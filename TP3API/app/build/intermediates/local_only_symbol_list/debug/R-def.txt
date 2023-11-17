@@ -25,7 +25,11 @@ mipmap ic_launcher_round
 string aboutus
 string add_sport
 string app_name
+string date_asc
+string date_desc
 string delete_sport
+string difficulty_asc
+string difficulty_desc
 string edit_profile
 string get_all_sports
 string get_current_sport
@@ -40,6 +44,8 @@ string login_repassword
 string logout
 string modify_sport
 string profile_screen
+string rating_asc
+string rating_desc
 string register
 string resend
 string search_bar
