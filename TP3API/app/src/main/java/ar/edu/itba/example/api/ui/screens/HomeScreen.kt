@@ -12,6 +12,7 @@ import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.R
 
 @Composable
+//@Preview
 fun HomeScreen() {
     Column(
         modifier = Modifier.fillMaxSize(),

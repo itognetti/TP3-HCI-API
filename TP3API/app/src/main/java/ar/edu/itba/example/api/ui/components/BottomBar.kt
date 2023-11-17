@@ -5,13 +5,12 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import ar.edu.itba.example.api.ui.main.Screen
-import ar.edu.itba.example.api.ui.theme.Black
 import ar.edu.itba.example.api.ui.theme.FOrange
+import ar.edu.itba.example.api.ui.theme.Black
 import ar.edu.itba.example.api.ui.theme.White
 
 @Composable
@@ -39,15 +38,16 @@ fun BottomBar(
                         tint = if (currentRoute == item.route) FOrange else White
                     )
                 },
-                label = {
-                    Text(
-                        text = item.title,
-                        color = if (currentRoute == item.route) FOrange else White
-                    )
-                },
                 alwaysShowLabel = true,
                 selected = currentRoute == item.route,
                 onClick = { onNavigateToRoute(item.route) },
+
+            )
+        }
+    }
+}
+
+/*
 //                colors = NavigationBarItemColors(
 //                    selectedIconColor = FOrange,
 //                    selectedTextColor = FOrange,
@@ -55,8 +55,4 @@ fun BottomBar(
 //                    unselectedIconColor = White,
 //                    unselectedTextColor = White,
 //                ),
-            )
-        }
-    }
-}
-
+ */

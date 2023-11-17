@@ -10,7 +10,11 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Close
 import androidx.compose.material3.Card
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -20,17 +24,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.R
+import ar.edu.itba.example.api.ui.theme.Black
 
-@Preview(showSystemUi = true)
 @Composable
-fun AboutUs() {
+fun AboutUs(onNavegateTologinRegisterScreen: () -> Unit) {
     Box(
-        modifier = Modifier
-            .fillMaxSize()
+        modifier = Modifier.fillMaxSize()
     ) {
         Image(
             painter = painterResource(id = R.drawable.nosotros),
@@ -50,18 +52,15 @@ fun AboutUs() {
                 painter = painterResource(id = R.drawable.logotext),
                 contentDescription = null,
                 modifier = Modifier.size(250.dp)
-
             )
         }
 
-        // Cuadro con título y texto
+
         Card(
             modifier = Modifier
                 .padding(40.dp)
                 .padding(top = 200.dp)
-                .height(150.dp), // altura según sea necesario
-
-
+                .height(150.dp),
         ) {
             Column(
                 modifier = Modifier
@@ -69,8 +68,8 @@ fun AboutUs() {
                     .padding(16.dp)
                     .fillMaxSize()
                     .fillMaxHeight(),
-                    verticalArrangement = Arrangement.Center, // Centra verticalmente
-                    horizontalAlignment = Alignment.CenterHorizontally // Centra horizontalmente
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
                     text = stringResource(id = R.string.aboutus),
@@ -80,12 +79,26 @@ fun AboutUs() {
                 )
 
                 Text(
-                    text= stringResource(id = R.string.slogan),
-
+                    text = stringResource(id = R.string.slogan),
                     fontSize = 16.sp,
                     fontWeight = FontWeight.SemiBold,
                     textAlign = TextAlign.Center
                 )
+
+                IconButton(
+                    onClick = {
+                        onNavegateTologinRegisterScreen()
+                    },
+                    modifier = Modifier
+                        .align(Alignment.End)
+                        .size(50.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.Filled.Close,
+                        contentDescription = "Close",
+                        tint = Black,
+                    )
+                }
             }
         }
     }

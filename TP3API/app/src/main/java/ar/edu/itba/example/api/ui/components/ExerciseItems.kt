@@ -31,9 +31,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.material3.IconButton
 import ar.edu.itba.example.api.ui.theme.Black
+import androidx.compose.material3.IconButton
 import ar.edu.itba.example.api.ui.theme.White
+
 
 //ESTA HARDCODEADÍSIMO
 @Composable

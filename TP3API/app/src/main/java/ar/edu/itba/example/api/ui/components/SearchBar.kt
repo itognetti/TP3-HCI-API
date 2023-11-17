@@ -36,6 +36,7 @@ fun SearchBar(
         modifier = Modifier
             .fillMaxWidth()
             .padding(16.dp)
+            //.padding(end = 30.dp)
             .clip(RoundedCornerShape(24.dp)),
         value = searchQuery,
         onValueChange = {

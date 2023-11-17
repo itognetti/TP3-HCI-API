@@ -25,16 +25,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.theme.FOrange
 
-//fun LoginRegisterScreen(onLoginClick: () -> Unit, onRegisterClick: () -> Unit){
-@Preview
 @Composable
-fun LoginRegisterScreen() {
+fun LoginRegisterScreen(onNavegateToLoginScreen:()->Unit, onNavegateToRegisterScreen:()->Unit, onNavegateToAboutUs:()->Unit) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -73,7 +70,7 @@ fun LoginRegisterScreen() {
             // Botón de Iniciar Sesión
             Button(
                 onClick = {
-                    // Agrega la lógica de iniciar sesión aquí
+                    onNavegateToLoginScreen()
                 },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -91,7 +88,7 @@ fun LoginRegisterScreen() {
             // Botón de Registrarse
             Button(
                 onClick = {
-                    // Agrega la lógica de registrarse aquí
+                    onNavegateToRegisterScreen()
                 },
                 modifier = Modifier
                     .fillMaxWidth()
@@ -108,7 +105,7 @@ fun LoginRegisterScreen() {
 
         IconButton(
             onClick = {
-                // Agrega la lógica para más información aquí
+                onNavegateToAboutUs()
             },
             modifier = Modifier
                 .align(Alignment.BottomEnd)
