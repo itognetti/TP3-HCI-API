@@ -28,10 +28,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.R
+import ar.edu.itba.example.api.ui.main.MainViewModel
 import ar.edu.itba.example.api.ui.theme.FOrange
 
 @Composable
 fun LoginRegisterScreen(onNavegateToLoginScreen:()->Unit, onNavegateToRegisterScreen:()->Unit, onNavegateToAboutUs:()->Unit) {
+
     Box(
         modifier = Modifier
             .fillMaxSize()

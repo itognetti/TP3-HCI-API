@@ -70,15 +70,31 @@ fun ProfileScreen(onNavegateTologinRegisterScreen:()->Unit, viewModel: MainViewM
 
             Spacer(modifier = Modifier.height(16.dp))
 
+            if(viewModel.uiState.isAuthenticated) {
 
-            Text(
-                text = viewModel.uiState.currentUser!!.username,
-                color = White,
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Bold,
-            )
+                Column {
+                    Text(
+                        text = viewModel.uiState.currentUser!!.username,
+                        color = White,
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.Bold,
+                    )
+                    Text(
+                        text = viewModel.uiState.currentUser!!.firstName,
+                        color = White,
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.Bold,
+                    )
+                    Text(
+                        text = viewModel.uiState.currentUser!!.lastName,
+                        color = White,
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.Bold,
+                    )
+                }
+            }
 
-            Spacer(modifier = Modifier.height(16.dp))
+            /*Spacer(modifier = Modifier.height(16.dp))
 
             // Botón de Editar Información
             Button(
@@ -104,13 +120,14 @@ fun ProfileScreen(onNavegateTologinRegisterScreen:()->Unit, viewModel: MainViewM
                     )
                 }
             }
+            */
 
             Spacer(modifier = Modifier.height(16.dp))
 
             // Botón de Cerrar Sesión
             Button(
                 onClick = {
-
+                    viewModel.logout()
                     onNavegateTologinRegisterScreen()
                 },
                 modifier = Modifier
