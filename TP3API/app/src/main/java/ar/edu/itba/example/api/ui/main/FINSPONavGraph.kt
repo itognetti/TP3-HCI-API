@@ -29,7 +29,8 @@ fun FINSPONavGraph(navController: NavHostController,
         }
         composable(Screen.ProfileScreen.route) {
             ProfileScreen(
-                onNavegateTologinRegisterScreen = {navController.navigate(Screen.LoginRegisterScreen.route)}
+                onNavegateTologinRegisterScreen = {navController.navigate(Screen.LoginRegisterScreen.route)},
+                viewModel
             )
         }
         composable(Screen.LoginRegisterScreen.route) {

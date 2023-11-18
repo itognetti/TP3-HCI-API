@@ -72,6 +72,7 @@
     <string msgid="2561197295334830845" name="switch_role">"Interruptor"</string>
     <string msgid="1672349317127674378" name="tab">"Pestaña"</string>
     <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g> por cien."</string>
+    <string name="username">Nombre de Usuario</string>
     <string name="ver">VERIFICAR</string>
     <string name="veremail">VERIFIQUE SU CORREO ELECTRONICO INGRESANDO EL CODIGO QUE HA SIDO ENVIADO A SU MAIL</string>
 </resources>

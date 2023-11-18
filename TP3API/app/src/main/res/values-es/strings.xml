@@ -17,6 +17,7 @@
     <string name="login">Iniciar Sesión</string>
     <string name="signin">Ingresar</string>
     <string name="register">Registrarse</string>
+    <string name="username">Nombre de Usuario</string>
     <string name="login_name">Nombre Completo</string>
     <string name="login_mail">Correo Electronico</string>
     <string name="login_password">Contraseña</string>

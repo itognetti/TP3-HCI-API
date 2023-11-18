@@ -66,6 +66,7 @@ string seccode
 string signin
 string slogan
 string sucreg
+string username
 string ver
 string veremail
 style Theme.Api

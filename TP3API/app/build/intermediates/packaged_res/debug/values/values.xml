@@ -51,6 +51,7 @@
     <string name="signin">Sign In</string>
     <string name="slogan">WE WILL TAKE YOU TO A HEALTHIER AND STRONGER VERSION OF YOUR SELF </string>
     <string name="sucreg">YOU HAVE REGISTERED</string>
+    <string name="username">Username</string>
     <string name="ver">VERIFY</string>
     <string name="veremail">VERIFY YOUR EMAIL WRITING THE CODE THAT HAS BEEN SEND TO YOUR EMAIL</string>
     <style name="Theme.Api" parent="android:Theme.Material.Light.NoActionBar"/>

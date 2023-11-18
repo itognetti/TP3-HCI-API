@@ -33,12 +33,13 @@ import ar.edu.itba.example.api.ui.theme.FOrange
 import androidx.compose.material3.Icon
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
+import ar.edu.itba.example.api.ui.main.MainViewModel
 import ar.edu.itba.example.api.ui.theme.Black
 import ar.edu.itba.example.api.ui.theme.White
 
 
 @Composable
-fun ProfileScreen(onNavegateTologinRegisterScreen:()->Unit) {
+fun ProfileScreen(onNavegateTologinRegisterScreen:()->Unit, viewModel: MainViewModel) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -69,7 +70,13 @@ fun ProfileScreen(onNavegateTologinRegisterScreen:()->Unit) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            //AGREGAR INFO DEL USUARIO
+
+            Text(
+                text = viewModel.uiState.currentUser!!.username,
+                color = White,
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+            )
 
             Spacer(modifier = Modifier.height(16.dp))
 

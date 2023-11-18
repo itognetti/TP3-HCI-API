@@ -280,6 +280,7 @@ string sucreg
 string switch_role
 string tab
 string template_percent
+string username
 string ver
 string veremail
 style DialogWindowTheme

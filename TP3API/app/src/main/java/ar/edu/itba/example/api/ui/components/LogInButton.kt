@@ -18,6 +18,7 @@ fun LogInButton(viewModel: MainViewModel, username: String, password: String, on
     Button(
         onClick = {
             viewModel.login(username, password)
+            viewModel.getCurrentUser()
             onNavigateToHomeScreen()
         },
         colors = ButtonDefaults.buttonColors(FOrange),

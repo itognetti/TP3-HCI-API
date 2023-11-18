@@ -96,7 +96,7 @@ fun LoginScreen(onNavegateToHomeScreen: () -> Unit, viewModel: MainViewModel) {
                 TextField(
                     value = username,
                     onValueChange = { username = it },
-                    label = { Text(text = stringResource(id = R.string.login_mail)) },
+                    label = { Text(text = stringResource(id = R.string.username)) },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(8.dp)

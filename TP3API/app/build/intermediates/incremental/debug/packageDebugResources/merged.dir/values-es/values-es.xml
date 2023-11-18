@@ -44,6 +44,7 @@
     <string name="signin">Ingresar</string>
     <string name="slogan">NOS DEDICAMOS A ACOMPAÑARTE  HACIA UNA VERSION MAS FUERTE  Y SALUDABLE DE TI MISMO</string>
     <string name="sucreg">TE HAS REGISTRADO</string>
+    <string name="username">Nombre de Usuario</string>
     <string name="ver">VERIFICAR</string>
     <string name="veremail">VERIFIQUE SU CORREO ELECTRONICO INGRESANDO EL CODIGO QUE HA SIDO ENVIADO A SU MAIL</string>
 </resources>
