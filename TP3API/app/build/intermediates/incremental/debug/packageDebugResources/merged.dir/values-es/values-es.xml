@@ -26,6 +26,7 @@
     <string name="home_screen">Inicio</string>
     <string name="log_out_profile">Cerrar Sesión</string>
     <string name="login">Iniciar Sesión</string>
+    <string name="login_error">Mail o contraseña invalido</string>
     <string name="login_mail">Correo Electronico</string>
     <string name="login_name">Nombre Completo</string>
     <string name="login_password">Contraseña</string>

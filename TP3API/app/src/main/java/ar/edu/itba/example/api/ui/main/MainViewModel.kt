@@ -195,7 +195,7 @@ class MainViewModel(
         }},
         { state, _ -> state}
     )
-    
+
     private fun <R> runOnViewModelScope(
         block: suspend () -> R,
         updateState: (MainUiState, R) -> MainUiState

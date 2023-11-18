@@ -48,4 +48,5 @@
     <string name="rating_desc">Puntuación Descendente</string>
     <string name="difficulty_asc">Dificultad Ascendente</string>
     <string name="difficulty_desc">Dificultad Descendente</string>
+    <string name="login_error">Mail o contraseña invalido</string>
 </resources>

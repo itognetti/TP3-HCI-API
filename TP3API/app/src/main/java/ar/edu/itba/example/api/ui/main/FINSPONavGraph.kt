@@ -12,9 +12,11 @@ import ar.edu.itba.example.api.ui.screens.ProfileScreen
 import ar.edu.itba.example.api.ui.screens.RegisterScreen
 import ar.edu.itba.example.api.ui.screens.SearchScreen
 import ar.edu.itba.example.api.ui.screens.SecurScreen
+import ar.edu.itba.example.api.util.getViewModelFactory
 
 @Composable
-fun FINSPONavGraph(navController: NavHostController) {
+fun FINSPONavGraph(navController: NavHostController,
+                   viewModel: MainViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory())) {
     NavHost(
         navController = navController,
         startDestination = Screen.LoginRegisterScreen.route
@@ -39,7 +41,8 @@ fun FINSPONavGraph(navController: NavHostController) {
         }
         composable(Screen.LoginScreen.route) {
             LoginScreen(
-                onNavegateToHomeScreen = {navController.navigate(Screen.HomeScreen.route)}
+                onNavegateToHomeScreen = {navController.navigate(Screen.HomeScreen.route)},
+                viewModel
             )
         }
         composable(Screen.RegisterScreen.route) {

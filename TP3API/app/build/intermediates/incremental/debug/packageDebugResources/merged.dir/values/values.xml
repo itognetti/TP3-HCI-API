@@ -33,6 +33,7 @@
     <string name="home_screen">Home</string>
     <string name="log_out_profile">Log Out</string>
     <string name="login">Log In</string>
+    <string name="login_error">Invalid email or password</string>
     <string name="login_mail">Email</string>
     <string name="login_name">Full Name</string>
     <string name="login_password">Password</string>

@@ -7,11 +7,13 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material3.*
 import androidx.compose.runtime.getValue
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import ar.edu.itba.example.api.ui.theme.ApiTheme
 import ar.edu.itba.example.api.ui.components.BottomBar
+import ar.edu.itba.example.api.util.getViewModelFactory
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -46,7 +48,7 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 ) {
-                    FINSPONavGraph(navController = navController)
+                    FINSPONavGraph(navController = navController, viewModel(factory = getViewModelFactory()))
                 }
             }
         }

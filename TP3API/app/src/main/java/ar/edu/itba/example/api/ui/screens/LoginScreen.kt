@@ -12,8 +12,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
@@ -32,15 +30,15 @@ import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.R
+import ar.edu.itba.example.api.ui.components.LogInButton
+import ar.edu.itba.example.api.ui.main.MainViewModel
 import ar.edu.itba.example.api.ui.theme.Black
-import ar.edu.itba.example.api.ui.theme.FOrange
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen(onNavegateToHomeScreen: () -> Unit) {
-    var nombreCompleto by remember { mutableStateOf("") }
-    var correoElectronico by remember { mutableStateOf("") }
-    var contrasena by remember { mutableStateOf("") }
+fun LoginScreen(onNavegateToHomeScreen: () -> Unit, viewModel: MainViewModel) {
+    var username by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
 
     Box(
         modifier = Modifier
@@ -92,14 +90,13 @@ fun LoginScreen(onNavegateToHomeScreen: () -> Unit) {
                     color = Black,
                 )
 
-
                 Spacer(modifier = Modifier.height(16.dp))
 
                 // Espacio para el correo electrónico
                 TextField(
-                    value = correoElectronico,
-                    onValueChange = { correoElectronico = it },
-                    label = { Text(text = stringResource(id = R.string.login_mail))},
+                    value = username,
+                    onValueChange = { username = it },
+                    label = { Text(text = stringResource(id = R.string.login_mail)) },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(8.dp)
@@ -110,43 +107,26 @@ fun LoginScreen(onNavegateToHomeScreen: () -> Unit) {
 
                 // Espacio para la contraseña
                 TextField(
-                    value = contrasena,
-                    onValueChange = { contrasena = it },
-                    label = { Text(text = stringResource(id = R.string.login_password))},
+                    value = password,
+                    onValueChange = { password = it },
+                    label = { Text(text = stringResource(id = R.string.login_password)) },
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(8.dp)
-
-
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-
-
                 Spacer(modifier = Modifier.height(16.dp))
 
                 // Botón de Inicio
-                Button(
-                    onClick = {
-                        onNavegateToHomeScreen()
-                    },
-                    colors = ButtonDefaults.buttonColors(FOrange),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(50.dp)
-
-                ) {
-                    Text(text = stringResource(id = R.string.login))
-                }
-
+                LogInButton(
+                    viewModel = viewModel,
+                    username = username,
+                    password = password,
+                    onNavegateToHomeScreen
+                )
             }
         }
     }
 }
-
-
-
-
-
-

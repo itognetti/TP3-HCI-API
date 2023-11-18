@@ -48,4 +48,6 @@
     <string name="difficulty_asc">Ascending Difficulty</string>
     <string name="difficulty_desc">Descending Difficulty</string>
 
+    <string name="login_error">Invalid email or password</string>
+
 </resources>

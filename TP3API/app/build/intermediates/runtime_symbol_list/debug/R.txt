@@ -250,6 +250,7 @@ int string in_progress 0x7f090028
 int string indeterminate 0x7f090029
 int string log_out_profile 0x7f09002a
 int string login 0x7f09002b
+int string login_error 0x7f09004a
 int string login_mail 0x7f09002c
 int string login_name 0x7f09002d
 int string login_password 0x7f09002e
