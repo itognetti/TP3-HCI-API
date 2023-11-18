@@ -34,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.theme.FOrange
 
+@Preview
 @Composable
 fun Rest() {
     var isTimerPaused by remember { mutableStateOf(false) }

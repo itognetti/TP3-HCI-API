@@ -1,4 +1,4 @@
-#Fri Nov 17 20:11:19 ART 2023
+#Sat Nov 18 10:34:00 ART 2023
 base.0=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.10=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
