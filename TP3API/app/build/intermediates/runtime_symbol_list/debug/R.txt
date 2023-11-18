@@ -279,9 +279,9 @@ int string sucreg 0x7f090045
 int string switch_role 0x7f090046
 int string tab 0x7f090047
 int string template_percent 0x7f090048
-int string username 0x7f09004b
-int string ver 0x7f090049
-int string veremail 0x7f09004a
+int string username 0x7f090049
+int string ver 0x7f09004a
+int string veremail 0x7f09004b
 int style DialogWindowTheme 0x7f0a0000
 int style FloatingDialogTheme 0x7f0a0001
 int style FloatingDialogWindowTheme 0x7f0a0002

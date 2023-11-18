@@ -110,6 +110,7 @@ fun ProfileScreen(onNavegateTologinRegisterScreen:()->Unit, viewModel: MainViewM
             // Botón de Cerrar Sesión
             Button(
                 onClick = {
+
                     onNavegateTologinRegisterScreen()
                 },
                 modifier = Modifier
