@@ -1,16 +1,21 @@
 package ar.edu.itba.example.api.ui.screens
 
+import android.content.res.Configuration
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.widthIn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.Button
@@ -23,6 +28,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -32,14 +38,21 @@ import ar.edu.itba.example.api.ui.main.MainViewModel
 import ar.edu.itba.example.api.ui.theme.FOrange
 
 @Composable
-fun LoginRegisterScreen(onNavegateToLoginScreen:()->Unit, onNavegateToRegisterScreen:()->Unit, onNavegateToAboutUs:()->Unit) {
+fun LoginRegisterScreen(
+    onNavegateToLoginScreen: () -> Unit,
+    onNavegateToRegisterScreen: () -> Unit,
+    onNavegateToAboutUs: () -> Unit
+) {
+
+    val isScreenHorizontal =
+        LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
 
     Box(
         modifier = Modifier
             .fillMaxSize()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.loginscreen),
+            painter = painterResource(id = R.drawable.loginregisterscreen),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier
@@ -61,47 +74,94 @@ fun LoginRegisterScreen(onNavegateToLoginScreen:()->Unit, onNavegateToRegisterSc
             )
         }
 
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .height(250.dp)
-                .padding(50.dp),
-            verticalArrangement = Arrangement.Bottom,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            // Botón de Iniciar Sesión
-            Button(
-                onClick = {
-                    onNavegateToLoginScreen()
-                },
+        if (isScreenHorizontal) {
+            // Botones en una fila si la pantalla está horizontal
+            Row(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .height(50.dp),
-                colors = ButtonDefaults.buttonColors(FOrange),
+                    .fillMaxSize()
+                    .padding(50.dp),
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.Bottom
             ) {
-                Text(
-                    text = stringResource(id = R.string.login),
-                    fontSize = 24.sp
-                )
+                // Botón de Iniciar Sesión
+                Button(
+                    onClick = {
+                        onNavegateToLoginScreen()
+                    },
+                    modifier = Modifier
+                        .widthIn(200.dp)
+                        .height(80.dp), // Ajusta el tamaño aquí
+                    colors = ButtonDefaults.buttonColors(FOrange),
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.login),
+                        fontSize = 24.sp
+                    )
+                }
+
+                Spacer(modifier = Modifier.width(16.dp))
+
+                // Botón de Registrarse
+                Button(
+                    onClick = {
+                        onNavegateToRegisterScreen()
+                    },
+                    modifier = Modifier
+                        .widthIn(200.dp)
+                        .height(80.dp), // Ajusta el tamaño aquí
+                    colors = ButtonDefaults.buttonColors(Color.Transparent),
+                    border = BorderStroke(3.dp, FOrange),
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.register),
+                        fontSize = 24.sp
+                    )
+                }
             }
-
-            Spacer(modifier = Modifier.height(16.dp))
-
-            // Botón de Registrarse
-            Button(
-                onClick = {
-                    onNavegateToRegisterScreen()
-                },
+        } else {
+            // Botones en una columna si la pantalla está vertical
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth()
-                    .height(50.dp),
-                colors = ButtonDefaults.buttonColors(Color.Transparent),
-                border = BorderStroke(3.dp, FOrange),
+                    .fillMaxSize()
+                    .height(250.dp)
+                    .padding(50.dp),
+                verticalArrangement = Arrangement.Bottom,
+                horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text(
-                    text = stringResource(id = R.string.register),
-                    fontSize = 24.sp
-                )
+                // Botón de Iniciar Sesión
+                Button(
+                    onClick = {
+                        onNavegateToLoginScreen()
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(50.dp),
+                    colors = ButtonDefaults.buttonColors(FOrange),
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.login),
+                        fontSize = 24.sp
+                    )
+                }
+
+                Spacer(modifier = Modifier.height(16.dp))
+
+                // Botón de Registrarse
+                Button(
+                    onClick = {
+                        onNavegateToRegisterScreen()
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(50.dp),
+                    colors = ButtonDefaults.buttonColors(Color.Transparent),
+                    border = BorderStroke(3.dp, FOrange),
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.register),
+                        fontSize = 24.sp
+                    )
+                }
             }
         }
 

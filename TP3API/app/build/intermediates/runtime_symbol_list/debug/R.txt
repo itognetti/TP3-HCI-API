@@ -87,6 +87,7 @@ int drawable ic_call_decline 0x7f04000a
 int drawable ic_call_decline_low 0x7f04000b
 int drawable ic_launcher_background 0x7f04000c
 int drawable ic_launcher_foreground 0x7f04000d
+int drawable loginregisterscreen 0x7f040021
 int drawable loginscreen 0x7f04000e
 int drawable logo 0x7f04000f
 int drawable logotext 0x7f040010
