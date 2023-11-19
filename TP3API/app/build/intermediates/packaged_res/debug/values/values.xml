@@ -40,6 +40,7 @@
     <string name="login_repassword">Repeat Password</string>
     <string name="logout">LOGOUT</string>
     <string name="modify_sport">MODIFY SPORT</string>
+    <string name="no_routines">No routines available to show :(</string>
     <string name="profile_screen">PROFILE</string>
     <string name="rating_asc">Ascending Rating</string>
     <string name="rating_desc">Descending Rating</string>

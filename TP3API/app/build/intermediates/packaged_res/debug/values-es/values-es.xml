@@ -33,6 +33,7 @@
     <string name="login_repassword">Repetir Contraseña</string>
     <string name="logout">LOGOUT</string>
     <string name="modify_sport">MODIFY SPORT</string>
+    <string name="no_routines">No hay rutinas dispoinbles para mostrar :(</string>
     <string name="profile_screen">PERFIL</string>
     <string name="rating_asc">Puntuación Ascendente</string>
     <string name="rating_desc">Puntuación Descendente</string>

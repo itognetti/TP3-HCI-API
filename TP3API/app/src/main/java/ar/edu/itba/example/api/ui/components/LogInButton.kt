@@ -1,5 +1,6 @@
 package ar.edu.itba.example.api.ui.components
 
+import android.util.Log
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
@@ -18,7 +19,7 @@ fun LogInButton(viewModel: MainViewModel, username: String, password: String, on
     Button(
         onClick = {
             viewModel.login(username, password)
-            viewModel.getCurrentUser()
+            viewModel.setupViewModel()
             onNavigateToHomeScreen()
         },
         colors = ButtonDefaults.buttonColors(FOrange),

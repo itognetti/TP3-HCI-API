@@ -22,7 +22,7 @@ fun FINSPONavGraph(navController: NavHostController,
         startDestination = Screen.LoginRegisterScreen.route
     ) {
         composable(Screen.HomeScreen.route) {
-            HomeScreen()
+            HomeScreen(viewModel)
         }
         composable(Screen.SearchScreen.route) {
             SearchScreen()

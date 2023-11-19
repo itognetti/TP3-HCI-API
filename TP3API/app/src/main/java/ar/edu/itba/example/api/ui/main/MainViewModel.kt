@@ -35,6 +35,12 @@ class MainViewModel(
     var uiState by mutableStateOf(MainUiState(isAuthenticated = sessionManager.loadAuthToken() != null))
         private set
 
+    init {
+        if(uiState.isAuthenticated){
+            setupViewModel()
+        }
+    }
+
     fun setupViewModel(){
         getRoutines()
         getCurrentUser()
@@ -97,24 +103,52 @@ class MainViewModel(
         }
     )
 
-    fun getCurrentUserRoutines() = runOnViewModelScope(
-        {userRepository.getCurrentUserRoutines()},
-        { state, response ->
-            response.forEach { routine ->
-                if (state.userRoutines.orEmpty().find { it.id == routine.id } != null) {
+    fun getCurrentUserRoutines() = viewModelScope.launch {
+        uiState = uiState.copy(
+            isFetching = true,
+            error = null
+        )
+        runCatching {
+            userRepository.getCurrentUserRoutines()
+        }.onSuccess { response ->
+            uiState = uiState.copy(
+                isFetching = false,
+                userRoutines = response
+            )
+            uiState.routines.orEmpty().forEach { routine ->
+                if( uiState.userRoutines.orEmpty()
+                        .find { it.id == routine.id } != null){
                     routine.fromCUser = true
                 }
             }
-            state.copy(userRoutines = response)
+        }.onFailure { e ->
+            // Handle the error and notify the UI when appropriate.
+            uiState = uiState.copy(
+                error = handleError(e),
+                isFetching = false)
         }
-    )
+    }
 
-    fun getRoutines() = runOnViewModelScope(
-        {routineRepository.getRoutines(true)},
-        {state, response ->
-            state.copy(routines = response)
+    fun getRoutines() = viewModelScope.launch {
+        uiState = uiState.copy(
+            isFetching = true,
+            error = null
+        )
+        runCatching {
+            routineRepository.getRoutines(true)
+        }.onSuccess { response ->
+            uiState = uiState.copy(
+                isFetching = false,
+                routines = response
+            )
+            getCurrentUserRoutines()
+        }.onFailure { e ->
+            uiState = uiState.copy(
+                error = handleError(e),
+                isFetching = false
+            )
         }
-    )
+    }
 
     fun getRoutine(routineId: Int) = runOnViewModelScope(
         {routineRepository.getRoutine(routineId)},
@@ -127,12 +161,27 @@ class MainViewModel(
         getFilteredRoutines(uiState.filters[uiState.orderBy].order, uiState.filters[uiState.orderBy].direction, uiState.orderBy)
     }
 
-    fun getFilteredRoutines(order: String = "name", direction: String = "asc", index: Int) = runOnViewModelScope(
-        {routineRepository.getFilteredRoutines(order, direction)},
-        {state, response ->
-            state.copy(routines = response)
+    fun getFilteredRoutines(order: String = "name", dir: String = "asc", index: Int) = viewModelScope.launch {
+        uiState = uiState.copy(
+            isFetching = true,
+            error = null
+        )
+        runCatching {
+            routineRepository.getFilteredRoutines(order, dir)
+        }.onSuccess { response ->
+            uiState = uiState.copy(
+                isFetching = false,
+                routines = response,
+            )
+            getCurrentUserRoutines()
+            uiState = uiState.copy(orderBy = index)
+        }.onFailure { e ->
+            uiState = uiState.copy(
+                isFetching = false,
+                error = handleError(e)
+            )
         }
-    )
+    }
 
     fun getExercises() = runOnViewModelScope(
         {exerciseRepository.getExercises(true)},

@@ -56,6 +56,7 @@ string login_password
 string login_repassword
 string logout
 string modify_sport
+string no_routines
 string profile_screen
 string rating_asc
 string rating_desc

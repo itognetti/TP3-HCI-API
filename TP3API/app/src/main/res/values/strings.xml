@@ -50,5 +50,6 @@
     <string name="difficulty_desc">Descending Difficulty</string>
 
     <string name="login_error">Invalid email or password</string>
+    <string name="no_routines">No routines available to show :(</string>
 
 </resources>

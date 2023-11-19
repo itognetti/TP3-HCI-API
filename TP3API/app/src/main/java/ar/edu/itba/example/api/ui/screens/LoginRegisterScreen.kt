@@ -46,7 +46,6 @@ fun LoginRegisterScreen(
 
     val isScreenHorizontal =
         LocalConfiguration.current.orientation == Configuration.ORIENTATION_LANDSCAPE
-
     Box(
         modifier = Modifier
             .fillMaxSize()

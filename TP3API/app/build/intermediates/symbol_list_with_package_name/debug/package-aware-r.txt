@@ -260,6 +260,7 @@ string login_repassword
 string logout
 string modify_sport
 string navigation_menu
+string no_routines
 string not_selected
 string off
 string on
