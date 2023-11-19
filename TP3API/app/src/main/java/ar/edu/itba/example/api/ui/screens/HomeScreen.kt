@@ -1,5 +1,101 @@
 package ar.edu.itba.example.api.ui.screens
 
+import android.widget.Toast
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.R
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import ar.edu.itba.example.api.ui.main.Screen
+import kotlinx.coroutines.launch
+
+@Composable
+fun HomeScreen(
+    onNavigateToRoutineDetails: (id:Int) -> Unit,
+    onNavigateToExecution: (id:Int) -> Unit,
+    orderBy: String,
+    viewModel: RoutinesViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory())
+) {
+    val uiState = viewModel.uiState
+    val toastError = Toast.makeText(LocalContext.current, uiState.message, Toast.LENGTH_SHORT)
+
+    LaunchedEffect(key1 = uiState.message){
+        launch {
+            if(uiState.message != null){
+                toastError.show()
+            }
+        }
+    }
+
+    LaunchedEffect(key1 = Unit) {
+        launch {
+            if (uiState.canGetAllRoutines) {
+                viewModel.getFavouriteRoutines()
+            }
+        }
+    }
+
+    LaunchedEffect(key1 = orderBy) {
+        launch {
+            if (uiState.canGetAllRoutines) {
+                viewModel.getRoutines(orderBy)
+            }
+        }
+    }
+
+    LaunchedEffect(key1 = Unit) {
+        launch {
+            if (uiState.canGetCurrentUser)
+                viewModel.getCurrentUser()
+        }
+    }
+
+    Column() {
+        Text(
+            text = stringResource(R.string.routines_subtitle),
+            fontWeight = FontWeight.Bold,
+            fontSize = 28.sp,
+            modifier = Modifier.padding(horizontal = 15.dp, vertical = 20.dp)
+        )
+
+        if (uiState.isFetching) {
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Center
+            ) {
+                Text(
+                    text = stringResource(id = R.string.loading_message),
+                    fontSize = 16.sp
+                )
+            }
+        } else {
+            RoutineCardList(
+                list = uiState.routines?.filter { routine -> routine.user?.username == uiState.currentUser?.username }.orEmpty(),
+                hasReviews = false,
+                favouriteList = uiState.favourites.orEmpty(),
+                hasFavourites = true,
+                addFavourite = { routineId -> viewModel.addFavouriteRoutine(routineId) },
+                onNavigateToRoutineDetails = onNavigateToRoutineDetails,
+                onNavigateToExecution = onNavigateToExecution)
+            Spacer(modifier = Modifier.size(20.dp))
+        }
+    }
+}
+
+/*
+
 import android.util.Log
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -37,7 +133,7 @@ import ar.edu.itba.example.api.ui.theme.Black
 import ar.edu.itba.example.api.ui.theme.FOrange
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
-
+/*
 @Composable
 fun HomeScreen(viewModel: MainViewModel) {
     var searchQuery by remember { mutableStateOf("") }
@@ -70,6 +166,7 @@ fun HomeScreen(viewModel: MainViewModel) {
             CircularProgressIndicator(color = FOrange)
         } else {
             if (viewModel.uiState.routines != null) {
+                //uiState.users?.data.orEmpty()
                 // Mostrar la LazyColumn si las rutinas no son nulas
                 SwipeRefresh(
                     state = rememberSwipeRefreshState(isRefreshing = viewModel.uiState.isFetching),
@@ -112,156 +209,4 @@ fun HomeScreen(viewModel: MainViewModel) {
     }
 }
 
-/*Home Viejo
-package com.example.tp3hci.ui.screens
-
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import com.example.tp3hci.R
-import com.example.tp3hci.ui.theme.FOrange
-
-
-@Composable
-//@Preview
-fun HomeScreen() {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Text(
-            text = stringResource(id = R.string.home_screen),
-            fontSize = 30.sp
-        )
-    }
-
-}
-*/
-
-
-/*COSAS DE LA CLASE
-
-
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    var expanded by rememberSaveable {mutableStateOf(false)} //para que no se pierda cuando  rompa la actividad , rote pantalla
-    val extraPadding by animateDpAsState(
-        if(expanded) 48.dp else 0.dp,
-        animationSpec = spring(
-            dampingRatio = Spring.DampingRatioMediumBouncy,
-            stiffness = Spring.StiffnessLow
-        )
-    )
-    Surface(color = FOrange,
-        modifier = Modifier.padding(vertical=4.dp,horizontal=8.dp)
-    ) {
-        Row ( modifier = Modifier
-            .padding(24.dp)){
-            Column (modifier = Modifier
-                .weight(1f)
-                .padding(bottom = extraPadding)){//le agrego este padding que hace que le hace un recuadro mas grande a la frase
-                Text(text = "EJERCICIO",color = FOrange)
-                Text(text=name ,color = FOrange,
-                    style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.ExtraBold))
-            }
-            ElevatedButton(
-                onClick = { expanded=!expanded}) {
-                Text(text= if(expanded) "Show less" else "Show more")
-            }
-        }
-    }
-}
-
-@Composable
-fun Greetings(modifier: Modifier= Modifier, names:List<String> =List(20){"$it" }){
-    LazyColumn(modifier = modifier.padding(vertical = 4.dp)) {
-        items(items=names){name ->   //para que me imprima solo los de la pantalla
-            Greeting(name)
-        }
-    }
-}
-
-@Composable
-fun OnboardingScreen(modifier: Modifier=Modifier, onContinueClicked:() ->Unit){
-    Surface (color = Black){
-        Column(
-            modifier=modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text("FINSPO",color = FOrange)
-            ElevatedButton(
-                modifier= Modifier.padding(vertical=24.dp),
-                onClick = onContinueClicked) {
-                Text("Ver Ejercicios")
-            }
-        }
-    }
-}
-
-@Composable
-fun MyApp(modifier: Modifier= Modifier) {
-    var shouldShowOnboarding by remember{ mutableStateOf(true) }
-    Surface(modifier) {
-        if(shouldShowOnboarding){
-            OnboardingScreen(onContinueClicked={shouldShowOnboarding=false})
-        }else{
-            Greetings()
-        }
-    }
-}
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun MyAppPreview() {
-
-        MyApp()
-
-}
-
-@Composable
-fun OnboardingScreen2(modifier: Modifier=Modifier, onContinueClicked:() ->Unit){
-    Surface (color = Black){
-        Column(
-            modifier=modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-
-        ) {
-            Text("FINSPO",color = FOrange)
-            ElevatedButton(
-                modifier= Modifier.padding(vertical=24.dp),
-                onClick = onContinueClicked) {
-                Text("INICIAR SESION")
-            }
-            ElevatedButton(
-                modifier= Modifier.padding(vertical=24.dp),
-                onClick = onContinueClicked) {
-                Text("REGISTRARTE")
-            }
-        }
-    }
-}
-
-//@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun OnboardingPreview() {
-
-        OnboardingScreen2(onContinueClicked = {})
-
-}
 */

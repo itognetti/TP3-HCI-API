@@ -35,11 +35,6 @@ class MainViewModel(
     var uiState by mutableStateOf(MainUiState(isAuthenticated = sessionManager.loadAuthToken() != null))
         private set
 
-    init {
-        if(uiState.isAuthenticated){
-            setupViewModel()
-        }
-    }
 
     fun setupViewModel(){
         getRoutines()

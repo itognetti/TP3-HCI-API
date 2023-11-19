@@ -77,6 +77,7 @@ val MainUiState.canModifySport: Boolean get() = isAuthenticated && currentSport 
 
 val MainUiState.canDeleteSport: Boolean get() = canModifySport
 
+
 /*
 
 val MainUiState.canGetAllCategories: Boolean get() = isAuthenticated
