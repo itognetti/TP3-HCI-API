@@ -39,7 +39,7 @@ import ar.edu.itba.example.api.ui.theme.White
 
 
 @Composable
-fun ProfileScreen(onNavegateTologinRegisterScreen:()->Unit, viewModel: MainViewModel) {
+fun ProfileScreen(onNavigateToLoginRegisterScreen:()->Unit, viewModel: MainViewModel) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -94,33 +94,32 @@ fun ProfileScreen(onNavegateTologinRegisterScreen:()->Unit, viewModel: MainViewM
                 }
             }
 
-            /*Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
-            // Botón de Editar Información
-            Button(
-                onClick = {
-                    // Agrega la lógica de editar información aquí
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(50.dp),
-                colors = ButtonDefaults.buttonColors(Color.Transparent),
-                border = BorderStroke(2.dp, FOrange),
-            ) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    Icon(Icons.Filled.Edit, contentDescription = null, tint = White)
-                    Spacer(modifier = Modifier.width(8.dp))
-                    Text(
-                        text = stringResource(id = R.string.edit_profile),
-                        color= White,
-                        fontSize = 24.sp
-                    )
-                }
-            }
-            */
+//            // Botón de Editar Información
+//            Button(
+//                onClick = {
+//                    // Agrega la lógica de editar información aquí
+//                },
+//                modifier = Modifier
+//                    .fillMaxWidth()
+//                    .height(50.dp),
+//                colors = ButtonDefaults.buttonColors(Color.Transparent),
+//                border = BorderStroke(2.dp, FOrange),
+//            ) {
+//                Row(
+//                    verticalAlignment = Alignment.CenterVertically,
+//                    horizontalArrangement = Arrangement.Center
+//                ) {
+//                    Icon(Icons.Filled.Edit, contentDescription = null, tint = White)
+//                    Spacer(modifier = Modifier.width(8.dp))
+//                    Text(
+//                        text = stringResource(id = R.string.edit_profile),
+//                        color= White,
+//                        fontSize = 24.sp
+//                    )
+//                }
+//            }
 
             Spacer(modifier = Modifier.height(16.dp))
 
@@ -128,7 +127,7 @@ fun ProfileScreen(onNavegateTologinRegisterScreen:()->Unit, viewModel: MainViewM
             Button(
                 onClick = {
                     viewModel.logout()
-                    onNavegateTologinRegisterScreen()
+                    onNavigateToLoginRegisterScreen()
                 },
                 modifier = Modifier
                     .fillMaxWidth()

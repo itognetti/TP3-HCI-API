@@ -30,7 +30,7 @@ import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.theme.Black
 
 @Composable
-fun AboutUs(onNavegateTologinRegisterScreen: () -> Unit) {
+fun AboutUs(onNavigateToLoginRegisterScreen: () -> Unit) {
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -87,7 +87,7 @@ fun AboutUs(onNavegateTologinRegisterScreen: () -> Unit) {
 
                 IconButton(
                     onClick = {
-                        onNavegateTologinRegisterScreen()
+                        onNavigateToLoginRegisterScreen()
                     },
                     modifier = Modifier
                         .align(Alignment.End)

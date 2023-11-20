@@ -39,9 +39,8 @@ import ar.edu.itba.example.api.ui.theme.FOrange
 
 @Composable
 fun LoginRegisterScreen(
-    onNavegateToLoginScreen: () -> Unit,
-    onNavegateToRegisterScreen: () -> Unit,
-    onNavegateToAboutUs: () -> Unit
+    onNavigateToLoginScreen: () -> Unit,
+    onNavigateToAboutUs: () -> Unit
 ) {
 
     val isScreenHorizontal =
@@ -85,7 +84,7 @@ fun LoginRegisterScreen(
                 // Botón de Iniciar Sesión
                 Button(
                     onClick = {
-                        onNavegateToLoginScreen()
+                        onNavigateToLoginScreen()
                     },
                     modifier = Modifier
                         .widthIn(200.dp)
@@ -100,22 +99,22 @@ fun LoginRegisterScreen(
 
                 Spacer(modifier = Modifier.width(16.dp))
 
-                // Botón de Registrarse
-                Button(
-                    onClick = {
-                        onNavegateToRegisterScreen()
-                    },
-                    modifier = Modifier
-                        .widthIn(200.dp)
-                        .height(80.dp), // Ajusta el tamaño aquí
-                    colors = ButtonDefaults.buttonColors(Color.Transparent),
-                    border = BorderStroke(3.dp, FOrange),
-                ) {
-                    Text(
-                        text = stringResource(id = R.string.register),
-                        fontSize = 24.sp
-                    )
-                }
+//                // Botón de Registrarse
+//                Button(
+//                    onClick = {
+//                        onNavigateToRegisterScreen()
+//                    },
+//                    modifier = Modifier
+//                        .widthIn(200.dp)
+//                        .height(80.dp), // Ajusta el tamaño aquí
+//                    colors = ButtonDefaults.buttonColors(Color.Transparent),
+//                    border = BorderStroke(3.dp, FOrange),
+//                ) {
+//                    Text(
+//                        text = stringResource(id = R.string.register),
+//                        fontSize = 24.sp
+//                    )
+//                }
             }
         } else {
             // Botones en una columna si la pantalla está vertical
@@ -130,7 +129,7 @@ fun LoginRegisterScreen(
                 // Botón de Iniciar Sesión
                 Button(
                     onClick = {
-                        onNavegateToLoginScreen()
+                        onNavigateToLoginScreen()
                     },
                     modifier = Modifier
                         .fillMaxWidth()
@@ -145,28 +144,28 @@ fun LoginRegisterScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // Botón de Registrarse
-                Button(
-                    onClick = {
-                        onNavegateToRegisterScreen()
-                    },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(50.dp),
-                    colors = ButtonDefaults.buttonColors(Color.Transparent),
-                    border = BorderStroke(3.dp, FOrange),
-                ) {
-                    Text(
-                        text = stringResource(id = R.string.register),
-                        fontSize = 24.sp
-                    )
-                }
+//                // Botón de Registrarse
+//                Button(
+//                    onClick = {
+//                        onNavigateToRegisterScreen()
+//                    },
+//                    modifier = Modifier
+//                        .fillMaxWidth()
+//                        .height(50.dp),
+//                    colors = ButtonDefaults.buttonColors(Color.Transparent),
+//                    border = BorderStroke(3.dp, FOrange),
+//                ) {
+//                    Text(
+//                        text = stringResource(id = R.string.register),
+//                        fontSize = 24.sp
+//                    )
+//                }
             }
         }
 
         IconButton(
             onClick = {
-                onNavegateToAboutUs()
+                onNavigateToAboutUs()
             },
             modifier = Modifier
                 .align(Alignment.BottomEnd)

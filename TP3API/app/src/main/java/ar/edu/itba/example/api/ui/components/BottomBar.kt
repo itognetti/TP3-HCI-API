@@ -41,7 +41,6 @@ fun BottomBar(
                 alwaysShowLabel = true,
                 selected = currentRoute == item.route,
                 onClick = { onNavigateToRoute(item.route) },
-
             )
         }
     }

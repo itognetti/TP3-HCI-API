@@ -11,13 +11,7 @@ sealed class Screen(val title: String, val icon: ImageVector, val route: String)
     object SearchScreen: Screen("Search", Icons.Filled.Search, "search_screen")
     object ProfileScreen: Screen("Profile", Icons.Filled.AccountCircle, "profile_screen")
     object LoginRegisterScreen: Screen("LoginRegisterScreen", Icons.Filled.AccountCircle, "LoginRegisterScreen")
-
     object LoginScreen: Screen("Login", Icons.Filled.AccountCircle, "login_screen")
-
-    object RegisterScreen: Screen("Register", Icons.Filled.AccountCircle, "register_screen")
-
-    object SecurScreen: Screen("Security", Icons.Filled.AccountCircle, "secur_screen")
-
     object AboutUs: Screen("About Us", Icons.Filled.AccountCircle, "about_us")
 
 }

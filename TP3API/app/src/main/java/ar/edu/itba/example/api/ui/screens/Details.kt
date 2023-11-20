@@ -6,8 +6,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.HideSource
-import androidx.compose.material.icons.filled.NotListedLocation
-import androidx.compose.material.icons.filled.Rule
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
@@ -17,9 +15,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.tp3_hci.R
-import com.example.tp3_hci.components.CicleEntry
-import com.example.tp3_hci.components.EmptyState
+import ar.edu.itba.example.api.ui.components.CicleEntry
+import ar.edu.itba.example.api.ui.components.EmptyState
 import com.example.tp3_hci.util.getViewModelFactory
 import kotlinx.coroutines.launch
 

@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.DisabledByDefault
 import androidx.compose.material.icons.filled.HideSource
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -16,14 +15,10 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.tp3_hci.R
-import com.example.tp3_hci.components.CicleEntry
-import com.example.tp3_hci.components.EmptyState
-import com.example.tp3_hci.components.ExerciseEntry
+import ar.edu.itba.example.api.ui.components.EmptyState
+import ar.edu.itba.example.api.ui.components.ExerciseEntry
 import com.example.tp3_hci.ui.cycleDetails.CycleDetailsViewModel
 import com.example.tp3_hci.ui.cycleDetails.canGetAllCycleExercises
-import com.example.tp3_hci.ui.details.DetailsViewModel
-import com.example.tp3_hci.ui.details.canGetAllRoutineCycles
 import com.example.tp3_hci.util.getViewModelFactory
 import kotlinx.coroutines.launch
 
