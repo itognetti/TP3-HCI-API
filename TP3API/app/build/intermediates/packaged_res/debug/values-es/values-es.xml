@@ -24,6 +24,7 @@
     <string name="get_current_sport">GET CURRENT SPORT</string>
     <string name="get_current_user">GET CURRENT USER</string>
     <string name="home_screen">Inicio</string>
+    <string name="loading_message">Cargando</string>
     <string name="log_out_profile">Cerrar Sesión</string>
     <string name="login">Iniciar Sesión</string>
     <string name="login_error">Mail o contraseña invalido</string>

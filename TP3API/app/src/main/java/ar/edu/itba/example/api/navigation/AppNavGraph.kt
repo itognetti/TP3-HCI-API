@@ -1,6 +1,7 @@
 package ar.edu.itba.example.api.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -15,7 +16,8 @@ import ar.edu.itba.example.api.ui.home.HomeScreen
 import ar.edu.itba.example.api.ui.login.LoginScreen
 import ar.edu.itba.example.api.ui.profile.ProfileScreen
 import ar.edu.itba.example.api.ui.screens.AboutUsScreen
-import com.example.tp3_hci.Screens.CycleDetailsScreen
+import ar.edu.itba.example.api.util.getViewModelFactory
+import ar.edu.itba.example.api.ui.cycleDetails.CycleDetailsScreen
 
 @Composable
 fun AppNavGraph(navController: NavHostController = rememberNavController(),
@@ -31,7 +33,8 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
             HomeScreen(
                 onNavigateToRoutineDetails = {id -> navController.navigate("details/$id")},
                 onNavigateToExecution = {id -> navController.navigate("execution/$id")},
-                orderBy = orderBy
+                orderBy = orderBy,
+                viewModel = viewModel(factory = getViewModelFactory())
             )
         }
 
@@ -39,13 +42,16 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
             ExploreScreen(
                 onNavigateToRoutineDetails = { id -> navController.navigate("details/$id") },
                 onNavigateToExecution = { id -> navController.navigate("execution/$id") },
-                orderBy = orderBy
+                orderBy = orderBy,
+                viewModel = viewModel(factory = getViewModelFactory())
             )
         }
 
         composable("profile") {
             ProfileScreen(
-                onNavigateToLogin = {navController.navigate("login")}
+                onNavigateToLogin = {navController.navigate("login")},
+                orderBy = orderBy,
+                viewModel = viewModel(factory = getViewModelFactory())
             )
         }
 
@@ -61,37 +67,32 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
         ){
             DetailsScreen(
                 onNavigateToCycleDetails = { id -> navController.navigate("details-cycle/$id")},
-                routineId = navController.currentBackStackEntry?.arguments?.getString("routineId")?: "-1"
+                routineId = navController.currentBackStackEntry?.arguments?.getString("routineId")?: "-1",
+                viewModel = viewModel(factory = getViewModelFactory())
             )
         }
 
         composable("details-cycle/{cycleId}"){
             CycleDetailsScreen(
-                cycleId = navController.currentBackStackEntry?.arguments?.getString("cycleId")?: "-1")
+                cycleId = navController.currentBackStackEntry?.arguments?.getString("cycleId")?: "-1",
+                viewModel = viewModel(factory = getViewModelFactory())
+            )
         }
 
         composable("login") {
             LoginScreen(
                 onNavigateToHomeScreen = { navController.navigate("home") },
-                onNavigateToAboutUs = { navController.navigate("about_us")}
+                viewModel = viewModel(factory = getViewModelFactory())
             )
         }
 
         composable("execution/{routineId}"){
             ExecutionScreen(
                 onNavigateBack = { navController.navigateUp() },
-                // onNavigateToRate = {id -> navController.navigate("review/$id)}, SEGURO LO MANDAMOS AL HOME
-                onNavigateToHome = {navController.navigate("home")},
-                routineId = navController.currentBackStackEntry?.arguments?.getString("routineId")?: "-1")
+                onNavigateToExecution2 = { id -> navController.navigate("review/$id") },
+                routineId=navController.currentBackStackEntry?.arguments?.getString("routineId")?:"-1",
+                viewModel = viewModel(factory = getViewModelFactory())
         }
-
-
-        composable("about_us") {
-            AboutUsScreen(
-                onNavigateToLoginScreen = {navController.navigate("login")}
-            )
-        }
-
     }
 }
 

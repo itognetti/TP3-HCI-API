@@ -22,7 +22,7 @@
      con un certificado solo puede manejar tráfico HTTP
     -->
     <application
-        android:name="ar.edu.itba.example.api.ui.main.MyApplication"
+        android:name="ar.edu.itba.example.api.ui.MyApplication"
         android:allowBackup="true"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -33,11 +33,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:testOnly="true"
         android:theme="@style/Theme.Api"
         android:usesCleartextTraffic="true" >
         <activity
-            android:name="ar.edu.itba.example.api.ui.main.MainActivity"
+            android:name="ar.edu.itba.example.api.ui.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Api" >

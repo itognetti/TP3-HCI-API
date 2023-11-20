@@ -47,6 +47,7 @@ string get_all_sports
 string get_current_sport
 string get_current_user
 string home_screen
+string loading_message
 string log_out_profile
 string login
 string login_error

@@ -14,6 +14,8 @@
     <string name="edit_profile">Editar Perfil</string>
     <string name="log_out_profile">Cerrar Sesión</string>
     <string name="search_bar">Buscar</string>
+    <string name="loading_message">Cargando</string>
+
     <string name="login">Iniciar Sesión</string>
     <string name="signin">Ingresar</string>
     <string name="register">Registrarse</string>
@@ -51,4 +53,11 @@
     <string name="difficulty_desc">Dificultad Descendente</string>
     <string name="login_error">Mail o contraseña invalido</string>
     <string name="no_routines">No hay rutinas dispoinbles para mostrar :(</string>
+
+    <string name="routines">Rutinas</string>
+    <string name="details">Detalles</string>
+    <string name="cycle">Ciclos</string>
+    <string name="empty_routine">No tiene rutinas</string>
+    <string name="empty_cycle">No tiene ciclos</string>
+
 </resources>

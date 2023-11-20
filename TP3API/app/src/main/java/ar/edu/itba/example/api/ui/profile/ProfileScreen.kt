@@ -1,6 +1,5 @@
 package ar.edu.itba.example.api.ui.profile
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -16,7 +15,6 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
-import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.ExitToApp
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -33,13 +31,16 @@ import ar.edu.itba.example.api.ui.theme.FOrange
 import androidx.compose.material3.Icon
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import ar.edu.itba.example.api.ui.main.MainViewModel
 import ar.edu.itba.example.api.ui.theme.Black
 import ar.edu.itba.example.api.ui.theme.White
 
 
 @Composable
-fun ProfileScreen(onNavigateToLoginRegisterScreen:()->Unit, viewModel: MainViewModel) {
+fun ProfileScreen(
+    onNavigateToLogin:()->Unit,
+    orderBy: String,
+    viewModel: ProfileViewModel
+) {
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -127,7 +128,7 @@ fun ProfileScreen(onNavigateToLoginRegisterScreen:()->Unit, viewModel: MainViewM
             Button(
                 onClick = {
                     viewModel.logout()
-                    onNavigateToLoginRegisterScreen()
+                    onNavigateToLogin()
                 },
                 modifier = Modifier
                     .fillMaxWidth()

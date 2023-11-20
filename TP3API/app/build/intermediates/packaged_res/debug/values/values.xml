@@ -31,6 +31,7 @@
     <string name="get_current_sport">GET CURRENT SPORT</string>
     <string name="get_current_user">GET CURRENT USER</string>
     <string name="home_screen">Home</string>
+    <string name="loading_message">Loading</string>
     <string name="log_out_profile">Log Out</string>
     <string name="login">Log In</string>
     <string name="login_error">Invalid email or password</string>

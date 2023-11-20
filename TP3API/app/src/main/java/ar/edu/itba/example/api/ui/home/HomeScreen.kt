@@ -1,9 +1,7 @@
 package ar.edu.itba.example.api.ui.home
 
-import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.R
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -13,11 +11,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import ar.edu.itba.example.api.R
+import ar.edu.itba.example.api.ui.components.CardItem
 import kotlinx.coroutines.launch
 
 @Composable
@@ -25,26 +24,18 @@ fun HomeScreen(
     onNavigateToRoutineDetails: (id:Int) -> Unit,
     onNavigateToExecution: (id:Int) -> Unit,
     orderBy: String,
-    viewModel: HomeViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory())
+    viewModel: HomeViewModel
 ) {
     val uiState = viewModel.uiState
-    val toastError = Toast.makeText(LocalContext.current, uiState.message, Toast.LENGTH_SHORT)
-
-    LaunchedEffect(key1 = uiState.message){
-        launch {
-            if(uiState.message != null){
-                toastError.show()
-            }
-        }
-    }
-
-    LaunchedEffect(key1 = Unit) {
-        launch {
-            if (uiState.canGetAllRoutines) {
-                viewModel.getFavouriteRoutines()
-            }
-        }
-    }
+//    val toastError = Toast.makeText(LocalContext.current, uiState.error, Toast.LENGTH_SHORT)
+//
+//    LaunchedEffect(key1 = uiState.error){
+//        launch {
+//            if(uiState.error != null){
+//                toastError.show()
+//            }
+//        }
+//    }
 
     LaunchedEffect(key1 = orderBy) {
         launch {
@@ -63,7 +54,7 @@ fun HomeScreen(
 
     Column() {
         Text(
-            text = stringResource(R.string.routines_subtitle),
+            text = stringResource(R.string.routines),
             fontWeight = FontWeight.Bold,
             fontSize = 28.sp,
             modifier = Modifier.padding(horizontal = 15.dp, vertical = 20.dp)
@@ -81,14 +72,20 @@ fun HomeScreen(
                 )
             }
         } else {
-            RoutineCardList(
-                list = uiState.routines?.filter { routine -> routine.user?.username == uiState.currentUser?.username }.orEmpty(),
-                hasReviews = false,
-                favouriteList = uiState.favourites.orEmpty(),
-                hasFavourites = true,
-                addFavourite = { routineId -> viewModel.addFavouriteRoutine(routineId) },
-                onNavigateToRoutineDetails = onNavigateToRoutineDetails,
-                onNavigateToExecution = onNavigateToExecution)
+            CardItem(
+                imageResId = R.drawable.gym1,
+                title = "Tarjeta 1",
+                description = "Descripción de la tarjeta 1"
+            )
+//            RoutineCardList(
+//                list = uiState.routines?.filter { routine -> routine.user?.username == uiState.currentUser?.username }.orEmpty(),
+//                hasReviews = false,
+//                favouriteList = uiState.favourites.orEmpty(),
+//                hasFavourites = true,
+//                addFavourite = { routineId -> viewModel.addFavouriteRoutine(routineId) },
+//                onNavigateToRoutineDetails = onNavigateToRoutineDetails,
+//                onNavigateToExecution = onNavigateToExecution
+//             )
             Spacer(modifier = Modifier.size(20.dp))
         }
     }
@@ -133,7 +130,7 @@ import ar.edu.itba.example.api.ui.theme.Black
 import ar.edu.itba.example.api.ui.theme.FOrange
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
-/*
+
 @Composable
 fun HomeScreen(viewModel: MainViewModel) {
     var searchQuery by remember { mutableStateOf("") }
@@ -197,14 +194,14 @@ fun HomeScreen(viewModel: MainViewModel) {
             }
         }
 
-        /*
+
         // Lista de tarjetas
         CardItem(imageResId = R.drawable.gym1, title = "Tarjeta 1", description = "Descripción de la tarjeta 1")
         CardItem(imageResId = R.drawable.gym2, title = "Tarjeta 2", description = "Descripción de la tarjeta 2")
         CardItem(imageResId = R.drawable.gym3, title = "Tarjeta 3", description = "Descripción de la tarjeta 3")
         CardItem(imageResId = R.drawable.gym4, title = "Tarjeta 4", description = "Descripción de la tarjeta 4")
         CardItem(imageResId = R.drawable.gym5, title = "Tarjeta 5", description = "Descripción de la tarjeta 5")
-        */
+
 
     }
 }

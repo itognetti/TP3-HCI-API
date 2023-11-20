@@ -14,6 +14,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Divider
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -28,17 +35,25 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import ar.edu.itba.example.api.R
+import ar.edu.itba.example.api.ui.components.EmptyState
+import ar.edu.itba.example.api.ui.components.Timer
+import ar.edu.itba.example.api.ui.theme.FOrange
+import ar.edu.itba.example.api.ui.theme.Grey
+import ar.edu.itba.example.api.ui.theme.White
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 
 
+//LO QUE ES EXECUTION2 ES LA SEGUNDA FORMA DE VER EL EJ, EN LA CARPETA SCREENS ESTA SECONDROUTINE,
+//QUE HAY QUE MODIFICARLA Y AHCERLA IGUAL QUE ESTA, ASI EL USUARIO PASA DE UNA A OTRA
 @Composable
 fun ExecutionScreen(
     onNavigateBack: () -> Unit,
-    onNavigateToRate: (id: String) -> Unit,
+    onNavigateToExecution2: (id: String) -> Unit,
     routineId: String,
-    viewModel: ExecutionViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory()),
+    viewModel: ExecutionViewModel
 ) {
     val uiState = viewModel.uiState
     val context = LocalContext.current
@@ -56,14 +71,14 @@ fun ExecutionScreen(
     //var allExercises by remember { mutableStateOf( HashMap<Int, List<CycleContent>?>() ) }
     fun nextCycle() {
         if (currentCycleIndex + 1 >= uiState.routineCycles.orEmpty().size) {
-            onNavigateToRate(routineId)
+            onNavigateToExecution2(routineId)
         } else {
             currentExerciseIndex = 0
             do {
                 currentCycleIndex++
             } while (currentCycleIndex < uiState.routineCycles.orEmpty().size && uiState.cycleExercises.get(uiState.routineCycles!!.getOrNull(currentCycleIndex)!!.id).orEmpty().size == 0)
             if (currentCycleIndex + 1 >= uiState.routineCycles.orEmpty().size)
-                onNavigateToRate(routineId)
+                onNavigateToExecution2(routineId)
         }
     }
 
@@ -99,7 +114,7 @@ fun ExecutionScreen(
         }
     }
 
-    val msg = stringResource(id = R.string.no_cycles)
+    val msg = stringResource(id = R.string.empty_cycle)
 
     LaunchedEffect(key1 = Unit) {
         launch {
@@ -132,15 +147,15 @@ fun ExecutionScreen(
         }
     }
 
-    val toastError = Toast.makeText(LocalContext.current, uiState.message, Toast.LENGTH_SHORT)
-
-    LaunchedEffect(key1 = uiState.message){
-        launch {
-            if(uiState.message != null){
-                toastError.show()
-            }
-        }
-    }
+//    val toastError = Toast.makeText(LocalContext.current, uiState.error, Toast.LENGTH_SHORT)
+//
+//    LaunchedEffect(key1 = uiState.error){
+//        launch {
+//            if(uiState.error != null){
+//                toastError.show()
+//            }
+//        }
+//    }
 
     val cycles = uiState.routineCycles
     var currentCycle = uiState.routineCycles?.getOrNull(currentCycleIndex)
@@ -165,12 +180,12 @@ fun ExecutionScreen(
                     horizontalArrangement = Arrangement.End
                 ) {
                     Icon(
-                        imageVector = Icons.Default.Cancel,
+                        imageVector = Icons.Default.Close,
                         contentDescription = null,
                         modifier = Modifier
                             .size(35.dp)
                             .clickable { onNavigateBack() },
-                        tint = Grey2
+                        tint = Grey
                     )
                 }
 
@@ -179,7 +194,7 @@ fun ExecutionScreen(
                     if (uiState.cycleExercises.get(uiState.routineCycles!!.getOrNull(currentCycleIndex)?.id)
                             .orEmpty().size == 0
                     ) {
-                        EmptyState(text = stringResource(id = R.string.empty_routine), Icons.Default.HideSource)
+                        EmptyState(text = stringResource(id = R.string.empty_routine), Icons.Default.Build)
                     } else {
                         Text(
                             text = currentCycle?.name ?: "Cycle",
@@ -191,11 +206,11 @@ fun ExecutionScreen(
                                 .fillMaxWidth()
                                 .padding(horizontal = 50.dp, vertical = 10.dp),
                             thickness = 4.dp,
-                            color = GreyGrey
+                            color = Grey
                         )
                         Text(
                             text = uiState.cycleExercises?.getOrDefault(uiState.routineCycles!!.getOrNull(currentCycleIndex)?.id ?: -1, null)?.get(currentExerciseIndex)?.exercise?.name ?: "Titulo por defecto",
-                            color = MaterialTheme.colors.primary,
+                            color = FOrange,
                             fontSize = 28.sp,
                             fontWeight = FontWeight(500)
                         )
@@ -208,7 +223,7 @@ fun ExecutionScreen(
                         }
                         Text(
                             text = "Reps: " + reps,
-                            color = Grey2,
+                            color = Grey,
                             fontSize = 30.sp,
                             fontWeight = FontWeight(600),
                             modifier = Modifier
@@ -220,9 +235,9 @@ fun ExecutionScreen(
                             Timer(
                                 totalTime = uiState.cycleExercises.getOrDefault(uiState.routineCycles!!.getOrNull(currentCycleIndex)?.id ?: -1, null)
                                     ?.get(currentExerciseIndex)?.duration?.times(1000L) ?: 0,
-                                handleColor = MaterialTheme.colors.primary,
-                                inactiveBarColor = GreyGrey,
-                                activeBarColor = MaterialTheme.colors.primary,
+                                handleColor = FOrange,
+                                inactiveBarColor = Grey,
+                                activeBarColor = White,
                                 nextFunc = { nextExercise() },
                                 prevFunc = { previousExercise() },
                                 hasPrev = currentCycleIndex > 0 || currentExerciseIndex > 0,
@@ -259,7 +274,7 @@ fun ExecutionScreen(
                                             .fillMaxWidth()
                                             .padding(horizontal = 50.dp, vertical = 10.dp),
                                         thickness = 4.dp,
-                                        color = GreyGrey
+                                        color = Grey
                                     )
                                 }
                             }
@@ -281,16 +296,13 @@ fun ExecutionScreen(
                                         horizontalArrangement = Arrangement.SpaceAround
                                     ) {
                                         Text(
-                                            text = list.get(index).exercise.name!!,
-                                            style = MaterialTheme.typography.h5
+                                            text = list.get(index).exercise.name!!
                                         )
                                         Text(
-                                            text = stringResource(id = R.string.reps) + list.get(index).repetitions,
-                                            style = MaterialTheme.typography.h5
+                                            text = "reps" + list.get(index).repetitions
                                         )
                                         Text(
-                                            text = stringResource(id = R.string.time) + list.get(index).duration,
-                                            style = MaterialTheme.typography.h5
+                                            text = "time" + list.get(index).duration
                                         )
                                     }
                                 }
@@ -302,29 +314,29 @@ fun ExecutionScreen(
                             ) {
                                 fun nextC(){
                                     if (currentCycleIndex+1==uiState.routineCycles!!.size){
-                                        onNavigateToRate(routineId)
+                                        onNavigateToExecution2(routineId)
                                     } else {
                                         currentCycleIndex++;
                                     }
                                 }
                                 Button(
                                     onClick = { if (currentCycleIndex>0) currentCycleIndex--},
-                                    colors = ButtonDefaults.buttonColors(MaterialTheme.colors.secondary),
+                                    colors = ButtonDefaults.buttonColors(FOrange),
                                     shape = RoundedCornerShape(35.dp)
                                 ) {
                                     Text(
-                                        text = stringResource(id = R.string.previous),
+                                        text = "previous",
                                         color = Color.White
                                     )
                                 }
 
                                 Button(
                                     onClick = { nextC() },
-                                    colors = ButtonDefaults.buttonColors(MaterialTheme.colors.secondary),
+                                    colors = ButtonDefaults.buttonColors(FOrange),
                                     shape = RoundedCornerShape(35.dp)
                                 ) {
                                     Text(
-                                        text = stringResource(id = R.string.next),
+                                        text = "next",
                                         color = Color.White
                                     )
                                 }
