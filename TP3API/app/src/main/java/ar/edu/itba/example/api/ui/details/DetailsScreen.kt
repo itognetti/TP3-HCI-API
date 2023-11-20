@@ -1,5 +1,6 @@
 package ar.edu.itba.example.api.ui.details
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
@@ -9,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -17,12 +19,13 @@ import ar.edu.itba.example.api.ui.components.CicleEntry
 import ar.edu.itba.example.api.ui.components.EmptyState
 import kotlinx.coroutines.launch
 import ar.edu.itba.example.api.R
+import ar.edu.itba.example.api.util.getViewModelFactory
 
 @Composable
 fun DetailsScreen(
     onNavigateToCycleDetails: (id:Int) -> Unit,
     routineId: String,
-    viewModel: DetailsViewModel
+    viewModel: DetailsViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory())
 ) {
     val uiState = viewModel.uiState
 
@@ -33,15 +36,15 @@ fun DetailsScreen(
         }
     }
 
-//    val toastError = Toast.makeText(LocalContext.current, uiState.error, Toast.LENGTH_SHORT)
-//
-//    LaunchedEffect(key1 = uiState.error){
-//        launch {
-//            if(uiState.error != null){
-//                toastError.show()
-//            }
-//        }
-//    }
+    val toastError = Toast.makeText(LocalContext.current, uiState.error?.message ?: "", Toast.LENGTH_SHORT)
+
+    LaunchedEffect(key1 = uiState.error){
+        launch {
+            if(uiState.error != null){
+                toastError.show()
+            }
+        }
+    }
 
     Column(modifier = Modifier.fillMaxHeight()) {
         //Titulo
@@ -64,8 +67,8 @@ fun DetailsScreen(
                 )
             }
         } else {
-            val list = uiState.routineCycles?.orEmpty()
-            if (list==null || list.isEmpty()){
+            val list = uiState.routineCycles.orEmpty()
+            if (list.isEmpty()){
                 EmptyState(text = stringResource(id = R.string.empty_routine), Icons.Default.Build)
             } else {
                 LazyColumn(
@@ -73,16 +76,16 @@ fun DetailsScreen(
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     items(
-                        count = list?.size?:0,
+                        count = list.size ?:0,
                         key = { index ->
-                            list?.get(index)?.id.toString()
+                            list.get(index).id.toString()
                         }
                     ) { index ->
                         CicleEntry(
-                            title = list?.get(index)?.name ?: "Error",
-                            rounds = list?.get(index)?.repetitions?:0,
+                            title = list.get(index).name ?: "Error",
+                            rounds = list.get(index).repetitions ?:0,
                             onNavigateToCycleDetails = onNavigateToCycleDetails,
-                            cycleId = list?.get(index)?.id?:-1
+                            cycleId = list.get(index).id ?:-1
                         )
                     }
                 }

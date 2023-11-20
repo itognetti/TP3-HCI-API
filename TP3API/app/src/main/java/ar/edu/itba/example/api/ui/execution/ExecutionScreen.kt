@@ -24,6 +24,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -41,6 +42,7 @@ import ar.edu.itba.example.api.ui.components.Timer
 import ar.edu.itba.example.api.ui.theme.FOrange
 import ar.edu.itba.example.api.ui.theme.Grey
 import ar.edu.itba.example.api.ui.theme.White
+import ar.edu.itba.example.api.util.getViewModelFactory
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
@@ -53,19 +55,19 @@ fun ExecutionScreen(
     onNavigateBack: () -> Unit,
     onNavigateToExecution2: (id: String) -> Unit,
     routineId: String,
-    viewModel: ExecutionViewModel
+    viewModel: ExecutionViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory())
 ) {
     val uiState = viewModel.uiState
     val context = LocalContext.current
-    var currentCycleIndex by remember { mutableStateOf(0) }
-    var currentExerciseIndex by remember { mutableStateOf(0) }
+    var currentCycleIndex by remember { mutableIntStateOf(0) }
+    var currentExerciseIndex by remember { mutableIntStateOf(0) }
     var boca by remember { mutableStateOf(false) }
     var rivar by remember { mutableStateOf(false) }
-    var finishedThreads by remember { mutableStateOf(0) }
+    var finishedThreads by remember { mutableIntStateOf(0) }
     val mutex = Mutex()
 
-    var preferences = PreferenceManager.getDefaultSharedPreferences(LocalContext.current)
-    var advancedModeEnabled by remember { mutableStateOf(preferences.getBoolean("advanced_exec_enabled",false)) }
+    val preferences = PreferenceManager.getDefaultSharedPreferences(LocalContext.current)
+    val advancedModeEnabled by remember { mutableStateOf(preferences.getBoolean("advanced_exec_enabled",false)) }
 
 
     //var allExercises by remember { mutableStateOf( HashMap<Int, List<CycleContent>?>() ) }
@@ -76,14 +78,15 @@ fun ExecutionScreen(
             currentExerciseIndex = 0
             do {
                 currentCycleIndex++
-            } while (currentCycleIndex < uiState.routineCycles.orEmpty().size && uiState.cycleExercises.get(uiState.routineCycles!!.getOrNull(currentCycleIndex)!!.id).orEmpty().size == 0)
+            } while (currentCycleIndex < uiState.routineCycles.orEmpty().size && uiState.cycleExercises[uiState.routineCycles!!.getOrNull(currentCycleIndex)!!.id].orEmpty().isEmpty()
+            )
             if (currentCycleIndex + 1 >= uiState.routineCycles.orEmpty().size)
                 onNavigateToExecution2(routineId)
         }
     }
 
     fun nextExercise() {
-        if (currentExerciseIndex + 1 >= uiState.cycleExercises.get(uiState.routineCycles!!.getOrNull(currentCycleIndex)!!.id).orEmpty().size) {
+        if (currentExerciseIndex + 1 >= uiState.cycleExercises[uiState.routineCycles!!.getOrNull(currentCycleIndex)!!.id].orEmpty().size) {
             nextCycle()
         } else {
             currentExerciseIndex++
@@ -95,13 +98,16 @@ fun ExecutionScreen(
             return
         } else {
             var i=1
-            while (currentCycleIndex-i >= 0 && uiState.cycleExercises.get(uiState.routineCycles!!.getOrNull(currentCycleIndex-i)!!.id).orEmpty().size == 0){
+            while (currentCycleIndex-i >= 0 && uiState.cycleExercises[uiState.routineCycles!!.getOrNull(
+                    currentCycleIndex - i
+                )!!.id].orEmpty().isEmpty()
+            ){
                 i++
             }
             //Encontró un cyclo
             if (currentCycleIndex-i >= 0) {
                 currentCycleIndex -= i
-                currentExerciseIndex =  uiState.cycleExercises.get(uiState.routineCycles!!.getOrNull(currentCycleIndex)!!.id).orEmpty().size-1
+                currentExerciseIndex =  uiState.cycleExercises[uiState.routineCycles!!.getOrNull(currentCycleIndex)!!.id].orEmpty().size-1
             }
         }
     }
@@ -129,8 +135,8 @@ fun ExecutionScreen(
     LaunchedEffect(key1 = boca) {
         launch {
             if (boca) {
-                uiState.routineCycles?.forEach { it ->
-                    viewModel.getCycleExercises(it?.id!!)
+                uiState.routineCycles?.forEach {
+                    viewModel.getCycleExercises(it.id!!)
                     mutex.withLock {
                         finishedThreads++
                     }
@@ -147,18 +153,18 @@ fun ExecutionScreen(
         }
     }
 
-//    val toastError = Toast.makeText(LocalContext.current, uiState.error, Toast.LENGTH_SHORT)
-//
-//    LaunchedEffect(key1 = uiState.error){
-//        launch {
-//            if(uiState.error != null){
-//                toastError.show()
-//            }
-//        }
-//    }
+    val toastError = Toast.makeText(LocalContext.current, uiState.error?.message ?: "", Toast.LENGTH_SHORT)
+
+    LaunchedEffect(key1 = uiState.error){
+        launch {
+            if(uiState.error != null){
+                toastError.show()
+            }
+        }
+    }
 
     val cycles = uiState.routineCycles
-    var currentCycle = uiState.routineCycles?.getOrNull(currentCycleIndex)
+    val currentCycle = uiState.routineCycles?.getOrNull(currentCycleIndex)
 
 
     Column(
@@ -191,8 +197,10 @@ fun ExecutionScreen(
 
                 if(!advancedModeEnabled){
                     //Nombre del ciclo
-                    if (uiState.cycleExercises.get(uiState.routineCycles!!.getOrNull(currentCycleIndex)?.id)
-                            .orEmpty().size == 0
+                    if (uiState.cycleExercises[uiState.routineCycles!!.getOrNull(
+                            currentCycleIndex
+                        )?.id]
+                            .orEmpty().isEmpty()
                     ) {
                         EmptyState(text = stringResource(id = R.string.empty_routine), Icons.Default.Build)
                     } else {
@@ -209,20 +217,22 @@ fun ExecutionScreen(
                             color = Grey
                         )
                         Text(
-                            text = uiState.cycleExercises?.getOrDefault(uiState.routineCycles!!.getOrNull(currentCycleIndex)?.id ?: -1, null)?.get(currentExerciseIndex)?.exercise?.name ?: "Titulo por defecto",
+                            text = uiState.cycleExercises.getOrDefault(uiState.routineCycles.getOrNull(currentCycleIndex)?.id ?: -1, null)
+                                ?.get(currentExerciseIndex)?.exercise?.name ?: "Titulo por defecto",
                             color = FOrange,
                             fontSize = 28.sp,
                             fontWeight = FontWeight(500)
                         )
                         val reps: String
-                        val numReps: Int = uiState.cycleExercises?.getOrDefault(uiState.routineCycles!!.getOrNull(currentCycleIndex)?.id ?: -1, null)?.get(currentExerciseIndex)?.repetitions?:0
-                        if(numReps == 0){
-                            reps = "--"
+                        val numReps: Int = uiState.cycleExercises.getOrDefault(uiState.routineCycles.getOrNull(currentCycleIndex)?.id ?: -1, null)
+                            ?.get(currentExerciseIndex)?.repetitions?:0
+                        reps = if(numReps == 0){
+                            "--"
                         } else {
-                            reps = numReps.toString()
+                            numReps.toString()
                         }
                         Text(
-                            text = "Reps: " + reps,
+                            text = "Reps: $reps",
                             color = Grey,
                             fontSize = 30.sp,
                             fontWeight = FontWeight(600),
@@ -233,7 +243,7 @@ fun ExecutionScreen(
                             contentAlignment = Alignment.Center,
                         ) {
                             Timer(
-                                totalTime = uiState.cycleExercises.getOrDefault(uiState.routineCycles!!.getOrNull(currentCycleIndex)?.id ?: -1, null)
+                                totalTime = uiState.cycleExercises.getOrDefault(uiState.routineCycles.getOrNull(currentCycleIndex)?.id ?: -1, null)
                                     ?.get(currentExerciseIndex)?.duration?.times(1000L) ?: 0,
                                 handleColor = FOrange,
                                 inactiveBarColor = Grey,
@@ -259,7 +269,7 @@ fun ExecutionScreen(
                             horizontalAlignment = Alignment.CenterHorizontally,
                             verticalArrangement = Arrangement.SpaceEvenly
                         ) {
-                            Box(){
+                            Box{
                                 Column(
                                     modifier = Modifier,
                                     horizontalAlignment = Alignment.CenterHorizontally
@@ -282,12 +292,10 @@ fun ExecutionScreen(
                                 modifier = Modifier
                                     .size(500.dp),
                             ) {
-                                var list = uiState.cycleExercises?.get(
-                                    uiState.routineCycles!!.getOrNull(currentCycleIndex)?.id!!
-                                ).orEmpty()
+                                val list = uiState.cycleExercises[uiState.routineCycles!!.getOrNull(currentCycleIndex)?.id!!].orEmpty()
                                 items(
                                     count = list.size,
-                                    key = { index -> list.get(index).exercise.name!! }
+                                    key = { index -> list[index].exercise.name!! }
                                 ) { index ->
                                     Row(
                                         modifier = Modifier
@@ -296,13 +304,13 @@ fun ExecutionScreen(
                                         horizontalArrangement = Arrangement.SpaceAround
                                     ) {
                                         Text(
-                                            text = list.get(index).exercise.name!!
+                                            text = list[index].exercise.name!!
                                         )
                                         Text(
-                                            text = "reps" + list.get(index).repetitions
+                                            text = "reps" + list[index].repetitions
                                         )
                                         Text(
-                                            text = "time" + list.get(index).duration
+                                            text = "time" + list[index].duration
                                         )
                                     }
                                 }
@@ -316,7 +324,7 @@ fun ExecutionScreen(
                                     if (currentCycleIndex+1==uiState.routineCycles!!.size){
                                         onNavigateToExecution2(routineId)
                                     } else {
-                                        currentCycleIndex++;
+                                        currentCycleIndex++
                                     }
                                 }
                                 Button(

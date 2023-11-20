@@ -1,7 +1,6 @@
 package ar.edu.itba.example.api.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -15,8 +14,6 @@ import ar.edu.itba.example.api.ui.explore.ExploreScreen
 import ar.edu.itba.example.api.ui.home.HomeScreen
 import ar.edu.itba.example.api.ui.login.LoginScreen
 import ar.edu.itba.example.api.ui.profile.ProfileScreen
-import ar.edu.itba.example.api.ui.screens.AboutUsScreen
-import ar.edu.itba.example.api.util.getViewModelFactory
 import ar.edu.itba.example.api.ui.cycleDetails.CycleDetailsScreen
 
 @Composable
@@ -33,26 +30,23 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
             HomeScreen(
                 onNavigateToRoutineDetails = {id -> navController.navigate("details/$id")},
                 onNavigateToExecution = {id -> navController.navigate("execution/$id")},
-                orderBy = orderBy,
-                viewModel = viewModel(factory = getViewModelFactory())
-            )
+                orderBy = orderBy
+                )
         }
 
         composable("explore") {
             ExploreScreen(
                 onNavigateToRoutineDetails = { id -> navController.navigate("details/$id") },
                 onNavigateToExecution = { id -> navController.navigate("execution/$id") },
-                orderBy = orderBy,
-                viewModel = viewModel(factory = getViewModelFactory())
-            )
+                orderBy = orderBy
+                )
         }
 
         composable("profile") {
             ProfileScreen(
                 onNavigateToLogin = {navController.navigate("login")},
-                orderBy = orderBy,
-                viewModel = viewModel(factory = getViewModelFactory())
-            )
+                orderBy = orderBy
+                )
         }
 
         composable("details/{routineId}",
@@ -67,32 +61,28 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
         ){
             DetailsScreen(
                 onNavigateToCycleDetails = { id -> navController.navigate("details-cycle/$id")},
-                routineId = navController.currentBackStackEntry?.arguments?.getString("routineId")?: "-1",
-                viewModel = viewModel(factory = getViewModelFactory())
-            )
+                routineId = navController.currentBackStackEntry?.arguments?.getString("routineId")?: "-1"
+                )
         }
 
         composable("details-cycle/{cycleId}"){
             CycleDetailsScreen(
-                cycleId = navController.currentBackStackEntry?.arguments?.getString("cycleId")?: "-1",
-                viewModel = viewModel(factory = getViewModelFactory())
-            )
+                cycleId = navController.currentBackStackEntry?.arguments?.getString("cycleId")?: "-1"
+                )
         }
 
         composable("login") {
             LoginScreen(
-                onNavigateToHomeScreen = { navController.navigate("home") },
-                viewModel = viewModel(factory = getViewModelFactory())
-            )
+                onNavigateToHomeScreen = { navController.navigate("home") }
+                )
         }
 
         composable("execution/{routineId}"){
             ExecutionScreen(
                 onNavigateBack = { navController.navigateUp() },
                 onNavigateToExecution2 = { id -> navController.navigate("review/$id") },
-                routineId=navController.currentBackStackEntry?.arguments?.getString("routineId")?:"-1",
-                viewModel = viewModel(factory = getViewModelFactory())
-            )
+                routineId=navController.currentBackStackEntry?.arguments?.getString("routineId")?:"-1"
+                )
         }
     }
 }

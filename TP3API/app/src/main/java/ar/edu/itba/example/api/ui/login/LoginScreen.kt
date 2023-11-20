@@ -32,6 +32,7 @@ import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.components.LogInButton
 import ar.edu.itba.example.api.ui.theme.Black
+import ar.edu.itba.example.api.util.getViewModelFactory
 
 
 //HAY QUE MODIFICARLA TODA
@@ -40,7 +41,7 @@ import ar.edu.itba.example.api.ui.theme.Black
 @Composable
 fun LoginScreen(
     onNavigateToHomeScreen: () -> Unit,
-    viewModel: LoginViewModel
+    viewModel: LoginViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory())
 ) {
 
     var username by remember { mutableStateOf("") }

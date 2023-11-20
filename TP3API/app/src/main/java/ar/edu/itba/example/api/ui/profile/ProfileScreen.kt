@@ -33,12 +33,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import ar.edu.itba.example.api.ui.theme.Black
 import ar.edu.itba.example.api.ui.theme.White
+import ar.edu.itba.example.api.util.getViewModelFactory
 
 @Composable
 fun ProfileScreen(
     onNavigateToLogin:()->Unit,
     orderBy: String,
-    viewModel: ProfileViewModel
+    viewModel: ProfileViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory())
 ) {
     Box(
         modifier = Modifier

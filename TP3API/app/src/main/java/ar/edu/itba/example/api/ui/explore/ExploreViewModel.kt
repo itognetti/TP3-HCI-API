@@ -22,10 +22,25 @@ class ExploreViewModel (
     var uiState by mutableStateOf(ExploreUiState(isAuthenticated = sessionManager.loadAuthToken() != null))
         private set
 
-    fun getRoutines(orderBy: String) = runOnViewModelScope(
-        {routineRepository.getRoutines(true, orderBy)},
-        {state, response -> state.copy(routines = response)}
-    )
+    fun getRoutines(orderBy: String) = viewModelScope.launch {
+        uiState = uiState.copy(
+            isFetching = true,
+            error = null
+        )
+        runCatching {
+            routineRepository.getRoutines(true, orderBy = orderBy)
+        }.onSuccess { response ->
+            uiState = uiState.copy(
+                isFetching = false,
+                routines = response
+            )
+        }.onFailure { e ->
+            // Handle the error and notify the UI when appropriate.
+            uiState = uiState.copy(
+                error = handleError(e),
+                isFetching = false)
+        }
+    }
 
     fun getCurrentUser() = runOnViewModelScope(
         {userRepository.getCurrentUser(uiState.currentUser == null)},
