@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.material.icons.Icons
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -34,6 +35,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
+import ar.edu.itba.example.api.util.getViewModelFactory
 import kotlinx.coroutines.launch
 
 
@@ -49,9 +51,9 @@ fun LoginScreen(
     val uiState = viewModel.uiState
     val toastError = Toast.makeText(LocalContext.current, uiState.message, Toast.LENGTH_SHORT)
 
-    LaunchedEffect(key1 = uiState.message){
+    LaunchedEffect(key1 = uiState.error){
         launch {
-            if(uiState.message != null){
+            if(uiState.error != null){
                 toastError.show()
             }
         }

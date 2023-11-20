@@ -7,15 +7,15 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.material3.*
 import androidx.compose.runtime.getValue
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import ar.edu.itba.example.api.navigation.FINSPONavGraph
+import ar.edu.itba.example.api.navigation.AppNavGraph
 import ar.edu.itba.example.api.navigation.Screen
 import ar.edu.itba.example.api.ui.theme.ApiTheme
 import ar.edu.itba.example.api.ui.components.BottomBar
-import ar.edu.itba.example.api.util.getViewModelFactory
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -27,10 +27,11 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 val navBackStackEntry by navController.currentBackStackEntryAsState()
                 val currentRoute = navBackStackEntry?.destination?.route
+                val orderBy by remember { mutableStateOf("date") }
 
                 // Determinar si se debe mostrar la BottomBar
                 val shouldShowBottomBar = currentRoute == Screen.HomeScreen.route
-                        || currentRoute == Screen.SearchScreen.route
+                        || currentRoute == Screen.ExploreScreen.route
                         || currentRoute == Screen.ProfileScreen.route
 
                 Scaffold(
@@ -50,7 +51,7 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 ) {
-                    FINSPONavGraph(navController = navController, viewModel(factory = getViewModelFactory()))
+                    AppNavGraph(navController = navController, orderBy)
                 }
             }
         }

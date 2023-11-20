@@ -20,7 +20,7 @@ fun BottomBar(
 ) {
     val items = listOf(
         Screen.HomeScreen,
-        Screen.SearchScreen,
+        Screen.ExploreScreen,
         Screen.ProfileScreen
     )
 
@@ -40,13 +40,38 @@ fun BottomBar(
                 },
                 alwaysShowLabel = true,
                 selected = currentRoute == item.route,
-                onClick = { onNavigateToRoute(item.route) },
+                onClick = {
+                    onNavigateToRoute(item.route)},
             )
         }
     }
 }
 
 /*
+
+@Composable
+fun BottomBar(
+    currentRoute: String?,
+    onNavigateToRoute: (String) -> Unit
+) {
+    val items = listOf(
+        Screen.FirstScreen,
+        Screen.SecondScreen,
+        Screen.ThirdScreen
+    )
+
+    NavigationBar {
+        items.forEach { item ->
+            NavigationBarItem(
+                icon = { Icon(imageVector = item.icon, contentDescription = item.title) },
+                label = { Text(text = item.title) },
+                alwaysShowLabel = true,
+                selected = currentRoute == item.route,
+                onClick = { onNavigateToRoute(item.route) }
+            )
+        }
+    }
+}
 //                colors = NavigationBarItemColors(
 //                    selectedIconColor = FOrange,
 //                    selectedTextColor = FOrange,

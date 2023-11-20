@@ -18,7 +18,7 @@ import ar.edu.itba.example.api.ui.screens.AboutUsScreen
 import com.example.tp3_hci.Screens.CycleDetailsScreen
 
 @Composable
-fun FINSPONavGraph(navController: NavHostController = rememberNavController(),
+fun AppNavGraph(navController: NavHostController = rememberNavController(),
     orderBy: String){
     NavHost(
         navController = navController,
