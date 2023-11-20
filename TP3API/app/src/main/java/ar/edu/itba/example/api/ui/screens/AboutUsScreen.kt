@@ -30,7 +30,7 @@ import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.theme.Black
 
 @Composable
-fun AboutUs(onNavigateToLoginRegisterScreen: () -> Unit) {
+fun AboutUsScreen(onNavigateToLoginRegisterScreen: () -> Unit) {
     Box(
         modifier = Modifier.fillMaxSize()
     ) {

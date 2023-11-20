@@ -92,3 +92,57 @@ fun DetailsScreen(
         }
     }
 }
+
+/*
+@Composable
+fun ExampleRoutineScreen() {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+    ) {
+        Column(
+            modifier = Modifier
+                .background(Black)
+                .fillMaxSize()
+                .padding(5.dp),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            CardItem(
+                imageResId = R.drawable.gym1,
+                title = stringResource(id = R.string.Rout1),
+                description = stringResource(id = R.string.Desc1)
+            )
+
+        }
+
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(20.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Spacer(modifier = Modifier.height(66.dp))
+            ExerciseItem(stringResource(id = R.string.Exercise1))
+            ExerciseItem(stringResource(id = R.string.Exercise2))
+            ExerciseItem(stringResource(id = R.string.Exercise3))
+            Spacer(modifier = Modifier.height(16.dp))
+            // Botón de Inicio
+            Button(
+                onClick = {
+
+                },
+                colors = ButtonDefaults.buttonColors(FOrange),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp)
+            ) {
+                Text(
+                    text = stringResource(id = R.string.StartRoutine),
+                    fontWeight = FontWeight.SemiBold)
+            }
+        }
+    }
+}
+ */
