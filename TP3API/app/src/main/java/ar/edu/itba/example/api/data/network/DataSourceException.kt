@@ -1,4 +1,4 @@
-package ar.edu.itba.example.api.data
+package ar.edu.itba.example.api.data.network
 
 class DataSourceException(
     var code: Int,

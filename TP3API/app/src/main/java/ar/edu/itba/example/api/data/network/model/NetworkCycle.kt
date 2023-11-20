@@ -4,14 +4,14 @@ import ar.edu.itba.example.api.data.model.Cycle
 import com.google.gson.annotations.SerializedName
 
 
-data class NetworkCycle (
+class NetworkCycle (
 
-    @SerializedName("id"          ) var id          : Int,
+    @SerializedName("id"          ) var id          : Int?    = null,
     @SerializedName("name"        ) var name        : String,
     @SerializedName("detail"      ) var detail      : String? = null,
-    @SerializedName("type"        ) var type        : String,
-    @SerializedName("order"       ) var order       : Int,
-    @SerializedName("repetitions" ) var repetitions : Int,
+    @SerializedName("type"        ) var type        : String? = null,
+    @SerializedName("order"       ) var order       : Int?    = null,
+    @SerializedName("repetitions" ) var repetitions : Int?    = null,
     @SerializedName("metadata"    ) var metadata    : String? = null
 
 ) {
@@ -19,9 +19,6 @@ data class NetworkCycle (
         return Cycle(
             id = id,
             name = name,
-            detail = detail,
-            type = type,
-            order = order,
             repetitions = repetitions
         )
     }

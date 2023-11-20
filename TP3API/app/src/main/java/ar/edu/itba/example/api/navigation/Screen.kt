@@ -1,4 +1,4 @@
-package ar.edu.itba.example.api.ui.main
+package ar.edu.itba.example.api.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle

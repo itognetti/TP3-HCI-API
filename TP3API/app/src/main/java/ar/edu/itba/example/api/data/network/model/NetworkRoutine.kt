@@ -4,18 +4,17 @@ import ar.edu.itba.example.api.data.model.Routine
 import com.google.gson.annotations.SerializedName
 import java.util.Date
 
-data class NetworkRoutine (
-
-    @SerializedName("id"         ) var id         : Int,
+class NetworkRoutine (
+    @SerializedName("id"         ) var id         : Int?,
     @SerializedName("name"       ) var name       : String,
     @SerializedName("detail"     ) var detail     : String?   = null,
     @SerializedName("date"       ) var date       : Date?      = null,
     @SerializedName("score"      ) var score      : Int?      = null,
-    @SerializedName("isPublic"   ) var isPublic   : Boolean?  = null,
-    @SerializedName("difficulty" ) var difficulty : String?   = null,
-    @SerializedName("user"       ) var user       : NetworkUser?     = null,          //desde el converter estaba User()
-    @SerializedName("category"   ) var category   : NetworkCategory,
-    @SerializedName("metadata"   ) var metadata   : String?   = null
+    @SerializedName("isPublic"   ) var isPublic   : Boolean,
+    @SerializedName("difficulty" ) var difficulty : String,
+    @SerializedName("user"       ) var user       : NetworkRoutineUser? = NetworkRoutineUser(),
+    @SerializedName("category"   ) var category   : NetworkCategory? = NetworkCategory(),
+    @SerializedName("metadata"   ) var metadata   : Unit?   = null
 ) {
     fun asModel() : Routine {
         return Routine(
@@ -24,9 +23,9 @@ data class NetworkRoutine (
             detail = detail,
             date = date,
             score = score,
+            isPublic = isPublic,
             difficulty = difficulty,
-            user = user,
-            category = category
+            user = user?.asModel(),
         )
     }
 }

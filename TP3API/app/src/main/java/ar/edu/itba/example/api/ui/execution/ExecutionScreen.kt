@@ -1,4 +1,4 @@
-package ar.edu.itba.example.api.ui.screens
+package ar.edu.itba.example.api.ui.execution
 
 import android.preference.PreferenceManager
 import android.widget.Toast

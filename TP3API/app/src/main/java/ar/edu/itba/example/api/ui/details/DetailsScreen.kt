@@ -1,4 +1,4 @@
-package ar.edu.itba.example.api.ui.screens
+package ar.edu.itba.example.api.ui.details
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.*

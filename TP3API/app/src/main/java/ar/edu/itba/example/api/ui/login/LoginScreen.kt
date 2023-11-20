@@ -1,4 +1,4 @@
-package ar.edu.itba.example.api.ui.screens
+package ar.edu.itba.example.api.ui.login
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
@@ -38,7 +38,7 @@ import kotlinx.coroutines.launch
 
 
 @Composable
-fun LogInScreen(
+fun LoginScreen(
     onNavigateToHomeScreen: () -> Unit,
     viewModel: LoginViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory())
 ) {

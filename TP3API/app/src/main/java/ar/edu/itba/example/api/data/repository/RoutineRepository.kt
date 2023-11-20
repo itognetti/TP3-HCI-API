@@ -11,31 +11,13 @@ class RoutineRepository(
     private val routineMutex = Mutex()
     private var routines: List<Routine> = emptyList()
 
-    suspend fun getRoutines(refresh: Boolean = false) : List<Routine> {
-        var page = 0
+    suspend fun getRoutines(refresh: Boolean = false, orderBy: String) : List<Routine> {
         if (refresh || routines.isEmpty()){
-            this.routines = emptyList()
-            do {
-                val result = remoteDataSource.getRoutines(page)
-                routineMutex.withLock {
-                    this.routines = this.routines.plus(result.content.map { it.asModel() })
-                }
-                page++
-            }while(!result.isLastPage)
-        }
-        return routineMutex.withLock{ this.routines }
-    }
-
-    suspend fun getFilteredRoutines(order: String, direction: String) : List<Routine> {
-        var page = 0
-        this.routines = emptyList()
-        do {
-            val result = remoteDataSource.getFilteredRoutines(page, order, direction)
-            routineMutex.withLock{
-                this.routines = this.routines.plus(result.content.map { it.asModel() })
+            val result = remoteDataSource.getRoutines(orderBy)
+            routineMutex.withLock {
+                this.routines = result.content.map { it.asModel() }
             }
-            page++
-        } while(!result.isLastPage)
+        }
         return routineMutex.withLock{ this.routines }
     }
 

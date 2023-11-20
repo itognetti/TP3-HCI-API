@@ -27,10 +27,4 @@ class UserRemoteDataSource(
     suspend fun getCurrentUser(): NetworkUser {
         return handleApiResponse { apiUserService.getCurrentUser() }
     }
-
-    suspend fun getCurrentUserRoutines(page: Int) : NetworkPagedContent<NetworkRoutine> {
-        return handleApiResponse {
-            apiUserService.getCurrentUserRoutines(page)
-        }
-    }
 }

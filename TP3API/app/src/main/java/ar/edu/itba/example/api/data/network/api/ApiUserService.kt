@@ -20,7 +20,4 @@ interface ApiUserService {
 
     @GET("users/current")
     suspend fun getCurrentUser(): Response<NetworkUser>
-
-    @GET("users/current/routines")
-    suspend fun getCurrentUserRoutines(@Query("page") page : Int): Response <NetworkPagedContent<NetworkRoutine>>
 }

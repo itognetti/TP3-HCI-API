@@ -1,4 +1,4 @@
-package ar.edu.itba.example.api.ui.screens
+package ar.edu.itba.example.api.ui.profile
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background

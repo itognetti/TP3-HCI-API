@@ -1,25 +1,22 @@
-package ar.edu.itba.example.api.ui.main
+package ar.edu.itba.example.api.ui.profile
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import ar.edu.itba.example.api.data.network.DataSourceException
 import ar.edu.itba.example.api.data.model.Error
-import ar.edu.itba.example.api.data.model.Sport
-import ar.edu.itba.example.api.data.repository.SportRepository
+import ar.edu.itba.example.api.data.network.DataSourceException
 import ar.edu.itba.example.api.data.repository.UserRepository
+import ar.edu.itba.example.api.ui.main.MainUiState
 import ar.edu.itba.example.api.util.SessionManager
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-class MainViewModel(
-    sessionManager: SessionManager,
-    private val userRepository: UserRepository,
-    private val sportRepository: SportRepository,
+class ProfileViewModel(
+    private val sessionManager: SessionManager,
+    private val userRepository: UserRepository
 ) : ViewModel() {
-
     var uiState by mutableStateOf(MainUiState(isAuthenticated = sessionManager.loadAuthToken() != null))
         private set
 
@@ -41,41 +38,6 @@ class MainViewModel(
     fun getCurrentUser() = runOnViewModelScope(
         { userRepository.getCurrentUser(uiState.currentUser == null) },
         { state, response -> state.copy(currentUser = response) }
-    )
-
-    fun getSport(sportId: Int) = runOnViewModelScope(
-        { sportRepository.getSport(sportId) },
-        { state, response -> state.copy(currentSport = response) }
-    )
-
-    fun getSports() = runOnViewModelScope(
-        { sportRepository.getSports(true) },
-        { state, response -> state.copy(sports = response) }
-    )
-
-    fun deleteSport(sportId: Int) = runOnViewModelScope(
-        { sportRepository.deleteSport(sportId) },
-        { state, response ->
-            state.copy(
-                currentSport = null,
-                sports = null
-            )
-        }
-    )
-
-    fun addOrModifySport(sport: Sport) = runOnViewModelScope(
-        {
-            if (sport.id == null)
-                sportRepository.addSport(sport)
-            else
-                sportRepository.modifySport(sport)
-        },
-        { state, response ->
-            state.copy(
-                currentSport = response,
-                sports = null
-            )
-        }
     )
 
     private fun <R> runOnViewModelScope(

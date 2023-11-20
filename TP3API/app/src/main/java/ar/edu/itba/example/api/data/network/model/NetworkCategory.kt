@@ -5,13 +5,11 @@ import com.google.gson.annotations.SerializedName
 
 
 class NetworkCategory (
-
     @SerializedName("id"     ) var id     : Int?    = null,
-    @SerializedName("name"   ) var name   : String,
-    @SerializedName("detail" ) var detail : String
-
+    @SerializedName("name"   ) var name   : String? = null,
+    @SerializedName("detail" ) var detail : String? = null
 ) {
-    fun asModel(): Category {
+    fun asModel() : Category {
         return Category(
             id = id,
             name = name,

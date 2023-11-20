@@ -9,5 +9,5 @@ import retrofit2.http.Query
 
 interface ApiRoutineCyclesService {
     @GET("routines/{routineId}/cycles")
-    suspend fun getRoutineCycles(@Path("routineId") routineId: Int, @Query("page") page: Int) : Response<NetworkPagedContent<NetworkCycle>>
+    suspend fun getRoutineCycles(@Path("routineId") routineId: Int) : Response<NetworkPagedContent<NetworkCycle>>
 }

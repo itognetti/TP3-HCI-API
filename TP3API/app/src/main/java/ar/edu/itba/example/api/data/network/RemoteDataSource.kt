@@ -1,6 +1,5 @@
 package ar.edu.itba.example.api.data.network
 
-import ar.edu.itba.example.api.data.DataSourceException
 import ar.edu.itba.example.api.data.network.model.NetworkError
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken

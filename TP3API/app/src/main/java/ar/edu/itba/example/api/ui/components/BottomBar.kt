@@ -8,7 +8,7 @@ import androidx.compose.material3.NavigationBarItem
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import ar.edu.itba.example.api.ui.main.Screen
+import ar.edu.itba.example.api.navigation.Screen
 import ar.edu.itba.example.api.ui.theme.FOrange
 import ar.edu.itba.example.api.ui.theme.Black
 import ar.edu.itba.example.api.ui.theme.White

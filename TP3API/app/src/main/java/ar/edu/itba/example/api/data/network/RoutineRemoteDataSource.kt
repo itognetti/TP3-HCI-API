@@ -8,15 +8,9 @@ class RoutineRemoteDataSource (
     private val apiRoutineService: ApiRoutineService
 ) : RemoteDataSource() {
 
-    suspend fun getRoutines(page: Int) : NetworkPagedContent<NetworkRoutine> {
+    suspend fun getRoutines(orderBy: String) : NetworkPagedContent<NetworkRoutine> {
         return handleApiResponse {
-            apiRoutineService.getRoutines(page)
-        }
-    }
-
-    suspend fun getFilteredRoutines(page: Int, order: String, direction: String) : NetworkPagedContent<NetworkRoutine>{
-        return handleApiResponse {
-            apiRoutineService.getFilteredRoutines(page, order, direction)
+            apiRoutineService.getRoutines(orderBy)
         }
     }
 

@@ -1,4 +1,4 @@
-package ar.edu.itba.example.api.ui.screens
+package ar.edu.itba.example.api.ui.home
 
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
@@ -18,7 +18,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ar.edu.itba.example.api.ui.main.Screen
 import kotlinx.coroutines.launch
 
 @Composable
@@ -26,7 +25,7 @@ fun HomeScreen(
     onNavigateToRoutineDetails: (id:Int) -> Unit,
     onNavigateToExecution: (id:Int) -> Unit,
     orderBy: String,
-    viewModel: RoutinesViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory())
+    viewModel: HomeViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory())
 ) {
     val uiState = viewModel.uiState
     val toastError = Toast.makeText(LocalContext.current, uiState.message, Toast.LENGTH_SHORT)

@@ -12,16 +12,11 @@ class RoutineCyclesRepository(
     private var routineCycles: List<Cycle> = emptyList()
 
     suspend fun getRoutineCycles(routineId: Int, refresh: Boolean = false) : List<Cycle> {
-        var page = 0
         if(refresh || routineCycles.isEmpty()){
-            this.routineCycles = emptyList()
-            do {
-                val result = remoteDataSource.getRoutineCycles(routineId, page)
-                routineCyclesMutex.withLock {
-                    this.routineCycles = this.routineCycles.plus(result.content.map { it.asModel() })
-                }
-                page++
-            } while(!result.isLastPage)
+            val result = remoteDataSource.getRoutineCycles(routineId)
+            routineCyclesMutex.withLock {
+                this.routineCycles = result.content.map { it.asModel() }
+            }
         }
         return routineCyclesMutex.withLock { this.routineCycles }
     }
