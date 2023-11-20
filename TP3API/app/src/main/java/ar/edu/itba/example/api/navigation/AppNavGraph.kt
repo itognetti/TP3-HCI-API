@@ -24,7 +24,7 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
     orderBy: String){
     NavHost(
         navController = navController,
-        startDestination = "home"
+        startDestination = "login"
     ) {
         val uri = "http://www.finspo.com"
         val secureUri = "https://www.finspo.com"
@@ -92,6 +92,7 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
                 onNavigateToExecution2 = { id -> navController.navigate("review/$id") },
                 routineId=navController.currentBackStackEntry?.arguments?.getString("routineId")?:"-1",
                 viewModel = viewModel(factory = getViewModelFactory())
+            )
         }
     }
 }

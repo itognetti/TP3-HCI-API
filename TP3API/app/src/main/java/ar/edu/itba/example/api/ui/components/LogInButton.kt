@@ -1,6 +1,5 @@
 package ar.edu.itba.example.api.ui.components
 
-import android.util.Log
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.material3.Button
@@ -11,15 +10,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import ar.edu.itba.example.api.R
-import ar.edu.itba.example.api.ui.main.MainViewModel
+import ar.edu.itba.example.api.ui.login.LoginViewModel
 import ar.edu.itba.example.api.ui.theme.FOrange
 
 @Composable
-fun LogInButton(viewModel: MainViewModel, username: String, password: String, onNavigateToHomeScreen: () -> Unit){
+fun LogInButton(viewModel: LoginViewModel, username: String, password: String, onNavigateToHomeScreen: () -> Unit){
     Button(
         onClick = {
             viewModel.login(username, password)
-            viewModel.setupViewModel()
             onNavigateToHomeScreen()
         },
         colors = ButtonDefaults.buttonColors(FOrange),

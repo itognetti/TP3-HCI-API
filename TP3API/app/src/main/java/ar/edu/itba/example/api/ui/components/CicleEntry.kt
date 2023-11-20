@@ -3,23 +3,17 @@ package ar.edu.itba.example.api.ui.components
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.Icon
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowForwardIos
+import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material3.Card
+import androidx.compose.material3.Icon
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.compose.rememberNavController
-import com.example.tp3_hci.R
-import com.example.tp3_hci.navigation.MyAppNavHost
-import kotlin.math.round
 
 @Composable
 fun CicleEntry (
@@ -28,11 +22,10 @@ fun CicleEntry (
     onNavigateToCycleDetails: (id:Int) -> Unit,
     cycleId: Int
     ) {
-    Card(modifier = Modifier
+    Card(
+        modifier = Modifier
         .padding(horizontal = 8.dp, vertical = 4.dp)
         .clickable { onNavigateToCycleDetails(cycleId) },
-        backgroundColor = MaterialTheme.colors.background,
-        elevation = 5.dp,
         shape = RoundedCornerShape(12.dp)
     ) {
         Row (
@@ -50,7 +43,7 @@ fun CicleEntry (
                     fontSize = 22.sp
                 )
                 Text(
-                    text = rounds.toString() + " " + stringResource(id = R.string.rounds),
+                    text = "$rounds rounds",
                     fontSize = 18.sp,
                     color = Color.Gray
                 )
@@ -59,7 +52,7 @@ fun CicleEntry (
                 horizontalAlignment = Alignment.End,
             ) {
                 Icon(
-                    imageVector = Icons.Default.ArrowForwardIos,
+                    imageVector = Icons.Default.ArrowForward,
                     contentDescription = null,
                     tint = Color.Gray,
                     modifier = Modifier

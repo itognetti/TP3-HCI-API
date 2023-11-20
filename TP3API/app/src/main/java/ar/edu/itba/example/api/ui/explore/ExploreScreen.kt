@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.components.CardItem
+import ar.edu.itba.example.api.ui.components.RoutineCardList
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Mutex
 
@@ -105,20 +106,11 @@ fun ExploreScreen(
                     )
                 }
             } else {
-                CardItem(
-                    imageResId = R.drawable.gym1,
-                    title = "Tarjeta 1",
-                    description = "Descripción de la tarjeta 1"
+                RoutineCardList(
+                  list = uiState.routines?.filter { routine -> routine.user?.username == uiState.currentUser?.username }.orEmpty(),
+                  onNavigateToRoutineDetails = onNavigateToRoutineDetails,
+                  onNavigateToExecution = onNavigateToExecution
                 )
-//                RoutineCardList(
-//                  list = uiState.routines?.filter { routine -> routine.user?.username == uiState.currentUser?.username }.orEmpty(),
-//                  hasReviews = false,
-//                  favouriteList = uiState.favourites.orEmpty(),
-//                  hasFavourites = true,
-//                  addFavourite = { routineId -> viewModel.addFavouriteRoutine(routineId) },
-//                  onNavigateToRoutineDetails = onNavigateToRoutineDetails,
-//                  onNavigateToExecution = onNavigateToExecution
-//                )
                 Spacer(modifier = Modifier.size(20.dp))
             }
         }

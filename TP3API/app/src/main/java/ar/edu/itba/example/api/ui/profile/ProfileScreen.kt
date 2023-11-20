@@ -34,7 +34,6 @@ import androidx.compose.ui.text.font.FontWeight
 import ar.edu.itba.example.api.ui.theme.Black
 import ar.edu.itba.example.api.ui.theme.White
 
-
 @Composable
 fun ProfileScreen(
     onNavigateToLogin:()->Unit,
