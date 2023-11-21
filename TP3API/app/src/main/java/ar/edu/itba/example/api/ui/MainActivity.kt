@@ -12,6 +12,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -20,6 +21,7 @@ import ar.edu.itba.example.api.navigation.AppNavGraph
 import ar.edu.itba.example.api.navigation.Screen
 import ar.edu.itba.example.api.ui.theme.ApiTheme
 import ar.edu.itba.example.api.ui.components.BottomBar
+import ar.edu.itba.example.api.ui.components.TopBar
 
 class MainActivity : ComponentActivity() {
     @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -31,7 +33,7 @@ class MainActivity : ComponentActivity() {
                 val navController = rememberNavController()
                 val navBackStackEntry by navController.currentBackStackEntryAsState()
                 val currentRoute = navBackStackEntry?.destination?.route
-                val orderBy by remember { mutableStateOf("date") }
+                var orderBy by remember { mutableStateOf("date") }
 
                 // Determinar si se debe mostrar la BottomBar
                 val shouldShowBottomBar = currentRoute == Screen.HomeScreen.route
@@ -39,6 +41,12 @@ class MainActivity : ComponentActivity() {
                         || currentRoute == Screen.ProfileScreen.route
 
                 Scaffold(
+                    topBar = {
+                             TopBar(
+                                 navController = navController,
+                                 onOrderBy = {selection: String -> orderBy = selection}
+                             )
+                    },
                     bottomBar = {
                         if (shouldShowBottomBar) {
                             BottomBar(

@@ -11,8 +11,11 @@
     <string name="StartRoutine">Start Routine</string>
     <string name="aboutus">About Us</string>
     <string name="app_name">TP3HCI</string>
+    <string name="category">Category</string>
     <string name="cycle">Cycles</string>
+    <string name="date">Date</string>
     <string name="details">Details</string>
+    <string name="difficulty">Difficulty</string>
     <string name="empty_cycle">No cycles</string>
     <string name="empty_routine">No routines</string>
     <string name="home_screen">Home</string>
@@ -25,9 +28,11 @@
     <string name="login_password">Password</string>
     <string name="login_repassword">Repeat Password</string>
     <string name="no_routines">No routines available to show :(</string>
+    <string name="order_by">Order by</string>
     <string name="profile_screen">Profile</string>
     <string name="register">Register</string>
     <string name="routines">Routines</string>
+    <string name="score">Score</string>
     <string name="search_bar">Search</string>
     <string name="search_screen">Explore</string>
     <string name="signin">Sign In</string>

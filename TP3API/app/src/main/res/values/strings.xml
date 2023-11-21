@@ -29,4 +29,10 @@
     <string name="empty_routine">No routines</string>
     <string name="empty_cycle">No cycles</string>
 
+    <string name="order_by">Order by</string>
+    <string name="date">Date</string>
+    <string name="category">Category</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="score">Score</string>
+
 </resources>

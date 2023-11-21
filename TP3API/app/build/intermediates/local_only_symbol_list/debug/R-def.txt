@@ -27,8 +27,11 @@ string Myroutines
 string StartRoutine
 string aboutus
 string app_name
+string category
 string cycle
+string date
 string details
+string difficulty
 string empty_cycle
 string empty_routine
 string home_screen
@@ -41,9 +44,11 @@ string login_name
 string login_password
 string login_repassword
 string no_routines
+string order_by
 string profile_screen
 string register
 string routines
+string score
 string search_bar
 string search_screen
 string signin

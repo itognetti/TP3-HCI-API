@@ -28,5 +28,10 @@
     <string name="cycle">Ciclos</string>
     <string name="empty_routine">No tiene rutinas</string>
     <string name="empty_cycle">No tiene ciclos</string>
+    <string name="order_by">Ordernar por</string>
+    <string name="date">Fecha</string>
+    <string name="category">Categoria</string>
+    <string name="difficulty">Dificultad</string>
+    <string name="score">Puntuación</string>
 
 </resources>
