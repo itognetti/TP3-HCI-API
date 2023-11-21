@@ -3,20 +3,15 @@
     <string name="Myroutines">Mis Rutinas</string>
     <string name="StartRoutine">Comenzar Rutina</string>
     <string name="aboutus">SOBRE NOSOTROS</string>
-    <string name="app_name">TP3HCI</string>
+    <string name="app_name">Finspo</string>
     <string name="category">Categoria</string>
     <string name="cycle_details">Ejercicios del ciclo</string>
     <string name="date">Fecha</string>
     <string name="details">Detalles</string>
     <string name="difficulty">Dificultad</string>
-<<<<<<< Updated upstream
     <string name="empty_cycle">No hay ejercicios</string>
     <string name="empty_routine">No hay ciclos</string>
-=======
-    <string name="empty_cycle">No tiene ciclos</string>
-    <string name="empty_routine">No tiene rutinas</string>
     <string name="first_name">Nombre</string>
->>>>>>> Stashed changes
     <string name="home_screen">Inicio</string>
     <string name="last_name">Aplellido</string>
     <string name="loading_message">Cargando</string>
