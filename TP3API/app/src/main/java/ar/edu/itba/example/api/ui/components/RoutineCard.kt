@@ -32,7 +32,7 @@ fun RoutineCard(
 ) {
     val sendIntent: Intent = Intent().apply {
         action = Intent.ACTION_SEND
-        putExtra(Intent.EXTRA_TEXT, "https://motionfitnessitba.com/"+id.toString())
+        putExtra(Intent.EXTRA_TEXT, "https://finspo.com/"+id.toString())
         type = "text/plain"
     }
     val shareIntent = Intent.createChooser(sendIntent, null)
