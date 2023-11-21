@@ -41,7 +41,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.components.CircularProgressBar
-import ar.edu.itba.example.api.ui.components.ExerciseItem
 import ar.edu.itba.example.api.ui.theme.FOrange
 
 @Preview
