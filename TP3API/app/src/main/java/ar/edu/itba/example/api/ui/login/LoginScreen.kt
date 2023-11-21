@@ -14,7 +14,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -68,7 +67,6 @@ fun LoginScreen(
         }
     }
 
-
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -118,11 +116,7 @@ fun LoginScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-<<<<<<< HEAD
-                // Espacio para el username
-=======
-                // Espacio para el usuario
->>>>>>> 3b9ee491321bb82773da6a5406a2df2fccb0998f
+                // espacio para el usuario
                 TextField(
                     value = username,
                     onValueChange = { username = it },
@@ -168,145 +162,3 @@ fun LoginScreen(
         }
     }
 }
-<<<<<<< HEAD
-=======
-
-//    val usernameValue = rememberSaveable{ mutableStateOf("") }
-//    val passwordValue = rememberSaveable{ mutableStateOf("") }
-//    var passwordVisibility by remember { mutableStateOf(false) }
-//    val focusManager = LocalFocusManager.current
-//    val uiState = viewModel.uiState
-
-//    val toastError = Toast.makeText(LocalContext.current, uiState.error, Toast.LENGTH_SHORT)
-//
-//    LaunchedEffect(key1 = uiState.error){
-//        launch {
-//            if(uiState.error != null){
-//                toastError.show()
-//            }
-//        }
-//    }
-
-//    Box(
-//        modifier = Modifier
-//            .fillMaxSize()
-//            .background(Color.Black)
-//    ) {
-//        Image(
-//            modifier = Modifier
-//                .matchParentSize(),
-//            painter = painterResource(id = R.drawable.bg),
-//            contentDescription = "Login Image",
-//            contentScale = ContentScale.FillHeight
-//        )
-//        Box(
-//            modifier = Modifier.fillMaxSize(),
-//            contentAlignment = Alignment.BottomCenter
-//        ) {
-//            ConstraintLayout {
-//
-//                var (surface, fab) = createRefs()
-//
-//                Surface (
-//                    modifier = Modifier
-//                        .fillMaxWidth()
-//                        .height(400.dp)
-//                        .constrainAs(surface) {
-//                            bottom.linkTo(parent.bottom)
-//                        },
-//                    color = MaterialTheme.colors.background,
-//                    shape = RoundedCornerShape(
-//                        topStartPercent = 8,
-//                        topEndPercent = 8
-//                    )
-//                ){
-//                    Column(
-//                        modifier = Modifier
-//                            .fillMaxWidth()
-//                            .padding(16.dp),
-//                        verticalArrangement = Arrangement.SpaceEvenly
-//                    ) {
-//                        Text(
-//                            stringResource(id = R.string.welcome_message),
-//                            style = MaterialTheme.typography.h4.copy(
-//                                fontWeight = FontWeight.Medium
-//                            )
-//                        )
-//                        Text(
-//                            stringResource(id = R.string.welcome_subtitle),
-//                            style = MaterialTheme.typography.h5.copy(
-//                                color = MaterialTheme.colors.primary
-//                            )
-//                        )
-//                        Column(
-//                            modifier = Modifier
-//                                .fillMaxWidth()
-//                                .padding(horizontal = 16.dp),
-//                            horizontalAlignment = Alignment.CenterHorizontally,
-//                            verticalArrangement = Arrangement.spacedBy(8.dp)
-//                        ) {
-//                            TransparentTextField(
-//                                textFieldValue = usernameValue,
-//                                textLabel = stringResource(id = R.string.username),
-//                                keyboardType = KeyboardType.Text,
-//                                keyboardActions = KeyboardActions(
-//                                    onNext = {
-//                                        focusManager.moveFocus(FocusDirection.Down)
-//                                    }
-//                                ),
-//                                imeAction = ImeAction.Next
-//                            )
-//                            TransparentTextField(
-//                                textFieldValue = passwordValue,
-//                                textLabel = stringResource(id = R.string.password),
-//                                keyboardType = KeyboardType.Password,
-//                                keyboardActions = KeyboardActions(
-//                                    onDone = {
-//                                        focusManager.clearFocus()
-//                                    }
-//                                ),
-//                                imeAction = ImeAction.Done,
-//                                trailingIcon = {
-//                                    IconButton(
-//                                        onClick = {
-//                                            passwordVisibility = !passwordVisibility
-//                                        }
-//                                    ) {
-//                                        Icon(
-//                                            imageVector = if(passwordVisibility) {
-//                                                Icons.Default.Visibility
-//                                            } else {
-//                                                Icons.Default.VisibilityOff
-//                                            },
-//                                            contentDescription = "Toggle password icon"
-//                                        )
-//                                    }
-//                                },
-//                                visualTransformation = if(passwordVisibility) {
-//                                    VisualTransformation.None
-//                                } else {
-//                                    PasswordVisualTransformation()
-//                                }
-//                            )
-//                        }
-//                        Column(
-//                            modifier = Modifier.fillMaxWidth(),
-//                            horizontalAlignment = Alignment.CenterHorizontally,
-//                            verticalArrangement = Arrangement.spacedBy(8.dp)
-//                        ) {
-//                            RoundedButton(
-//                                text = stringResource(id = R.string.log_in),
-//                                displayProgressBar = false,
-//                                onClick = {
-//                                    viewModel.login(usernameValue.value, passwordValue.value).invokeOnCompletion {
-//                                        onNavigateToHomeScreen()
-//                                    }
-//                                }
-//                            )
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
->>>>>>> 3b9ee491321bb82773da6a5406a2df2fccb0998f
