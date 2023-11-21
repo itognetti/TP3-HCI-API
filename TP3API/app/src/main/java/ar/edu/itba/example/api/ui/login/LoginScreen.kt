@@ -254,13 +254,13 @@ fun LoginScreen(
                             .padding(8.dp)
                     )
 
-                    Spacer(modifier = Modifier.height(16.dp))
 
                     // Botón de Inicio
                     Button(
                         onClick = {
-                            viewModel.login(username, password)
-                            onNavigateToHome()
+                            viewModel.login(username, password).invokeOnCompletion {
+                                onNavigateToHome()
+                            }
                         },
                         colors = ButtonDefaults.buttonColors(FOrange),
                         modifier = Modifier
@@ -268,9 +268,9 @@ fun LoginScreen(
                     ) {
                         Text(text = stringResource(id = R.string.login))
                     }
+                    Spacer(modifier = Modifier.height(16.dp))
                 }
             }
-
         }
     }
 }
