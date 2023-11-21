@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.runtime.*
@@ -22,9 +23,9 @@ fun RoutineCardList(
     onNavigateToExecution: (id:Int) -> Unit,
 ) {
 
-    var imgIds by remember { mutableStateOf(listOf(R.drawable.gym1, R.drawable.gym2, R.drawable.gym3, R.drawable.gym4, R.drawable.gym5 )) }
+    val imgIds by remember { mutableStateOf(listOf(R.drawable.gym1, R.drawable.gym2, R.drawable.gym3, R.drawable.gym4, R.drawable.gym5 )) }
 
-    if (list==null || list.isEmpty()){
+    if (list.isEmpty()){
         Box (
             contentAlignment = Alignment.Center,
             modifier = Modifier.fillMaxSize()
@@ -33,21 +34,22 @@ fun RoutineCardList(
         }
     } else {
         LazyVerticalGrid(
+            state = rememberLazyGridState(),
             modifier = Modifier
                 .padding(horizontal = 8.dp),
-            columns = GridCells.Adaptive(300.dp)
+            columns = GridCells.Adaptive(minSize = 250.dp)
         ) {
             items(
-                count = list?.size?:0,
+                count = list.size,
                 key = { index ->
-                    list?.get(index)?.id.toString()
+                    list[index].id.toString()
                 }
             ) { index ->
                 RoutineCard(
-                    name = list?.get(index)?.name ?: "Error",
-                    description = list?.get(index)?.detail ?: "",
-                    id = list?.get(index)?.id!!,
-                    imgId = imgIds[index%8],
+                    name = list[index].name,
+                    description = list[index].detail ?: "",
+                    id = list[index].id!!,
+                    imgId = imgIds[index%5],
                     onNavigateToRoutineDetails = onNavigateToRoutineDetails,
                     onNavigateToExecution = onNavigateToExecution
                 )
