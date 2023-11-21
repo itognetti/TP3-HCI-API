@@ -13,12 +13,14 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.repeatOnLifecycle
 import ar.edu.itba.example.api.R
-import ar.edu.itba.example.api.ui.components.CardItem
 import ar.edu.itba.example.api.ui.components.RoutineCardList
 import ar.edu.itba.example.api.util.getViewModelFactory
 import kotlinx.coroutines.launch
@@ -27,11 +29,23 @@ import kotlinx.coroutines.launch
 fun HomeScreen(
     onNavigateToRoutineDetails: (id:Int) -> Unit,
     onNavigateToExecution: (id:Int) -> Unit,
+    onNavigateToLogin: () -> Unit,
     orderBy: String,
     viewModel: HomeViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory())
 ) {
     val uiState = viewModel.uiState
+    val lifecycle = LocalLifecycleOwner.current.lifecycle
     val toastError = Toast.makeText(LocalContext.current, uiState.error?.message?: "", Toast.LENGTH_SHORT)
+
+    LaunchedEffect(key1 = Unit) {
+        lifecycle.repeatOnLifecycle(state = Lifecycle.State.CREATED) {
+            launch {
+                //onPopStack("login")
+                if (!uiState.isAuthenticated)
+                    onNavigateToLogin()
+            }
+        }
+    }
 
     LaunchedEffect(key1 = uiState.error) {
         launch {
@@ -56,7 +70,7 @@ fun HomeScreen(
         }
     }
 
-    Column() {
+    Column {
         Text(
             text = stringResource(R.string.routines),
             fontWeight = FontWeight.Bold,

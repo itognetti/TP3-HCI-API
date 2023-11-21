@@ -1,5 +1,6 @@
 package ar.edu.itba.example.api.ui.profile
 
+import android.widget.Toast
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -29,18 +30,38 @@ import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.theme.FOrange
 import androidx.compose.material3.Icon
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import ar.edu.itba.example.api.ui.main.canGetCurrentUser
 import ar.edu.itba.example.api.ui.theme.Black
 import ar.edu.itba.example.api.ui.theme.White
 import ar.edu.itba.example.api.util.getViewModelFactory
+import kotlinx.coroutines.launch
 
 @Composable
 fun ProfileScreen(
     onNavigateToLogin:()->Unit,
-    orderBy: String,
     viewModel: ProfileViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory())
 ) {
+    val uiState = viewModel.uiState
+
+    LaunchedEffect(key1 = Unit){
+        launch {
+            if(uiState.canGetCurrentUser)
+                viewModel.getCurrentUser()
+        }
+    }
+
+    val toastError = Toast.makeText(LocalContext.current, uiState.error?.message ?: "", Toast.LENGTH_SHORT)
+
+    LaunchedEffect(key1 = uiState.error){
+        if (uiState.error != null){
+            toastError.show()
+        }
+    }
+
     Box(
         modifier = Modifier
             .fillMaxSize()
@@ -74,57 +95,37 @@ fun ProfileScreen(
             if(viewModel.uiState.isAuthenticated) {
 
                 Column {
-                    Text(
-                        text = viewModel.uiState.currentUser!!.username,
-                        color = White,
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold,
-                    )
-                    Text(
-                        text = viewModel.uiState.currentUser!!.firstName,
-                        color = White,
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold,
-                    )
-                    Text(
-                        text = viewModel.uiState.currentUser!!.lastName,
-                        color = White,
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold,
-                    )
+                    uiState.currentUser?.let {
+                        Text(
+                            text = it.username,
+                            color = White,
+                            fontSize = 24.sp,
+                            fontWeight = FontWeight.Bold,
+                        )
+                    }
+                    uiState.currentUser?.let {
+                        Text(
+                            text = it.firstName,
+                            color = White,
+                            fontSize = 24.sp,
+                            fontWeight = FontWeight.Bold,
+                        )
+                    }
+                    uiState.currentUser?.let {
+                        Text(
+                            text = it.lastName,
+                            color = White,
+                            fontSize = 24.sp,
+                            fontWeight = FontWeight.Bold,
+                        )
+                    }
                 }
             }
 
             Spacer(modifier = Modifier.height(16.dp))
 
-//            // Botón de Editar Información
-//            Button(
-//                onClick = {
-//                    // Agrega la lógica de editar información aquí
-//                },
-//                modifier = Modifier
-//                    .fillMaxWidth()
-//                    .height(50.dp),
-//                colors = ButtonDefaults.buttonColors(Color.Transparent),
-//                border = BorderStroke(2.dp, FOrange),
-//            ) {
-//                Row(
-//                    verticalAlignment = Alignment.CenterVertically,
-//                    horizontalArrangement = Arrangement.Center
-//                ) {
-//                    Icon(Icons.Filled.Edit, contentDescription = null, tint = White)
-//                    Spacer(modifier = Modifier.width(8.dp))
-//                    Text(
-//                        text = stringResource(id = R.string.edit_profile),
-//                        color= White,
-//                        fontSize = 24.sp
-//                    )
-//                }
-//            }
-
-            Spacer(modifier = Modifier.height(16.dp))
-
             // Botón de Cerrar Sesión
+
             Button(
                 onClick = {
                     viewModel.logout()
@@ -139,7 +140,7 @@ fun ProfileScreen(
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center
                 ) {
-                    Icon(Icons.Filled.ExitToApp, contentDescription = null,tint = White)
+                    Icon(Icons.Filled.ExitToApp, contentDescription = null, tint = White)
                     Spacer(modifier = Modifier.width(8.dp))
                     Text(
                         text = stringResource(id = R.string.log_out_profile),

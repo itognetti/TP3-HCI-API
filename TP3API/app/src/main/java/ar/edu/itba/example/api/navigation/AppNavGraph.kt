@@ -21,7 +21,7 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
     orderBy: String){
     NavHost(
         navController = navController,
-        startDestination = "login"
+        startDestination = "home"
     ) {
         val uri = "http://www.finspo.com"
         val secureUri = "https://www.finspo.com"
@@ -30,6 +30,7 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
             HomeScreen(
                 onNavigateToRoutineDetails = {id -> navController.navigate("details/$id")},
                 onNavigateToExecution = {id -> navController.navigate("execution/$id")},
+                onNavigateToLogin = {navController.navigate("login")},
                 orderBy = orderBy
                 )
         }
@@ -45,7 +46,6 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
         composable("profile") {
             ProfileScreen(
                 onNavigateToLogin = {navController.navigate("login")},
-                orderBy = orderBy
                 )
         }
 
