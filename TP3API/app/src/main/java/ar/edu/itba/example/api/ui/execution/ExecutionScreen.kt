@@ -53,12 +53,11 @@ import kotlinx.coroutines.sync.withLock
 @Composable
 fun ExecutionScreen(
     onNavigateBack: () -> Unit,
-    onNavigateToExecution2: (id: String) -> Unit,
+    onNavigateToHome: () -> Unit,
     routineId: String,
     viewModel: ExecutionViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory())
 ) {
     val uiState = viewModel.uiState
-    val context = LocalContext.current
     var currentCycleIndex by remember { mutableIntStateOf(0) }
     var currentExerciseIndex by remember { mutableIntStateOf(0) }
     var boca by remember { mutableStateOf(false) }
@@ -69,11 +68,10 @@ fun ExecutionScreen(
     val preferences = PreferenceManager.getDefaultSharedPreferences(LocalContext.current)
     val advancedModeEnabled by remember { mutableStateOf(preferences.getBoolean("advanced_exec_enabled",false)) }
 
-
     //var allExercises by remember { mutableStateOf( HashMap<Int, List<CycleContent>?>() ) }
     fun nextCycle() {
         if (currentCycleIndex + 1 >= uiState.routineCycles.orEmpty().size) {
-            onNavigateToExecution2(routineId)
+            onNavigateToHome()
         } else {
             currentExerciseIndex = 0
             do {
@@ -81,7 +79,7 @@ fun ExecutionScreen(
             } while (currentCycleIndex < uiState.routineCycles.orEmpty().size && uiState.cycleExercises[uiState.routineCycles!!.getOrNull(currentCycleIndex)!!.id].orEmpty().isEmpty()
             )
             if (currentCycleIndex + 1 >= uiState.routineCycles.orEmpty().size)
-                onNavigateToExecution2(routineId)
+               onNavigateToHome()
         }
     }
 
@@ -322,7 +320,7 @@ fun ExecutionScreen(
                             ) {
                                 fun nextC(){
                                     if (currentCycleIndex+1==uiState.routineCycles!!.size){
-                                        onNavigateToExecution2(routineId)
+                                        onNavigateToHome()
                                     } else {
                                         currentCycleIndex++
                                     }

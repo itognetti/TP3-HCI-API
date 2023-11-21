@@ -85,7 +85,7 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
         composable("execution/{routineId}"){
             ExecutionScreen(
                 onNavigateBack = { navController.navigateUp() },
-                onNavigateToExecution2 = { id -> navController.navigate("review/$id") },
+                onNavigateToHome = { navController.navigate("home")},
                 routineId=navController.currentBackStackEntry?.arguments?.getString("routineId")?:"-1"
             )
         }
