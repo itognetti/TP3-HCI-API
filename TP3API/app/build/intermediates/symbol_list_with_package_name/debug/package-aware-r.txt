@@ -224,7 +224,7 @@ string category
 string close_drawer
 string close_sheet
 string collapsed
-string cycle
+string cycle_details
 string date
 string default_error_message
 string default_popup_window_title

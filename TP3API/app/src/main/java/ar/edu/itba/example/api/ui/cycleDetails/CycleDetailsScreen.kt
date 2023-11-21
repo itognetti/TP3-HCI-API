@@ -35,7 +35,7 @@ fun CycleDetailsScreen(
         }
     }
 
-   val toastError = Toast.makeText(LocalContext.current, uiState.error?.message ?: "", Toast.LENGTH_SHORT)
+    val toastError = Toast.makeText(LocalContext.current, uiState.error?.message ?: "", Toast.LENGTH_SHORT)
 
     LaunchedEffect(key1 = uiState.error){
         launch {
@@ -48,7 +48,7 @@ fun CycleDetailsScreen(
     Column {
         //Titulo
         Text(
-            text = stringResource(R.string.cycle),
+            text = stringResource(R.string.cycle_details),
             fontSize = 22.sp,
             fontWeight = FontWeight(500),
             modifier = Modifier.padding(horizontal = 15.dp, vertical = 20.dp),
@@ -61,14 +61,14 @@ fun CycleDetailsScreen(
                 verticalArrangement = Arrangement.Center
             ) {
                 Text(
-                    text = stringResource(id = R.string.loading_message),
+                    text = stringResource(R.string.loading_message),
                     fontSize = 16.sp
                 )
             }
         } else {
             val list = uiState.cycleExercises.orEmpty()
             if (list.isEmpty()){
-                EmptyState(text = stringResource(id = R.string.empty_cycle), imgVector = Icons.Default.Build)
+                EmptyState(text = stringResource(R.string.empty_cycle), imgVector = Icons.Default.Build)
             } else {
                 LazyColumn(
                     verticalArrangement = Arrangement.SpaceEvenly,
@@ -86,7 +86,7 @@ fun CycleDetailsScreen(
                     }
                 }
             }
-            
+
         }
     }
 }

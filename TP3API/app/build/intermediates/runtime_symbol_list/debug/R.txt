@@ -223,7 +223,7 @@ int string category 0x7f090053
 int string close_drawer 0x7f090016
 int string close_sheet 0x7f090017
 int string collapsed 0x7f090018
-int string cycle 0x7f090019
+int string cycle_details 0x7f090058
 int string date 0x7f090054
 int string default_error_message 0x7f09001c
 int string default_popup_window_title 0x7f09001d

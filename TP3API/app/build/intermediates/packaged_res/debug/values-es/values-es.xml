@@ -5,12 +5,12 @@
     <string name="aboutus">SOBRE NOSOTROS</string>
     <string name="app_name">TP3HCI</string>
     <string name="category">Categoria</string>
-    <string name="cycle">Ciclos</string>
+    <string name="cycle_details">Ejercicios del ciclo</string>
     <string name="date">Fecha</string>
     <string name="details">Detalles</string>
     <string name="difficulty">Dificultad</string>
-    <string name="empty_cycle">No tiene ciclos</string>
-    <string name="empty_routine">No tiene rutinas</string>
+    <string name="empty_cycle">No hay ejercicios</string>
+    <string name="empty_routine">No hay ciclos</string>
     <string name="home_screen">Inicio</string>
     <string name="loading_message">Cargando</string>
     <string name="log_out_profile">Cerrar Sesión</string>

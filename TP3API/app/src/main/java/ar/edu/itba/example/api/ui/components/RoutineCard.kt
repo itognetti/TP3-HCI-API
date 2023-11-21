@@ -90,9 +90,7 @@ fun RoutineCard(
                             color = Color.White
                         )
                     }
-
                 }
-
             }
         }
     }

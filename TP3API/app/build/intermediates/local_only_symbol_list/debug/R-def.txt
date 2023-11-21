@@ -28,7 +28,7 @@ string StartRoutine
 string aboutus
 string app_name
 string category
-string cycle
+string cycle_details
 string date
 string details
 string difficulty

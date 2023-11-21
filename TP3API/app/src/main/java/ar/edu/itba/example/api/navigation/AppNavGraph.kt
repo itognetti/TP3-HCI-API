@@ -53,12 +53,15 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
         composable("details/{routineId}",
             arguments = listOf(navArgument("routineId") {
                 type = NavType.StringType
-                defaultValue = "-1"} ),
+                defaultValue = "-1"
+            }
+            ),
             deepLinks = listOf(
                 navDeepLink {
                     uriPattern =  "$uri/{routineId}"},
                 navDeepLink {
-                    uriPattern = "$secureUri/{routineId}"})
+                    uriPattern = "$secureUri/{routineId}"}
+            )
         ){
             DetailsScreen(
                 onNavigateToCycleDetails = { id -> navController.navigate("details-cycle/$id")},

@@ -12,12 +12,12 @@
     <string name="aboutus">About Us</string>
     <string name="app_name">TP3HCI</string>
     <string name="category">Category</string>
-    <string name="cycle">Cycles</string>
+    <string name="cycle_details">Cycle exercises</string>
     <string name="date">Date</string>
     <string name="details">Details</string>
     <string name="difficulty">Difficulty</string>
-    <string name="empty_cycle">No cycles</string>
-    <string name="empty_routine">No routines</string>
+    <string name="empty_cycle">No exercises</string>
+    <string name="empty_routine">No cycles</string>
     <string name="home_screen">Home</string>
     <string name="loading_message">Loading</string>
     <string name="log_out_profile">Log Out</string>

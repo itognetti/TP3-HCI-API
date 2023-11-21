@@ -76,16 +76,16 @@ fun DetailsScreen(
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     items(
-                        count = list.size ?:0,
+                        count = list.size,
                         key = { index ->
-                            list.get(index).id.toString()
+                            list[index].id.toString()
                         }
                     ) { index ->
                         CycleEntry(
-                            title = list.get(index).name ?: "Error",
-                            rounds = list.get(index).repetitions ?:0,
+                            title = list[index].name,
+                            rounds = list[index].repetitions ?:0,
                             onNavigateToCycleDetails = onNavigateToCycleDetails,
-                            cycleId = list.get(index).id ?:-1
+                            cycleId = list[index].id ?:-1
                         )
                     }
                 }
