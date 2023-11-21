@@ -1,17 +1,8 @@
 <resources>
-    <string name="logout">LOGOUT</string>
-    <string name="get_current_user">GET CURRENT USER</string>
-    <string name="get_all_sports">GET ALL SPORTS</string>
-    <string name="get_current_sport">GET CURRENT SPORT</string>
-    <string name="add_sport">ADD SPORT</string>
-    <string name="modify_sport">MODIFY SPORT</string>
-    <string name="delete_sport">DELETE SPORT</string>
-
     <string name="app_name">TP3HCI</string>
     <string name="home_screen">Home</string>
-    <string name="search_screen">Search</string>
-    <string name="profile_screen">PROFILE</string>
-    <string name="edit_profile">Edit Profile</string>
+    <string name="search_screen">Explore</string>
+    <string name="profile_screen">Profile</string>
     <string name="log_out_profile">Log Out</string>
     <string name="search_bar">Search</string>
     <string name="loading_message">Loading</string>
@@ -24,32 +15,10 @@
     <string name="login_mail">Email</string>
     <string name="login_password">Password</string>
     <string name="login_repassword">Repeat Password</string>
-    <string name="sucreg">YOU HAVE REGISTERED</string>
-    <string name="ver">VERIFY</string>
-    <string name="seccode">Security Code</string>
-    <string name="veremail">VERIFY YOUR EMAIL WRITING THE CODE THAT HAS BEEN SEND TO YOUR EMAIL</string>
-    <string name="aboutus">ABOUT US</string>
-    <string name="slogan">WE WILL TAKE YOU TO A HEALTHIER AND STRONGER VERSION OF YOUR SELF </string>
-    <string name="resend">RESEND  CODE</string>
-    <string name="Myroutines">MY ROUTINES</string>
-    <string name="StartRoutine">START ROUTINE</string>
-    <string name="Exercise1">Exercise 1</string>
-    <string name="Exercise2">Exercise 2</string>
-    <string name="Exercise3">Exercise 3</string>
-    <string name="Desc1">Description 1</string>
-    <string name="Desc2">Description 2</string>
-    <string name="Desc3">Description 3</string>
-    <string name="Rout1">Routine 1</string>
-    <string name="Rout2">Routine 2</string>
-    <string name="Rout3">Routine 3</string>
-
-    <!-- Habria que ordenar por view/utilidad-->
-    <string name="date_asc">Ascending Date</string>
-    <string name="date_desc">Descending Date</string>
-    <string name="rating_asc">Ascending Rating</string>
-    <string name="rating_desc">Descending Rating</string>
-    <string name="difficulty_asc">Ascending Difficulty</string>
-    <string name="difficulty_desc">Descending Difficulty</string>
+    <string name="aboutus">About Us</string>
+    <string name="slogan">We will take you to a healthier and stronger version of yourself. Coming soon on social media.</string>
+    <string name="Myroutines">My Routines</string>
+    <string name="StartRoutine">Start Routine</string>
 
     <string name="login_error">Invalid email or password</string>
     <string name="no_routines">No routines available to show :(</string>
