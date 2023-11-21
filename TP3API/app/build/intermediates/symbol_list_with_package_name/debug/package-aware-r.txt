@@ -235,9 +235,11 @@ string dropdown_menu
 string empty_cycle
 string empty_routine
 string expanded
+string first_name
 string home_screen
 string in_progress
 string indeterminate
+string last_name
 string loading_message
 string log_out_profile
 string login

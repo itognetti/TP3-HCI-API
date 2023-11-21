@@ -34,7 +34,9 @@ string details
 string difficulty
 string empty_cycle
 string empty_routine
+string first_name
 string home_screen
+string last_name
 string loading_message
 string log_out_profile
 string login

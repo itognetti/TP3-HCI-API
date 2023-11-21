@@ -11,6 +11,8 @@
     <string name="signin">Ingresar</string>
     <string name="register">Registrarse</string>
     <string name="username">Nombre de Usuario</string>
+    <string name="first_name">Nombre</string>
+    <string name="last_name">Aplellido</string>
     <string name="login_name">Nombre Completo</string>
     <string name="login_mail">Correo Electronico</string>
     <string name="login_password">Contraseña</string>

@@ -115,7 +115,7 @@ fun ProfileScreen(
                 Column {
                     uiState.currentUser?.let {
                         Text(
-                            text = it.username,
+                            text = stringResource(id = R.string.login_mail) + ": " + it.email,
                             color = White,
                             fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
@@ -124,7 +124,7 @@ fun ProfileScreen(
                     }
                     uiState.currentUser?.let {
                         Text(
-                            text = it.firstName,
+                            text = stringResource(id = R.string.username) + ": " + it.username,
                             color = White,
                             fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
@@ -133,7 +133,16 @@ fun ProfileScreen(
                     }
                     uiState.currentUser?.let {
                         Text(
-                            text = it.lastName,
+                            text = stringResource(id = R.string.first_name) + ": " + it.firstName,
+                            color = White,
+                            fontSize = 24.sp,
+                            fontWeight = FontWeight.Bold,
+                            textAlign = TextAlign.Center
+                        )
+                    }
+                    uiState.currentUser?.let {
+                        Text(
+                            text = stringResource(id = R.string.last_name) + ": " + it.lastName,
                             color = White,
                             fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
