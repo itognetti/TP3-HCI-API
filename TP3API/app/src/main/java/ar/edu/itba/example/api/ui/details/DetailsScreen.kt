@@ -15,7 +15,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ar.edu.itba.example.api.ui.components.CicleEntry
+import ar.edu.itba.example.api.ui.components.CycleEntry
 import ar.edu.itba.example.api.ui.components.EmptyState
 import kotlinx.coroutines.launch
 import ar.edu.itba.example.api.R
@@ -81,7 +81,7 @@ fun DetailsScreen(
                             list.get(index).id.toString()
                         }
                     ) { index ->
-                        CicleEntry(
+                        CycleEntry(
                             title = list.get(index).name ?: "Error",
                             rounds = list.get(index).repetitions ?:0,
                             onNavigateToCycleDetails = onNavigateToCycleDetails,

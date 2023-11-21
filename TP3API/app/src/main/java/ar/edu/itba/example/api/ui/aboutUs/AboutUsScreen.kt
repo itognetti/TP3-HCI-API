@@ -1,4 +1,4 @@
-package ar.edu.itba.example.api.ui.screens
+package ar.edu.itba.example.api.ui.aboutUs
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -28,9 +29,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.theme.Black
+import ar.edu.itba.example.api.ui.theme.FOrange
 
 @Composable
-fun AboutUsScreen(onNavigateToLoginRegisterScreen: () -> Unit) {
+fun AboutUsScreen(onNavigateToLogin: () -> Unit) {
     Box(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -40,6 +42,28 @@ fun AboutUsScreen(onNavigateToLoginRegisterScreen: () -> Unit) {
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize()
         )
+
+        // Botón de Información (en la esquina superior derecha)
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(8.dp)
+        ) {
+            // Botón de Información
+            IconButton(
+                onClick = {
+                    onNavigateToLogin()
+                },
+                modifier = Modifier
+                    .align(Alignment.TopEnd),
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Close,
+                    contentDescription = "Cerrar",
+                    tint = FOrange
+                )
+            }
+        }
 
         Column(
             modifier = Modifier
@@ -54,7 +78,6 @@ fun AboutUsScreen(onNavigateToLoginRegisterScreen: () -> Unit) {
                 modifier = Modifier.size(250.dp)
             )
         }
-
 
         Card(
             modifier = Modifier
@@ -84,21 +107,6 @@ fun AboutUsScreen(onNavigateToLoginRegisterScreen: () -> Unit) {
                     fontWeight = FontWeight.SemiBold,
                     textAlign = TextAlign.Center
                 )
-
-                IconButton(
-                    onClick = {
-                        onNavigateToLoginRegisterScreen()
-                    },
-                    modifier = Modifier
-                        .align(Alignment.End)
-                        .size(50.dp)
-                ) {
-                    Icon(
-                        imageVector = Icons.Filled.Close,
-                        contentDescription = "Close",
-                        tint = Black,
-                    )
-                }
             }
         }
     }

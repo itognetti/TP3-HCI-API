@@ -14,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -26,10 +27,15 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.IconButtonColors
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -47,7 +53,8 @@ import kotlinx.coroutines.launch
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(
-    onNavigateToHomeScreen: () -> Unit,
+    onNavigateToHome: () -> Unit,
+    onNavigateToAboutUs: () -> Unit,
     viewModel: LoginViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory())
 ) {
 
@@ -77,6 +84,28 @@ fun LoginScreen(
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize()
         )
+
+        // Botón de Información (en la esquina superior derecha)
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(8.dp)
+        ) {
+            // Botón de Información
+            IconButton(
+                onClick = {
+                    onNavigateToAboutUs()
+                },
+                modifier = Modifier
+                    .align(Alignment.TopEnd),
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Info,
+                    contentDescription = "Información",
+                    tint = FOrange
+                )
+            }
+        }
 
         Column(
             modifier = Modifier
@@ -140,15 +169,12 @@ fun LoginScreen(
                         .padding(8.dp)
                 )
 
-                Spacer(modifier = Modifier.height(16.dp))
-
-                Spacer(modifier = Modifier.height(16.dp))
 
                 // Botón de Inicio
                 Button(
                     onClick = {
                         viewModel.login(username, password)
-                        onNavigateToHomeScreen()
+                        onNavigateToHome()
                     },
                     colors = ButtonDefaults.buttonColors(FOrange),
                     modifier = Modifier
@@ -156,9 +182,8 @@ fun LoginScreen(
                 ) {
                     Text(text = stringResource(id = R.string.login))
                 }
-
-                //se puede agregar el about us
             }
         }
     }
 }
+

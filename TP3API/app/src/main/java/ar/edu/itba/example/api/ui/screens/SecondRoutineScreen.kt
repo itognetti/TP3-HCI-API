@@ -87,7 +87,7 @@ fun SecondRoutineScreen() {
             CircularProgressBar()
 
             // Elemento de ejercicio
-            ExerciseItem(stringResource(id = R.string.Exercise1))
+            // ExerciseItem(stringResource(id = R.string.Exercise1))
 
             // Ajusta el espaciado entre ExerciseItem y la Card
             Spacer(modifier = Modifier.height(8.dp))

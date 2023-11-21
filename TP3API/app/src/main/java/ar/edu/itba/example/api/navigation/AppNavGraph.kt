@@ -15,6 +15,7 @@ import ar.edu.itba.example.api.ui.home.HomeScreen
 import ar.edu.itba.example.api.ui.login.LoginScreen
 import ar.edu.itba.example.api.ui.profile.ProfileScreen
 import ar.edu.itba.example.api.ui.cycleDetails.CycleDetailsScreen
+import ar.edu.itba.example.api.ui.aboutUs.AboutUsScreen
 
 @Composable
 fun AppNavGraph(navController: NavHostController = rememberNavController(),
@@ -73,7 +74,8 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
 
         composable("login") {
             LoginScreen(
-                onNavigateToHomeScreen = { navController.navigate("home") }
+                onNavigateToHome = { navController.navigate("home") },
+                onNavigateToAboutUs = { navController.navigate("about_us") }
             )
         }
 
@@ -82,6 +84,12 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
                 onNavigateBack = { navController.navigateUp() },
                 onNavigateToExecution2 = { id -> navController.navigate("review/$id") },
                 routineId=navController.currentBackStackEntry?.arguments?.getString("routineId")?:"-1"
+            )
+        }
+
+        composable("about_us"){
+            AboutUsScreen(
+                onNavigateToLogin = { navController.navigate("login") }
             )
         }
     }
