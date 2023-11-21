@@ -1,5 +1,6 @@
 package ar.edu.itba.example.api.ui.explore
 
+import android.util.Log
 import android.widget.Toast
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -17,6 +18,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -35,11 +37,7 @@ fun ExploreScreen(
     orderBy: String,
     viewModel: ExploreViewModel = androidx.lifecycle.viewmodel.compose.viewModel(factory = getViewModelFactory())
 ) {
-
-    var boca by remember { mutableStateOf(false) }
-    var rivar by remember { mutableStateOf(false) }
-    var finishedThreads by remember { mutableIntStateOf(0) }
-    val mutex = Mutex()
+    var finished by remember { mutableStateOf(false) }
 
     val uiState = viewModel.uiState
 
@@ -49,29 +47,8 @@ fun ExploreScreen(
             if (uiState.canGetAllRoutines) {
                 viewModel.getCurrentUser()
                 viewModel.getRoutines(orderBy).invokeOnCompletion {
-                    boca = true
+                    finished = true
                 }
-            }
-        }
-    }
-
-//    LaunchedEffect(key1 = boca) {
-//        launch {
-//            if (boca) {
-//                uiState.routines?.forEach { it ->
-//                    viewModel.getReviews(it?.id!!)
-//                    mutex.withLock {
-//                        finishedThreads++
-//                    }
-//                }
-//            }
-//        }
-//    }
-
-    LaunchedEffect(key1 = finishedThreads) {
-        launch {
-            if (finishedThreads == uiState.routines?.size) {
-                rivar = true
             }
         }
     }
@@ -86,9 +63,7 @@ fun ExploreScreen(
         }
     }
 
-    //-----
-
-    if (rivar) {
+    if (finished) {
         Column {
             Text(
                 text = stringResource(R.string.search_bar),
