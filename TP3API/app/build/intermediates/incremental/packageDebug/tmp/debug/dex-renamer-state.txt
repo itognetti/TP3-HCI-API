@@ -1,21 +1,4 @@
-<<<<<<< Updated upstream
-#Tue Nov 21 16:05:48 ART 2023
-base.0=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
-base.1=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
-base.10=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/7/classes.dex
-base.11=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/8/classes.dex
-base.12=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/9/classes.dex
-base.13=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeExtDexDebug/classes2.dex
-base.2=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/1/classes.dex
-base.3=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/10/classes.dex
-base.4=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/12/classes.dex
-base.5=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex
-base.6=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/15/classes.dex
-base.7=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/3/classes.dex
-base.8=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex
-base.9=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/5/classes.dex
-=======
-#Tue Nov 21 16:32:40 ART 2023
+#Tue Nov 21 18:09:35 ART 2023
 base.0=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
 base.10=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
@@ -30,7 +13,6 @@ base.6=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\inte
 base.7=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
 base.8=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
 base.9=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
->>>>>>> Stashed changes
 path.0=classes.dex
 path.1=0/classes.dex
 path.10=7/classes.dex

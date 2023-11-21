@@ -9,14 +9,9 @@
     <string name="date">Fecha</string>
     <string name="details">Detalles</string>
     <string name="difficulty">Dificultad</string>
-<<<<<<< Updated upstream
     <string name="empty_cycle">No hay ejercicios</string>
     <string name="empty_routine">No hay ciclos</string>
-=======
-    <string name="empty_cycle">No tiene ciclos</string>
-    <string name="empty_routine">No tiene rutinas</string>
     <string name="first_name">Nombre</string>
->>>>>>> Stashed changes
     <string name="home_screen">Inicio</string>
     <string name="last_name">Aplellido</string>
     <string name="loading_message">Cargando</string>

@@ -16,14 +16,9 @@
     <string name="date">Date</string>
     <string name="details">Details</string>
     <string name="difficulty">Difficulty</string>
-<<<<<<< Updated upstream
     <string name="empty_cycle">No exercises</string>
     <string name="empty_routine">No cycles</string>
-=======
-    <string name="empty_cycle">No cycles</string>
-    <string name="empty_routine">No routines</string>
     <string name="first_name">First Name</string>
->>>>>>> Stashed changes
     <string name="home_screen">Home</string>
     <string name="last_name">Last Name</string>
     <string name="loading_message">Loading</string>

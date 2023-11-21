@@ -33,6 +33,7 @@ import ar.edu.itba.example.api.ui.theme.FOrange
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -85,99 +86,205 @@ fun ProfileScreen(
             )
         }
 
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(16.dp),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Text(
-                text = stringResource(id = R.string.profile_screen),
-                color = FOrange,
-                fontSize = 24.sp,
-                fontWeight = FontWeight.Black,
-            )
+        val widthInDp = LocalConfiguration.current.screenWidthDp.dp
 
-            Icon(
-                imageVector = Icons.Filled.AccountCircle,
-                contentDescription = null,
+        if (widthInDp > 600.dp){ //falta la vista horizontal
+
+            /*
+            Row(
                 modifier = Modifier
-                    .size(150.dp)
-                    .clip(CircleShape),
-                tint = White
-            )
-
-            Spacer(modifier = Modifier.height(32.dp))
-
-            if(viewModel.uiState.isAuthenticated) {
-
-                Column {
-                    uiState.currentUser?.let {
-                        Text(
-                            text = stringResource(id = R.string.login_mail) + ": " + it.email,
-                            color = White,
-                            fontSize = 24.sp,
-                            fontWeight = FontWeight.Bold,
-                            textAlign = TextAlign.Center
-                        )
-                    }
-                    uiState.currentUser?.let {
-                        Text(
-                            text = stringResource(id = R.string.username) + ": " + it.username,
-                            color = White,
-                            fontSize = 24.sp,
-                            fontWeight = FontWeight.Bold,
-                            textAlign = TextAlign.Center
-                        )
-                    }
-                    uiState.currentUser?.let {
-                        Text(
-                            text = stringResource(id = R.string.first_name) + ": " + it.firstName,
-                            color = White,
-                            fontSize = 24.sp,
-                            fontWeight = FontWeight.Bold,
-                            textAlign = TextAlign.Center
-                        )
-                    }
-                    uiState.currentUser?.let {
-                        Text(
-                            text = stringResource(id = R.string.last_name) + ": " + it.lastName,
-                            color = White,
-                            fontSize = 24.sp,
-                            fontWeight = FontWeight.Bold,
-                            textAlign = TextAlign.Center
-                        )
-                    }
-                }
-            }
-
-            Spacer(modifier = Modifier.height(32.dp))
-
-            // Botón de Cerrar Sesión
-            Button(
-                onClick = {
-                    viewModel.logout()
-                    onNavigateToLogin()
-                },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(50.dp),
-                colors = ButtonDefaults.buttonColors(Color.Transparent),
+                    .fillMaxSize()
+                    .padding(5.dp),
+                horizontalArrangement = Arrangement.Center,
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    Icon(Icons.Filled.ExitToApp, contentDescription = null, tint = White)
-                    Spacer(modifier = Modifier.width(8.dp))
+                Column (
+
+                ){
                     Text(
-                        text = stringResource(id = R.string.log_out_profile),
-                        color = White,
-                        fontSize = 24.sp
+                        text = stringResource(id = R.string.profile_screen),
+                        color = FOrange,
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.Black,
                     )
+
+                    Icon(
+                        imageVector = Icons.Filled.AccountCircle,
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(150.dp)
+                            .clip(CircleShape),
+                        tint = White
+                    )
+
+                    Button(
+                        onClick = {
+                            viewModel.logout()
+                            onNavigateToLogin()
+                        },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(50.dp),
+                        colors = ButtonDefaults.buttonColors(Color.Transparent),
+                    ) {
+                        Row(
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.Center
+                        ) {
+                            Icon(Icons.Filled.ExitToApp, contentDescription = null, tint = White)
+                            Spacer(modifier = Modifier.width(8.dp))
+                            Text(
+                                text = stringResource(id = R.string.log_out_profile),
+                                color = White,
+                                fontSize = 24.sp
+                            )
+                        }
+                    }
+                }
+
+                Spacer(modifier = Modifier.width(64.dp))
+
+                if(viewModel.uiState.isAuthenticated) {
+
+                    Column {
+                        uiState.currentUser?.let {
+                            Text(
+                                text = stringResource(id = R.string.login_mail) + ": " + it.email,
+                                color = White,
+                                fontSize = 24.sp,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center
+                            )
+                        }
+                        uiState.currentUser?.let {
+                            Text(
+                                text = stringResource(id = R.string.username) + ": " + it.username,
+                                color = White,
+                                fontSize = 24.sp,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center
+                            )
+                        }
+                        uiState.currentUser?.let {
+                            Text(
+                                text = stringResource(id = R.string.first_name) + ": " + it.firstName,
+                                color = White,
+                                fontSize = 24.sp,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center
+                            )
+                        }
+                        uiState.currentUser?.let {
+                            Text(
+                                text = stringResource(id = R.string.last_name) + ": " + it.lastName,
+                                color = White,
+                                fontSize = 24.sp,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center
+                            )
+                        }
+                    }
                 }
             }
+             */
+
+        }else{
+
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = stringResource(id = R.string.profile_screen),
+                    color = FOrange,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Black,
+                )
+
+                Icon(
+                    imageVector = Icons.Filled.AccountCircle,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(150.dp)
+                        .clip(CircleShape),
+                    tint = White
+                )
+
+                Spacer(modifier = Modifier.height(32.dp))
+
+                if(viewModel.uiState.isAuthenticated) {
+
+                    Column {
+                        uiState.currentUser?.let {
+                            Text(
+                                text = stringResource(id = R.string.login_mail) + ": " + it.email,
+                                color = White,
+                                fontSize = 24.sp,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center
+                            )
+                        }
+                        uiState.currentUser?.let {
+                            Text(
+                                text = stringResource(id = R.string.username) + ": " + it.username,
+                                color = White,
+                                fontSize = 24.sp,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center
+                            )
+                        }
+                        uiState.currentUser?.let {
+                            Text(
+                                text = stringResource(id = R.string.first_name) + ": " + it.firstName,
+                                color = White,
+                                fontSize = 24.sp,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center
+                            )
+                        }
+                        uiState.currentUser?.let {
+                            Text(
+                                text = stringResource(id = R.string.last_name) + ": " + it.lastName,
+                                color = White,
+                                fontSize = 24.sp,
+                                fontWeight = FontWeight.Bold,
+                                textAlign = TextAlign.Center
+                            )
+                        }
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(32.dp))
+
+                // Botón de Cerrar Sesión
+                Button(
+                    onClick = {
+                        viewModel.logout()
+                        onNavigateToLogin()
+                    },
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(50.dp),
+                    colors = ButtonDefaults.buttonColors(Color.Transparent),
+                ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Center
+                    ) {
+                        Icon(Icons.Filled.ExitToApp, contentDescription = null, tint = White)
+                        Spacer(modifier = Modifier.width(8.dp))
+                        Text(
+                            text = stringResource(id = R.string.log_out_profile),
+                            color = White,
+                            fontSize = 24.sp
+                        )
+                    }
+                }
+            }
+
         }
     }
 }
