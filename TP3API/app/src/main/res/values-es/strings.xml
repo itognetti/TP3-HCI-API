@@ -12,7 +12,7 @@
     <string name="register">Registrarse</string>
     <string name="username">Nombre de Usuario</string>
     <string name="first_name">Nombre</string>
-    <string name="last_name">Aplellido</string>
+    <string name="last_name">Apellido</string>
     <string name="login_name">Nombre Completo</string>
     <string name="login_mail">Correo Electronico</string>
     <string name="login_password">Contraseña</string>
@@ -32,7 +32,7 @@
     <string name="empty_cycle">No hay ejercicios</string>
     <string name="order_by">Ordernar por</string>
     <string name="date">Fecha</string>
-    <string name="category">Categoria</string>
+    <string name="category">Categoría</string>
     <string name="difficulty">Dificultad</string>
     <string name="score">Puntuación</string>
 

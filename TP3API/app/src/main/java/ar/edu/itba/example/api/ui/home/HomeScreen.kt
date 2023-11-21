@@ -23,6 +23,8 @@ import androidx.lifecycle.repeatOnLifecycle
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.components.RoutineCardList
 import ar.edu.itba.example.api.util.getViewModelFactory
+import com.google.accompanist.swiperefresh.SwipeRefresh
+import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import kotlinx.coroutines.launch
 
 @Composable
@@ -69,32 +71,38 @@ fun HomeScreen(
         }
     }
 
-    Column {
-        Text(
-            text = stringResource(R.string.routines),
-            fontWeight = FontWeight.Bold,
-            fontSize = 28.sp,
-            modifier = Modifier.padding(horizontal = 15.dp, vertical = 20.dp)
-        )
+    SwipeRefresh(
+        state = rememberSwipeRefreshState(uiState.isFetching),
+        onRefresh = {viewModel.getRoutines(orderBy)}
+    ) {
+        Column {
+            Text(
+                text = stringResource(R.string.routines),
+                fontWeight = FontWeight.Bold,
+                fontSize = 28.sp,
+                modifier = Modifier.padding(horizontal = 15.dp, vertical = 20.dp)
+            )
 
-        if (uiState.isFetching) {
-            Column(
-                modifier = Modifier.fillMaxSize(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
-                Text(
-                    text = stringResource(id = R.string.loading_message),
-                    fontSize = 16.sp
+            if (uiState.isFetching) {
+                Column(
+                    modifier = Modifier.fillMaxSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.Center
+                ) {
+                    Text(
+                        text = stringResource(id = R.string.loading_message),
+                        fontSize = 16.sp
+                    )
+                }
+            } else {
+                RoutineCardList(
+                    list = uiState.routines?.filter { routine -> routine.user?.username == uiState.currentUser?.username }
+                        .orEmpty(),
+                    onNavigateToRoutineDetails = onNavigateToRoutineDetails,
+                    onNavigateToExecution = onNavigateToExecution
                 )
+                Spacer(modifier = Modifier.size(20.dp))
             }
-        } else {
-            RoutineCardList(
-               list = uiState.routines?.filter { routine -> routine.user?.username == uiState.currentUser?.username }.orEmpty(),
-                onNavigateToRoutineDetails = onNavigateToRoutineDetails,
-                onNavigateToExecution = onNavigateToExecution
-             )
-            Spacer(modifier = Modifier.size(20.dp))
         }
     }
 }

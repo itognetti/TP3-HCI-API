@@ -24,6 +24,8 @@ import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.components.RoutineCardList
 import ar.edu.itba.example.api.util.getViewModelFactory
+import com.google.accompanist.swiperefresh.SwipeRefresh
+import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
 import kotlinx.coroutines.launch
 
 @Composable
@@ -57,34 +59,41 @@ fun ExploreScreen(
             }
         }
     }
+    
+    SwipeRefresh(
+        state = rememberSwipeRefreshState(uiState.isFetching),
+        onRefresh = {viewModel.getRoutines(orderBy)}
+    ) {
+        if (finished) {
 
-    if (finished) {
-        Column {
-            Text(
-                text = stringResource(R.string.search_bar),
-                fontWeight = FontWeight.Bold,
-                fontSize = 28.sp,
-                modifier = Modifier.padding(horizontal = 15.dp, vertical = 20.dp)
-            )
-
-            if (uiState.isFetching) {
-                Column(
-                    modifier = Modifier.fillMaxSize(),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center
-                ) {
-                    Text(
-                        text = stringResource(id = R.string.loading_message),
-                        fontSize = 16.sp
-                    )
-                }
-            } else {
-                RoutineCardList(
-                  list = uiState.routines?.filter { routine -> routine.user?.username == uiState.currentUser?.username }.orEmpty(),
-                  onNavigateToRoutineDetails = onNavigateToRoutineDetails,
-                  onNavigateToExecution = onNavigateToExecution
+            Column {
+                Text(
+                    text = stringResource(R.string.search_bar),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 28.sp,
+                    modifier = Modifier.padding(horizontal = 15.dp, vertical = 20.dp)
                 )
-                Spacer(modifier = Modifier.size(20.dp))
+
+                if (uiState.isFetching) {
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.loading_message),
+                            fontSize = 16.sp
+                        )
+                    }
+                } else {
+                    RoutineCardList(
+                        list = uiState.routines?.filter { routine -> routine.user?.username != uiState.currentUser?.username }
+                            .orEmpty(),
+                        onNavigateToRoutineDetails = onNavigateToRoutineDetails,
+                        onNavigateToExecution = onNavigateToExecution
+                    )
+                    Spacer(modifier = Modifier.size(20.dp))
+                }
             }
         }
     }

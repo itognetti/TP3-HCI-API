@@ -4,7 +4,7 @@
     <string name="StartRoutine">Comenzar Rutina</string>
     <string name="aboutus">SOBRE NOSOTROS</string>
     <string name="app_name">Finspo</string>
-    <string name="category">Categoria</string>
+    <string name="category">Categoría</string>
     <string name="cycle_details">Ejercicios del ciclo</string>
     <string name="date">Fecha</string>
     <string name="details">Detalles</string>
@@ -13,7 +13,7 @@
     <string name="empty_routine">No hay ciclos</string>
     <string name="first_name">Nombre</string>
     <string name="home_screen">Inicio</string>
-    <string name="last_name">Aplellido</string>
+    <string name="last_name">Apellido</string>
     <string name="loading_message">Cargando</string>
     <string name="log_out_profile">Cerrar Sesión</string>
     <string name="login">Iniciar Sesión</string>
