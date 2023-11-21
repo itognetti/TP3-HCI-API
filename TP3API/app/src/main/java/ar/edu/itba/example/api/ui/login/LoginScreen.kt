@@ -24,18 +24,21 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.TextField
 import androidx.compose.ui.text.font.FontWeight.Companion.Bold
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.R
-import ar.edu.itba.example.api.ui.components.LogInButton
 import ar.edu.itba.example.api.ui.theme.Black
+import ar.edu.itba.example.api.ui.theme.FOrange
 import ar.edu.itba.example.api.util.getViewModelFactory
-
-
-//HAY QUE MODIFICARLA TODA
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -51,9 +54,8 @@ fun LoginScreen(
         modifier = Modifier
             .fillMaxSize()
     ) {
-
         Image(
-            painter = painterResource(id = R.drawable.register),
+            painter = painterResource(id = R.drawable.loginscreen),
             contentDescription = null,
             contentScale = ContentScale.Crop,
             modifier = Modifier.fillMaxSize()
@@ -76,16 +78,14 @@ fun LoginScreen(
         Card(
             modifier = Modifier
                 .fillMaxWidth(0.8f)
-                .fillMaxHeight(0.7f)
+                .fillMaxHeight(0.65f)
                 .padding(top = 150.dp)
                 .align(Alignment.Center),
-
             shape = RoundedCornerShape(16.dp)
         ) {
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-
                     .padding(16.dp),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
@@ -99,7 +99,7 @@ fun LoginScreen(
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                // Espacio para el correo electrónico
+                // Espacio para el usuario
                 TextField(
                     value = username,
                     onValueChange = { username = it },
@@ -107,7 +107,6 @@ fun LoginScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(8.dp)
-
                 )
 
                 Spacer(modifier = Modifier.height(16.dp))
@@ -117,6 +116,8 @@ fun LoginScreen(
                     value = password,
                     onValueChange = { password = it },
                     label = { Text(text = stringResource(id = R.string.login_password)) },
+                    visualTransformation = PasswordVisualTransformation(), //esta linea y la de abajo son para que no se vea la contraseña
+                    keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(8.dp)
@@ -127,16 +128,23 @@ fun LoginScreen(
                 Spacer(modifier = Modifier.height(16.dp))
 
                 // Botón de Inicio
-                LogInButton(
-                    viewModel = viewModel,
-                    username = username,
-                    password = password,
-                    onNavigateToHomeScreen
-                )
+                Button(
+                    onClick = {
+                        viewModel.login(username, password)
+                        onNavigateToHomeScreen()
+                    },
+                    colors = ButtonDefaults.buttonColors(FOrange),
+                    modifier = Modifier
+                        .width(150.dp)
+                ) {
+                    Text(text = stringResource(id = R.string.login))
+                }
+
+                //se puede agregar el about us
             }
         }
     }
-
+}
 
 //    val usernameValue = rememberSaveable{ mutableStateOf("") }
 //    val passwordValue = rememberSaveable{ mutableStateOf("") }
@@ -276,105 +284,3 @@ fun LoginScreen(
 //            }
 //        }
 //    }
-}
-/*
-
-
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun LoginScreen(onNavegateToHomeScreen: () -> Unit, viewModel: MainViewModel) {
-    var username by remember { mutableStateOf("") }
-    var password by remember { mutableStateOf("") }
-
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-    ) {
-
-        Image(
-            painter = painterResource(id = R.drawable.register),
-            contentDescription = null,
-            contentScale = ContentScale.Crop,
-            modifier = Modifier.fillMaxSize()
-        )
-
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(5.dp),
-            verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.logotext),
-                contentDescription = null,
-                modifier = Modifier.size(250.dp)
-            )
-        }
-
-        Card(
-            modifier = Modifier
-                .fillMaxWidth(0.8f)
-                .fillMaxHeight(0.7f)
-                .padding(top = 150.dp)
-                .align(Alignment.Center),
-
-            shape = RoundedCornerShape(16.dp)
-        ) {
-            Column(
-                modifier = Modifier
-                    .fillMaxSize()
-
-                    .padding(16.dp),
-                verticalArrangement = Arrangement.Center,
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
-                Text(
-                    fontWeight = Bold,
-                    text = stringResource(id = R.string.login),
-                    fontSize = 30.sp,
-                    color = Black,
-                )
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                // Espacio para el correo electrónico
-                TextField(
-                    value = username,
-                    onValueChange = { username = it },
-                    label = { Text(text = stringResource(id = R.string.username)) },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(8.dp)
-
-                )
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                // Espacio para la contraseña
-                TextField(
-                    value = password,
-                    onValueChange = { password = it },
-                    label = { Text(text = stringResource(id = R.string.login_password)) },
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(8.dp)
-                )
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                Spacer(modifier = Modifier.height(16.dp))
-
-                // Botón de Inicio
-                LogInButton(
-                    viewModel = viewModel,
-                    username = username,
-                    password = password,
-                    onNavegateToHomeScreen
-                )
-            }
-        }
-    }
-}
-
- */

@@ -1,6 +1,7 @@
 package ar.edu.itba.example.api.ui.profile
 
 import android.widget.Toast
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -33,7 +34,10 @@ import androidx.compose.material3.Icon
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import ar.edu.itba.example.api.ui.main.canGetCurrentUser
 import ar.edu.itba.example.api.ui.theme.Black
 import ar.edu.itba.example.api.ui.theme.White
@@ -70,6 +74,20 @@ fun ProfileScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(top = 16.dp),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.logo),
+                contentDescription = null,
+                modifier = Modifier.size(70.dp)
+            )
+        }
+
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
                 .padding(16.dp),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
@@ -90,7 +108,7 @@ fun ProfileScreen(
                 tint = White
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(32.dp))
 
             if(viewModel.uiState.isAuthenticated) {
 
@@ -101,6 +119,7 @@ fun ProfileScreen(
                             color = White,
                             fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
+                            textAlign = TextAlign.Center
                         )
                     }
                     uiState.currentUser?.let {
@@ -109,6 +128,7 @@ fun ProfileScreen(
                             color = White,
                             fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
+                            textAlign = TextAlign.Center
                         )
                     }
                     uiState.currentUser?.let {
@@ -117,15 +137,15 @@ fun ProfileScreen(
                             color = White,
                             fontSize = 24.sp,
                             fontWeight = FontWeight.Bold,
+                            textAlign = TextAlign.Center
                         )
                     }
                 }
             }
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(32.dp))
 
             // Botón de Cerrar Sesión
-
             Button(
                 onClick = {
                     viewModel.logout()

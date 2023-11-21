@@ -32,7 +32,7 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
                 onNavigateToExecution = {id -> navController.navigate("execution/$id")},
                 onNavigateToLogin = {navController.navigate("login")},
                 orderBy = orderBy
-                )
+            )
         }
 
         composable("explore") {
@@ -40,13 +40,13 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
                 onNavigateToRoutineDetails = { id -> navController.navigate("details/$id") },
                 onNavigateToExecution = { id -> navController.navigate("execution/$id") },
                 orderBy = orderBy
-                )
+            )
         }
 
         composable("profile") {
             ProfileScreen(
-                onNavigateToLogin = {navController.navigate("login")},
-                )
+                onNavigateToLogin = {navController.navigate("login")}
+            )
         }
 
         composable("details/{routineId}",
@@ -62,19 +62,19 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
             DetailsScreen(
                 onNavigateToCycleDetails = { id -> navController.navigate("details-cycle/$id")},
                 routineId = navController.currentBackStackEntry?.arguments?.getString("routineId")?: "-1"
-                )
+            )
         }
 
         composable("details-cycle/{cycleId}"){
             CycleDetailsScreen(
                 cycleId = navController.currentBackStackEntry?.arguments?.getString("cycleId")?: "-1"
-                )
+            )
         }
 
         composable("login") {
             LoginScreen(
                 onNavigateToHomeScreen = { navController.navigate("home") }
-                )
+            )
         }
 
         composable("execution/{routineId}"){
@@ -82,7 +82,7 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
                 onNavigateBack = { navController.navigateUp() },
                 onNavigateToExecution2 = { id -> navController.navigate("review/$id") },
                 routineId=navController.currentBackStackEntry?.arguments?.getString("routineId")?:"-1"
-                )
+            )
         }
     }
 }

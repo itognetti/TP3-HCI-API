@@ -33,14 +33,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import ar.edu.itba.example.api.ui.theme.Black
 import androidx.compose.material3.IconButton
+import androidx.compose.ui.tooling.preview.Preview
 import ar.edu.itba.example.api.ui.theme.White
 
 
 //ESTA HARDCODEADÍSIMO
+@Preview
 @Composable
 fun ExerciseItem(
-    name: String,
-    modifier: Modifier = Modifier
+    //name: String,
+    //modifier: Modifier = Modifier
 ) {
     var expanded by rememberSaveable { mutableStateOf(false) }
     val extraPadding by animateDpAsState(
@@ -65,7 +67,7 @@ fun ExerciseItem(
                     .padding(bottom = extraPadding)
             ) {
                 Text(
-                    text = name,
+                    text = "name",
                     color = Black,
                     style = MaterialTheme.typography.headlineMedium.copy(fontWeight = FontWeight.ExtraBold)
                 )
