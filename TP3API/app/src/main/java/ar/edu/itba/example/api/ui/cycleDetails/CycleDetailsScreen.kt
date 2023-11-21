@@ -21,7 +21,6 @@ import kotlinx.coroutines.launch
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.util.getViewModelFactory
 
-
 @Composable
 fun CycleDetailsScreen(
     cycleId: String,

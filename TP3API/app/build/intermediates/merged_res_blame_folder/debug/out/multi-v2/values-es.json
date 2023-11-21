@@ -4,24 +4,7 @@
             "outputFile": "ar.edu.itba.example.api.app-mergeDebugResources-48:/values-es/values-es.xml",
             "map": [
                 {
-                    "source": "/Users/axelcastro/.gradle/caches/transforms-3/ee64e97561dea54bff65e93822e94c1c/transformed/ui-release/res/values-es/values-es.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,201,283,381,484,573,652,745,837,924,997,1067,1153,1244,1321,1403,1473",
-                        "endColumns": "95,81,97,102,88,78,92,91,86,72,69,85,90,76,81,69,120",
-                        "endOffsets": "196,278,376,479,568,647,740,832,919,992,1062,1148,1239,1316,1398,1468,1589"
-                    },
-                    "to": {
-                        "startLines": "23,24,29,30,36,45,46,57,59,60,61,63,64,73,78,79,80",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "1511,1607,1918,2016,2433,3001,3080,3727,3902,3989,4062,4182,4268,4781,5174,5256,5326",
-                        "endColumns": "95,81,97,102,88,78,92,91,86,72,69,85,90,76,81,69,120",
-                        "endOffsets": "1602,1684,2011,2114,2517,3075,3168,3814,3984,4057,4127,4263,4354,4853,5251,5321,5442"
-                    }
-                },
-                {
-                    "source": "/Users/axelcastro/.gradle/caches/transforms-3/e060ddb424a06ecfb8e75da3d70f4c48/transformed/core-1.12.0/res/values-es/values-es.xml",
+                    "source": "/Users/ian/.gradle/caches/transforms-3/e060ddb424a06ecfb8e75da3d70f4c48/transformed/core-1.12.0/res/values-es/values-es.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -38,7 +21,24 @@
                     }
                 },
                 {
-                    "source": "/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/res/values-es/strings.xml",
+                    "source": "/Users/ian/.gradle/caches/transforms-3/ee64e97561dea54bff65e93822e94c1c/transformed/ui-release/res/values-es/values-es.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,201,283,381,484,573,652,745,837,924,997,1067,1153,1244,1321,1403,1473",
+                        "endColumns": "95,81,97,102,88,78,92,91,86,72,69,85,90,76,81,69,120",
+                        "endOffsets": "196,278,376,479,568,647,740,832,919,992,1062,1148,1239,1316,1398,1468,1589"
+                    },
+                    "to": {
+                        "startLines": "23,24,29,30,36,45,46,57,59,60,61,63,64,73,78,79,80",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1511,1607,1918,2016,2433,3001,3080,3727,3902,3989,4062,4182,4268,4781,5174,5256,5326",
+                        "endColumns": "95,81,97,102,88,78,92,91,86,72,69,85,90,76,81,69,120",
+                        "endOffsets": "1602,1684,2011,2114,2517,3075,3168,3814,3984,4057,4127,4263,4354,4853,5251,5321,5442"
+                    }
+                },
+                {
+                    "source": "/Users/ian/Desktop/TP3-HCI-API/TP3API/app/src/main/res/values-es/strings.xml",
                     "from": {
                         "startLines": "38,39,40,35,36,37,33,41,42,43,34,30,5,9,58,47,48,7,57,51,52,13,60,59,3,4,2,10,16,14,18,53,23,22,24,25,1,6,54,12,49,50,20,32,56,15,11,28,19,31,26,21,27,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -55,7 +55,7 @@
                     }
                 },
                 {
-                    "source": "/Users/axelcastro/.gradle/caches/transforms-3/95307028250a3d1c2707ec3c5d80d07c/transformed/material3-1.0.0/res/values-es/values-es.xml",
+                    "source": "/Users/ian/.gradle/caches/transforms-3/95307028250a3d1c2707ec3c5d80d07c/transformed/material3-1.0.0/res/values-es/values-es.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
