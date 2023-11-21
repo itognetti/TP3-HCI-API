@@ -17,8 +17,9 @@ import ar.edu.itba.example.api.ui.theme.FOrange
 fun LogInButton(viewModel: LoginViewModel, username: String, password: String, onNavigateToHomeScreen: () -> Unit){
     Button(
         onClick = {
-            viewModel.login(username, password)
-            onNavigateToHomeScreen()
+            viewModel.login(username, password).invokeOnCompletion {
+                onNavigateToHomeScreen()
+            }
         },
         colors = ButtonDefaults.buttonColors(FOrange),
         modifier = Modifier
