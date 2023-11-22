@@ -26,6 +26,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -57,10 +58,10 @@ fun TopBar(
     val details = stringResource(R.string.details)
 
     val topBarMap by remember {
-        mutableStateOf(hashMapOf<String, TopBarInfo>(
-            "home" to TopBarInfo(home, false, true),
-            "explore" to TopBarInfo(explore, false, true),
-            "details" to TopBarInfo(details, true, false)
+        mutableStateOf(hashMapOf(
+            "home" to TopBarInfo(home, hasBackArrow = false, hasOrderBy = true),
+            "explore" to TopBarInfo(explore, hasBackArrow = false, hasOrderBy = true),
+            "details" to TopBarInfo(details, hasBackArrow = true, hasOrderBy = false)
         ))
     }
 
