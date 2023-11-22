@@ -1,6 +1,6 @@
 R_DEF: Internal format may change without notice
 local
-color base_grey
+color black
 color ic_launcher_background
 drawable background
 drawable gym1

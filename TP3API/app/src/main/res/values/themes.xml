@@ -2,7 +2,6 @@
 <resources>
 
     <style name="Theme.Api" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:colorPrimary">@color/base_grey</item>
-        <item name="android:statusBarColor">@color/base_grey</item>
+        <item name="android:statusBarColor">@color/black</item>
     </style>
 </resources>

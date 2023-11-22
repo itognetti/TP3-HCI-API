@@ -2,8 +2,6 @@ package ar.edu.itba.example.api.data.network
 
 import ar.edu.itba.example.api.data.network.api.ApiUserService
 import ar.edu.itba.example.api.data.network.model.NetworkCredentials
-import ar.edu.itba.example.api.data.network.model.NetworkPagedContent
-import ar.edu.itba.example.api.data.network.model.NetworkRoutine
 import ar.edu.itba.example.api.data.network.model.NetworkUser
 import ar.edu.itba.example.api.util.SessionManager
 

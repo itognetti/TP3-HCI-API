@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="base_grey">#333333</color>
+    <color name="black">#FF000000</color>
     <color name="ic_launcher_background">#FFFFFF</color>
     <string name="Myroutines">My Routines</string>
     <string name="StartRoutine">Start Routine</string>
@@ -38,7 +38,6 @@
     <string name="slogan">We will take you to a healthier and stronger version of yourself. Coming soon on social media.</string>
     <string name="username">Username</string>
     <style name="Theme.Api" parent="android:Theme.Material.Light.NoActionBar">
-        <item name="android:colorPrimary">@color/base_grey</item>
-        <item name="android:statusBarColor">@color/base_grey</item>
+        <item name="android:statusBarColor">@color/black</item>
     </style>
 </resources>
