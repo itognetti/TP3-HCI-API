@@ -131,23 +131,22 @@ fun Timer(
             }
         }
         Row(
-            //horizontalArrangement = Arrangement.SpaceAround,
-            //modifier = Modifier
-              //  .fillMaxWidth()
             modifier = Modifier
                 .fillMaxWidth()
                 .background(MaterialTheme.colorScheme.background),
-                //.align(Alignment.BottomCenter),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
+            Spacer(modifier = Modifier.width(16.dp))
             IconButton(
                 enabled = hasPrev,
                 onClick = { prevFunc() },
-                //shape = RoundedCornerShape(35.dp)
             ) {
-                //Text(text = "previous", color = Color.White)
-                Icon(Icons.Default.ArrowBack, contentDescription = "Listar", tint = FOrange)
-
+                Icon(
+                    Icons.Default.ArrowBack,
+                    contentDescription = "Listar",
+                    tint = FOrange,
+                    modifier = Modifier.size(36.dp)
+                )
             }
             IconButton(
                 enabled = value != 0F,
@@ -159,37 +158,31 @@ fun Timer(
                         isTimerRunning = !isTimerRunning
                     }
                 },
-                //shape = RoundedCornerShape(35.dp)
             ){
                 val icon = if (isTimerRunning) {
                     Icons.Default.Menu
                 } else {
                     Icons.Default.PlayArrow
                 }
-                Icon(icon, contentDescription = "Pausar", tint = FOrange)
-            }
-            /*
-            {
-                Text(
-                    text = if (isTimerRunning && currentTime >= 0L) "pause"
-                    else if (!isTimerRunning && currentTime >= 0L) "start"
-                    else "start",
-                    color = Color.White
+                Icon(
+                    icon,
+                    contentDescription = "Pausar",
+                    tint = FOrange,
+                    modifier = Modifier.size(36.dp)
                 )
             }
-
-             */
             IconButton(
                 onClick = { nextFunc() },
-                //shape = RoundedCornerShape(35.dp)
             ) {
-                //Text(text = "next", color = Color.White)
-                Icon(Icons.Default.ArrowForward, contentDescription = "Flecha hacia adelante", tint = FOrange)
-
+                Icon(
+                    Icons.Default.ArrowForward,
+                    contentDescription = "Flecha hacia adelante",
+                    tint = FOrange,
+                    modifier = Modifier.size(36.dp)
+                )
             }
-            IconButton(onClick = { /* Manejar acción de siguiente */ }) {
-                Icon(Icons.Default.List, contentDescription = "Listar", tint = FOrange)
-            }
+            Spacer(modifier = Modifier.width(16.dp))
         }
+
     }
 }

@@ -1,4 +1,5 @@
 ar.edu.itba.example.api:string/log_out_profile = 0x7f090022
+<<<<<<< Updated upstream
 ar.edu.itba.example.api:string/routine_details = 0x7f090033
 ar.edu.itba.example.api:string/call_notification_hang_up_action = 0x7f090009
 ar.edu.itba.example.api:string/not_selected = 0x7f09002b
@@ -27,9 +28,43 @@ ar.edu.itba.example.api:id/accessibility_custom_action_11 = 0x7f050004
 ar.edu.itba.example.api:string/category = 0x7f09000d
 ar.edu.itba.example.api:string/collapsed = 0x7f090010
 ar.edu.itba.example.api:string/username = 0x7f09003f
+=======
+ar.edu.itba.example.api:string/dropdown_menu = 0x7f090018
+ar.edu.itba.example.api:styleable/GradientColor = 0x7f0b0005
+ar.edu.itba.example.api:string/not_selected = 0x7f09002b
+ar.edu.itba.example.api:string/call_notification_hang_up_action = 0x7f090009
+ar.edu.itba.example.api:string/routine_details = 0x7f09003f
+ar.edu.itba.example.api:mipmap/ic_launcher = 0x7f080000
+ar.edu.itba.example.api:dimen/notification_large_icon_width = 0x7f03000c
+ar.edu.itba.example.api:string/template_percent = 0x7f09003d
+ar.edu.itba.example.api:id/accessibility_custom_action_27 = 0x7f050015
+ar.edu.itba.example.api:style/TextAppearance.Compat.Notification.Time = 0x7f0a0006
+ar.edu.itba.example.api:string/switch_role = 0x7f09003b
+ar.edu.itba.example.api:id/accessibility_custom_action_18 = 0x7f05000b
+ar.edu.itba.example.api:id/tag_screen_reader_focusable = 0x7f050049
+ar.edu.itba.example.api:drawable/$ic_launcher_foreground__0 = 0x7f040000
+ar.edu.itba.example.api:string/navigation_menu = 0x7f090029
+ar.edu.itba.example.api:string/Myroutines = 0x7f090000
+ar.edu.itba.example.api:string/empty_cycle = 0x7f090019
+ar.edu.itba.example.api:xml/backup_rules = 0x7f0c0000
+ar.edu.itba.example.api:id/accessibility_custom_action_20 = 0x7f05000e
+ar.edu.itba.example.api:style/TextAppearance.Compat.Notification = 0x7f0a0003
+ar.edu.itba.example.api:string/signin = 0x7f090038
+ar.edu.itba.example.api:string/search_screen = 0x7f090036
+ar.edu.itba.example.api:style/TextAppearance.Compat.Notification.Line2 = 0x7f0a0005
+ar.edu.itba.example.api:id/hide_in_inspector_tag = 0x7f050030
+ar.edu.itba.example.api:styleable/Capability = 0x7f0b0001
+ar.edu.itba.example.api:id/accessibility_custom_action_9 = 0x7f050020
+ar.edu.itba.example.api:string/difficulty = 0x7f090017
+ar.edu.itba.example.api:style/FloatingDialogTheme = 0x7f0a0001
+ar.edu.itba.example.api:id/accessibility_custom_action_10 = 0x7f050003
+ar.edu.itba.example.api:string/routines = 0x7f090033
+ar.edu.itba.example.api:string/username = 0x7f09003e
+>>>>>>> Stashed changes
 ar.edu.itba.example.api:id/line3 = 0x7f050038
 ar.edu.itba.example.api:dimen/notification_action_text_size = 0x7f030008
 ar.edu.itba.example.api:string/home_screen = 0x7f09001d
+<<<<<<< Updated upstream
 ar.edu.itba.example.api:style/TextAppearance.Compat.Notification.Line2 = 0x7f0a0005
 ar.edu.itba.example.api:id/hide_in_inspector_tag = 0x7f050030
 ar.edu.itba.example.api:styleable/Capability = 0x7f0b0001
@@ -38,6 +73,13 @@ ar.edu.itba.example.api:id/accessibility_custom_action_20 = 0x7f05000e
 ar.edu.itba.example.api:string/empty_cycle = 0x7f090019
 ar.edu.itba.example.api:id/accessibility_custom_action_9 = 0x7f050020
 ar.edu.itba.example.api:string/difficulty = 0x7f090017
+=======
+ar.edu.itba.example.api:string/call_notification_decline_action = 0x7f090008
+ar.edu.itba.example.api:string/androidx_startup = 0x7f090004
+ar.edu.itba.example.api:id/accessibility_custom_action_11 = 0x7f050004
+ar.edu.itba.example.api:string/collapsed = 0x7f090010
+ar.edu.itba.example.api:string/category = 0x7f09000d
+>>>>>>> Stashed changes
 ar.edu.itba.example.api:string/login_repassword = 0x7f090028
 ar.edu.itba.example.api:id/accessibility_custom_action_17 = 0x7f05000a
 ar.edu.itba.example.api:string/loading_message = 0x7f090021
@@ -79,6 +121,12 @@ ar.edu.itba.example.api:string/close_sheet = 0x7f09000f
 ar.edu.itba.example.api:string/search_bar = 0x7f090036
 ar.edu.itba.example.api:layout/custom_dialog = 0x7f070000
 ar.edu.itba.example.api:id/accessibility_custom_action_0 = 0x7f050001
+<<<<<<< Updated upstream
+=======
+ar.edu.itba.example.api:style/Widget.Compat.NotificationActionContainer = 0x7f0a0009
+ar.edu.itba.example.api:string/close_sheet = 0x7f09000f
+ar.edu.itba.example.api:string/search_bar = 0x7f090035
+>>>>>>> Stashed changes
 ar.edu.itba.example.api:drawable/loginregisterscreen = 0x7f04000f
 ar.edu.itba.example.api:integer/status_bar_notification_info_maxnum = 0x7f060000
 ar.edu.itba.example.api:id/async = 0x7f050027
@@ -87,8 +135,8 @@ ar.edu.itba.example.api:id/text = 0x7f05004f
 ar.edu.itba.example.api:style/DialogWindowTheme = 0x7f0a0000
 ar.edu.itba.example.api:id/right_side = 0x7f050041
 ar.edu.itba.example.api:id/report_drawn = 0x7f05003f
-ar.edu.itba.example.api:drawable/ic_call_answer_video = 0x7f040009
 ar.edu.itba.example.api:id/accessibility_custom_action_3 = 0x7f050018
+ar.edu.itba.example.api:drawable/ic_call_answer_video = 0x7f040009
 ar.edu.itba.example.api:string/profile_screen = 0x7f09002f
 ar.edu.itba.example.api:id/pooling_container_listener_holder_tag = 0x7f05003e
 ar.edu.itba.example.api:string/selected = 0x7f090038

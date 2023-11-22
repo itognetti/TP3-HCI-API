@@ -82,7 +82,7 @@ fun ExerciseEntry (
             Spacer(modifier = Modifier.width(12.dp))
 
             Text(
-                text =  if (time>0) "$time secs." else "-",
+                text =  if (time>0) "$time s." else "-",
                 fontSize = 18.sp,
                 color = White
             )
