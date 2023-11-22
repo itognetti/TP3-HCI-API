@@ -156,14 +156,17 @@ fun ProfileScreen(
                                     textAlign = TextAlign.Center
                                 )
                             }
-                            uiState.currentUser?.let {
-                                Text(
-                                    text = stringResource(id = R.string.last_name) + ": " + it.lastName,
-                                    color = White,
-                                    fontSize = 24.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    textAlign = TextAlign.Center
-                                )
+                            uiState.currentUser?.lastName?.let {lastName ->
+                                if (lastName.isNotEmpty()) {
+                                    Text(
+                                        text = stringResource(id = R.string.last_name) + ": $lastName",
+                                        color = White,
+                                        fontSize = 24.sp,
+                                        fontWeight = FontWeight.Bold,
+                                        textAlign = TextAlign.Center,
+                                        modifier = Modifier.padding(6.dp)
+                                    )
+                                }
                             }
                         }
                     }
