@@ -19,6 +19,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
@@ -34,8 +35,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.main.MainViewModel
+import ar.edu.itba.example.api.ui.theme.Black
 import ar.edu.itba.example.api.ui.theme.FOrange
 import ar.edu.itba.example.api.ui.theme.Grey
+import ar.edu.itba.example.api.ui.theme.White
 import ar.edu.itba.example.api.util.getViewModelFactory
 
 
@@ -78,14 +81,18 @@ fun TopBar(
 
     if(currentTopBar != null){
         TopAppBar(
-            title = { currentTopBar.title },
-            modifier = Modifier.background(color = FOrange),
+            title = { Text(text = currentTopBar.title, color = White) },
+            colors = TopAppBarDefaults.smallTopAppBarColors(
+                containerColor = Black
+            ),
             navigationIcon = {
                 if (currentTopBar.hasBackArrow) {
                     IconButton(
                         onClick = { navController.popBackStack() }){
-                        Icon(imageVector = Icons.Default.ArrowBack,
-                            contentDescription = "back")
+                        Icon(
+                            imageVector = Icons.Default.ArrowBack,
+                            contentDescription = "back",
+                            tint = White)
                     }
                 }
             },
@@ -93,61 +100,76 @@ fun TopBar(
                 if (currentTopBar.hasOrderBy) {
                     Row(
                         modifier = Modifier
-                            .padding(end = 6.dp)
+                            .padding(end = 15.dp)
                             .clickable { showPopUp = !showPopUp }
                     ) {
                         Text(
                             text = stringResource(id = R.string.order_by),
+                            color = White,
                             modifier = Modifier
                                 .padding(end = 6.dp)
                         )
                         Icon(
                             imageVector = Icons.Default.List,
-                            contentDescription = "orderBy"
+                            contentDescription = "orderBy",
+                            tint = White
                         )
                     }
                     DropdownMenu(
                         expanded = showPopUp,
                         onDismissRequest = { showPopUp = false },
-                        modifier = Modifier.background(FOrange)
+                        modifier = Modifier.background(Black)
                     ) {
                         DropdownMenuItem(
-                            text = { Text(text = stringResource(R.string.date)) },
+                            text = { Text(
+                                text = stringResource(R.string.date),
+                                color = White
+                            ) },
                             onClick = { onOrderBy("date"); showPopUp = false },
                             leadingIcon = {
                                 Icon(
                                     imageVector = Icons.Default.DateRange,
-                                    contentDescription = "date"
+                                    contentDescription = "date",
+                                    tint = White
                                 )
                             }
                         )
                         DropdownMenuItem(
-                            text = { Text(text = stringResource(R.string.difficulty)) },
+                            text = { Text(
+                                text = stringResource(R.string.difficulty),
+                                color = White) },
                             onClick = { onOrderBy("difficulty"); showPopUp = false },
                             leadingIcon = {
                                 Icon(
                                     imageVector = Icons.Default.Build,
-                                    contentDescription = "difficulty"
+                                    contentDescription = "difficulty",
+                                    tint = White
                                 )
                             }
                         )
                         DropdownMenuItem(
-                            text = { Text(text = stringResource(R.string.score)) },
+                            text = { Text(
+                                text = stringResource(R.string.score),
+                                color = White) },
                             onClick = { onOrderBy("score"); showPopUp = false },
                             leadingIcon = {
                                 Icon(
                                     imageVector = Icons.Default.Star,
-                                    contentDescription = "score"
+                                    contentDescription = "score",
+                                    tint = White
                                 )
                             }
                         )
                         DropdownMenuItem(
-                            text = { Text(text = stringResource(R.string.category)) },
+                            text = { Text(
+                                text = stringResource(R.string.category),
+                                color = White) },
                             onClick = { onOrderBy("category"); showPopUp = false },
                             leadingIcon = {
                                 Icon(
                                     imageVector = Icons.Default.MoreVert,
-                                    contentDescription = "category"
+                                    contentDescription = "category",
+                                    tint = White
                                 )
                             }
                         )

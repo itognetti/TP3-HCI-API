@@ -62,7 +62,7 @@ fun CycleDetailsScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = 65.dp),
+                .padding(top = 55.dp),
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
