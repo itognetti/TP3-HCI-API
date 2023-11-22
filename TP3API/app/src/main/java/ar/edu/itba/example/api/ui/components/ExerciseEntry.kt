@@ -66,7 +66,6 @@ fun ExerciseEntry (
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Spacer(modifier = Modifier.width(12.dp))
 
             Text(
                 text = title,

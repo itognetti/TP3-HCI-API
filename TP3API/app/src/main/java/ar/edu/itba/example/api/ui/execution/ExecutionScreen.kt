@@ -45,6 +45,7 @@ import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.components.EmptyState
 import ar.edu.itba.example.api.ui.components.Timer
+import ar.edu.itba.example.api.ui.theme.Black
 import ar.edu.itba.example.api.ui.theme.FOrange
 import ar.edu.itba.example.api.ui.theme.Grey
 import ar.edu.itba.example.api.ui.theme.White
@@ -244,7 +245,7 @@ fun ExecutionScreen(
                                         .fillMaxWidth()
                                         .padding(horizontal = 50.dp, vertical = 10.dp),
                                     thickness = 4.dp,
-                                    color = Grey
+                                    color = Black
                                 )
                                 Text(
                                     text = uiState.cycleExercises.getOrDefault(

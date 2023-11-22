@@ -31,6 +31,7 @@ import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.ui.theme.FOrange
+import ar.edu.itba.example.api.ui.theme.White
 import kotlinx.coroutines.delay
 import kotlin.math.PI
 import kotlin.math.cos
@@ -123,13 +124,13 @@ fun Timer(
                     text = (currentTime / 1000L).toString(),
                     fontSize = 80.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.Black
+                    color = White
                 )
                 Text(
                     text = " s",
                     fontSize = 50.sp,
                     fontWeight = FontWeight.Bold,
-                    color = Color.Black
+                    color = White
                 )
             }
         }
