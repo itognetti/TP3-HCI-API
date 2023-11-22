@@ -67,15 +67,20 @@ fun DetailsScreen(
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
+            Image(
+                painter = painterResource(id = R.drawable.logo),
+                contentDescription = null,
+                modifier = Modifier.size(70.dp)
+            )
 
             Column(modifier = Modifier.fillMaxHeight()) {
-                Text(
-                    text = stringResource(R.string.details),
-                    color = White,
-                    fontSize = 22.sp,
-                    fontWeight = FontWeight(500),
-                    modifier = Modifier.padding(horizontal = 15.dp, vertical = 20.dp),
-                )
+//                Text(
+//                    text = stringResource(R.string.details),
+//                    color = White,
+//                    fontSize = 22.sp,
+//                    fontWeight = FontWeight(500),
+//                    modifier = Modifier.padding(horizontal = 15.dp, vertical = 20.dp),
+//                )
                 //Tabla de ciclos
                 if (uiState.isFetching) {
                     Column(
