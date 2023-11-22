@@ -100,6 +100,10 @@
         "source": "C:\\Users\\Ian\\.gradle\\daemon\\8.0\\ar.edu.itba.example.api.app-main-52:\\drawable\\gym4.png"
     },
     {
+        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_background.PNG.flat",
+        "source": "ar.edu.itba.example.api.app-main-52:/drawable/background.PNG"
+    },
+    {
         "merged": "C:\\Users\\Ian\\.gradle\\daemon\\8.0\\ar.edu.itba.example.api.app-merged_res-50:\\drawable_routine1.png.flat",
         "source": "C:\\Users\\Ian\\.gradle\\daemon\\8.0\\ar.edu.itba.example.api.app-main-52:\\drawable\\routine1.png"
     },

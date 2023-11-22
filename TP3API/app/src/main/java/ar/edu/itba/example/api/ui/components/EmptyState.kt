@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import ar.edu.itba.example.api.ui.theme.Grey
+import ar.edu.itba.example.api.ui.theme.White
 
 
 @Composable
@@ -23,7 +23,7 @@ fun EmptyState(text: String, imgVector: ImageVector){
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Icon(imageVector = imgVector, contentDescription = "No content available", modifier = Modifier.size(100.dp), tint = Grey)
-        Text(text=text, fontSize = 25.sp, color = Grey)
+        Icon(imageVector = imgVector, contentDescription = "No content available", modifier = Modifier.size(100.dp), tint = White)
+        Text(text=text, fontSize = 25.sp, color = White)
     }
 }

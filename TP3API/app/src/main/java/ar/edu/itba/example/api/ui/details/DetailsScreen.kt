@@ -1,6 +1,7 @@
 package ar.edu.itba.example.api.ui.details
 
 import android.widget.Toast
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
@@ -10,7 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -46,104 +49,74 @@ fun DetailsScreen(
         }
     }
 
-    Column(modifier = Modifier.fillMaxHeight()) {
-        //Titulo
-        Text(
-            text = stringResource(R.string.details),
-            fontSize = 22.sp,
-            fontWeight = FontWeight(500),
-            modifier = Modifier.padding(horizontal = 15.dp, vertical = 20.dp),
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.background),
+            contentDescription = null,
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.fillMaxSize()
         )
-        //Tabla de ciclos
-        if (uiState.isFetching) {
-            Column(
-                modifier = Modifier.fillMaxSize(),
-                horizontalAlignment = Alignment.CenterHorizontally,
-                verticalArrangement = Arrangement.Center
-            ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(top = 16.dp),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.logo),
+                contentDescription = null,
+                modifier = Modifier.size(70.dp)
+            )
+
+            Column(modifier = Modifier.fillMaxHeight()) {
                 Text(
-                    text = stringResource(id = R.string.loading_message),
-                    fontSize = 16.sp
+                    text = stringResource(R.string.details),
+                    fontSize = 22.sp,
+                    fontWeight = FontWeight(500),
+                    modifier = Modifier.padding(horizontal = 15.dp, vertical = 20.dp),
                 )
-            }
-        } else {
-            val list = uiState.routineCycles.orEmpty()
-            if (list.isEmpty()){
-                EmptyState(text = stringResource(id = R.string.empty_routine), Icons.Default.Build)
-            } else {
-                LazyColumn(
-                    verticalArrangement = Arrangement.SpaceEvenly,
-                    modifier = Modifier.fillMaxWidth()
-                ) {
-                    items(
-                        count = list.size,
-                        key = { index ->
-                            list[index].id.toString()
-                        }
-                    ) { index ->
-                        CycleEntry(
-                            title = list[index].name,
-                            rounds = list[index].repetitions ?:0,
-                            onNavigateToCycleDetails = onNavigateToCycleDetails,
-                            cycleId = list[index].id ?:-1
+                //Tabla de ciclos
+                if (uiState.isFetching) {
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.loading_message),
+                            fontSize = 16.sp
                         )
+                    }
+                } else {
+                    val list = uiState.routineCycles.orEmpty()
+                    if (list.isEmpty()) {
+                        EmptyState(text = stringResource(id = R.string.empty_routine), Icons.Default.Build)
+                    } else {
+                        LazyColumn(
+                            verticalArrangement = Arrangement.SpaceEvenly,
+                            modifier = Modifier.fillMaxWidth()
+                        ) {
+                            items(
+                                count = list.size,
+                                key = { index ->
+                                    list[index].id.toString()
+                                }
+                            ) { index ->
+                                CycleEntry(
+                                    title = list[index].name,
+                                    rounds = list[index].repetitions ?: 0,
+                                    onNavigateToCycleDetails = onNavigateToCycleDetails,
+                                    cycleId = list[index].id ?: -1
+                                )
+                            }
+                        }
                     }
                 }
             }
         }
     }
 }
-
-/*
-@Composable
-fun ExampleRoutineScreen() {
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-    ) {
-        Column(
-            modifier = Modifier
-                .background(Black)
-                .fillMaxSize()
-                .padding(5.dp),
-            verticalArrangement = Arrangement.Top,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            CardItem(
-                imageResId = R.drawable.gym1,
-                title = stringResource(id = R.string.Rout1),
-                description = stringResource(id = R.string.Desc1)
-            )
-
-        }
-
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(20.dp),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            Spacer(modifier = Modifier.height(66.dp))
-            ExerciseItem(stringResource(id = R.string.Exercise1))
-            ExerciseItem(stringResource(id = R.string.Exercise2))
-            ExerciseItem(stringResource(id = R.string.Exercise3))
-            Spacer(modifier = Modifier.height(16.dp))
-            // Botón de Inicio
-            Button(
-                onClick = {
-
-                },
-                colors = ButtonDefaults.buttonColors(FOrange),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(50.dp)
-            ) {
-                Text(
-                    text = stringResource(id = R.string.StartRoutine),
-                    fontWeight = FontWeight.SemiBold)
-            }
-        }
-    }
-}
- */

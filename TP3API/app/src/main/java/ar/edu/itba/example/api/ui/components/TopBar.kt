@@ -34,6 +34,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.main.MainViewModel
 import ar.edu.itba.example.api.ui.theme.FOrange
+import ar.edu.itba.example.api.ui.theme.Grey
 import ar.edu.itba.example.api.util.getViewModelFactory
 
 
@@ -77,7 +78,7 @@ fun TopBar(
     if(currentTopBar != null){
         TopAppBar(
             title = { currentTopBar.title },
-            Modifier.background(color = FOrange),
+            modifier = Modifier.background(color = FOrange),
             navigationIcon = {
                 if (currentTopBar.hasBackArrow) {
                     IconButton(

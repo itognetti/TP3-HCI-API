@@ -1,8 +1,9 @@
 package ar.edu.itba.example.api.ui.home
 
 import android.widget.Toast
-import androidx.compose.foundation.background
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,8 +14,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -23,7 +26,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.repeatOnLifecycle
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.components.RoutineCardList
-import ar.edu.itba.example.api.ui.theme.FOrange
 import ar.edu.itba.example.api.ui.theme.White
 import ar.edu.itba.example.api.util.getViewModelFactory
 import com.google.accompanist.swiperefresh.SwipeRefresh
@@ -78,35 +80,50 @@ fun HomeScreen(
         state = rememberSwipeRefreshState(uiState.isFetching),
         onRefresh = {viewModel.getRoutines(orderBy)}
     ) {
-        Column(
-            modifier = Modifier.background(White)
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
         ) {
-            Text(
-                text = stringResource(R.string.routines),
-                fontWeight = FontWeight.Bold,
-                fontSize = 28.sp,
-                modifier = Modifier.padding(horizontal = 15.dp, vertical = 20.dp)
+            Image(
+                painter = painterResource(id = R.drawable.background),
+                contentDescription = null,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.fillMaxSize()
             )
-
-            if (uiState.isFetching) {
-                Column(
-                    modifier = Modifier.fillMaxSize(),
-                    horizontalAlignment = Alignment.CenterHorizontally,
-                    verticalArrangement = Arrangement.Center
-                ) {
-                    Text(
-                        text = stringResource(id = R.string.loading_message),
-                        fontSize = 16.sp
-                    )
-                }
-            } else {
-                RoutineCardList(
-                    list = uiState.routines?.filter { routine -> routine.user?.username == uiState.currentUser?.username }
-                        .orEmpty(),
-                    onNavigateToRoutineDetails = onNavigateToRoutineDetails,
-                    onNavigateToExecution = onNavigateToExecution
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(top = 16.dp),
+                verticalArrangement = Arrangement.Top,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.logo),
+                    contentDescription = null,
+                    modifier = Modifier.size(70.dp)
                 )
-                Spacer(modifier = Modifier.size(20.dp))
+
+                if (uiState.isFetching) {
+                    Column(
+                        modifier = Modifier.fillMaxSize(),
+                        horizontalAlignment = Alignment.CenterHorizontally,
+                        verticalArrangement = Arrangement.Center
+                    ) {
+                        Text(
+                            text = stringResource(id = R.string.loading_message),
+                            fontSize = 16.sp,
+                            color = White
+                        )
+                    }
+                } else {
+                    RoutineCardList(
+                        list = uiState.routines?.filter { routine -> routine.user?.username == uiState.currentUser?.username }.orEmpty(),
+                        onNavigateToRoutineDetails = onNavigateToRoutineDetails,
+                        onNavigateToExecution = onNavigateToExecution
+                    )
+
+                    Spacer(modifier = Modifier.size(20.dp))
+                }
             }
         }
     }

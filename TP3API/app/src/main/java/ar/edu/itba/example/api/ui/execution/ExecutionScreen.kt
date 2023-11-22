@@ -2,12 +2,14 @@ package ar.edu.itba.example.api.ui.execution
 
 import android.preference.PreferenceManager
 import android.widget.Toast
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -16,6 +18,8 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.KeyboardArrowRight
+import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Divider
@@ -31,7 +35,9 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -165,195 +171,245 @@ fun ExecutionScreen(
     val currentCycle = uiState.routineCycles?.getOrNull(currentCycleIndex)
 
 
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
+    Box(
         modifier = Modifier
-            .padding(12.dp)
-            .fillMaxHeight(),
-        verticalArrangement = Arrangement.SpaceBetween
+            .fillMaxSize()
     ) {
-        if (rivar) {
+        Image(
+            painter = painterResource(id = R.drawable.background),
+            contentDescription = null,
+            contentScale = ContentScale.Crop,
+            modifier = Modifier.fillMaxSize()
+        )
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(top = 16.dp),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.logo),
+                contentDescription = null,
+                modifier = Modifier.size(70.dp)
+            )
+
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
+                modifier = Modifier
+                    .padding(12.dp)
+                    .fillMaxHeight(),
+                verticalArrangement = Arrangement.SpaceBetween
             ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(horizontal = 6.dp)
-                        .padding(top = 3.dp),
-                    horizontalArrangement = Arrangement.End
-                ) {
-                    Icon(
-                        imageVector = Icons.Default.Close,
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(35.dp)
-                            .clickable { onNavigateBack() },
-                        tint = Grey
-                    )
-                }
-
-                if(!advancedModeEnabled){
-                    //Nombre del ciclo
-                    if (uiState.cycleExercises[uiState.routineCycles!!.getOrNull(
-                            currentCycleIndex
-                        )?.id]
-                            .orEmpty().isEmpty()
+                if (rivar) {
+                    Column(
+                        horizontalAlignment = Alignment.CenterHorizontally,
                     ) {
-                        EmptyState(text = stringResource(id = R.string.empty_routine), Icons.Default.Build)
-                    } else {
-                        Text(
-                            text = currentCycle?.name ?: "Cycle",
-                            fontSize = 32.sp,
-                            fontWeight = FontWeight(500)
-                        )
-                        Divider(
+                        Row(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .padding(horizontal = 50.dp, vertical = 10.dp),
-                            thickness = 4.dp,
-                            color = Grey
-                        )
-                        Text(
-                            text = uiState.cycleExercises.getOrDefault(uiState.routineCycles.getOrNull(currentCycleIndex)?.id ?: -1, null)
-                                ?.get(currentExerciseIndex)?.exercise?.name ?: "Titulo por defecto",
-                            color = FOrange,
-                            fontSize = 28.sp,
-                            fontWeight = FontWeight(500)
-                        )
-                        val reps: String
-                        val numReps: Int = uiState.cycleExercises.getOrDefault(uiState.routineCycles.getOrNull(currentCycleIndex)?.id ?: -1, null)
-                            ?.get(currentExerciseIndex)?.repetitions?:0
-                        reps = if(numReps == 0){
-                            "--"
-                        } else {
-                            numReps.toString()
-                        }
-                        Text(
-                            text = "Reps: $reps",
-                            color = Grey,
-                            fontSize = 30.sp,
-                            fontWeight = FontWeight(600),
-                            modifier = Modifier
-                                .padding(top = 6.dp)
-                        )
-                        Box(
-                            contentAlignment = Alignment.Center,
+                                .padding(horizontal = 6.dp)
+                                .padding(top = 3.dp),
+                            horizontalArrangement = Arrangement.End
                         ) {
-                            Timer(
-                                totalTime = uiState.cycleExercises.getOrDefault(uiState.routineCycles.getOrNull(currentCycleIndex)?.id ?: -1, null)
-                                    ?.get(currentExerciseIndex)?.duration?.times(1000L) ?: 0,
-                                handleColor = FOrange,
-                                inactiveBarColor = Grey,
-                                activeBarColor = White,
-                                nextFunc = { nextExercise() },
-                                prevFunc = { previousExercise() },
-                                hasPrev = currentCycleIndex > 0 || currentExerciseIndex > 0,
+                            Icon(
+                                imageVector = Icons.Default.Close,
+                                contentDescription = null,
                                 modifier = Modifier
-                                    .size(280.dp),
-                                strokeWidth = 10.dp
+                                    .size(35.dp)
+                                    .clickable { onNavigateBack() },
+                                tint = White
                             )
+                        }
+
+                        if (!advancedModeEnabled) {
+                            //Nombre del ciclo
+                            if (uiState.cycleExercises[uiState.routineCycles!!.getOrNull(
+                                    currentCycleIndex
+                                )?.id]
+                                    .orEmpty().isEmpty()
+                            ) {
+                                EmptyState(
+                                    text = stringResource(id = R.string.empty_routine),
+                                    Icons.Default.Build
+                                )
+                            } else {
+                                Text(
+                                    text = currentCycle?.name ?: "Cycle",
+                                    fontSize = 32.sp,
+                                    fontWeight = FontWeight(500),
+                                    color = White
+                                )
+                                Divider(
+                                    modifier = Modifier
+                                        .fillMaxWidth()
+                                        .padding(horizontal = 50.dp, vertical = 10.dp),
+                                    thickness = 4.dp,
+                                    color = Grey
+                                )
+                                Text(
+                                    text = uiState.cycleExercises.getOrDefault(
+                                        uiState.routineCycles.getOrNull(
+                                            currentCycleIndex
+                                        )?.id ?: -1, null
+                                    )
+                                        ?.get(currentExerciseIndex)?.exercise?.name
+                                        ?: "Titulo por defecto",
+                                    color = FOrange,
+                                    fontSize = 28.sp,
+                                    fontWeight = FontWeight(500)
+                                )
+                                val reps: String
+                                val numReps: Int = uiState.cycleExercises.getOrDefault(
+                                    uiState.routineCycles.getOrNull(currentCycleIndex)?.id ?: -1,
+                                    null
+                                )
+                                    ?.get(currentExerciseIndex)?.repetitions ?: 0
+                                reps = if (numReps == 0) {
+                                    "--"
+                                } else {
+                                    numReps.toString()
+                                }
+                                Text(
+                                    text = "Reps: $reps",
+                                    color = White,
+                                    fontSize = 30.sp,
+                                    fontWeight = FontWeight(600),
+                                    modifier = Modifier
+                                        .padding(top = 6.dp)
+                                )
+                                Box(
+                                    contentAlignment = Alignment.Center,
+                                ) {
+                                    Timer(
+                                        totalTime = uiState.cycleExercises.getOrDefault(
+                                            uiState.routineCycles.getOrNull(
+                                                currentCycleIndex
+                                            )?.id ?: -1, null
+                                        )
+                                            ?.get(currentExerciseIndex)?.duration?.times(1000L)
+                                            ?: 0,
+                                        handleColor = FOrange,
+                                        inactiveBarColor = Grey,
+                                        activeBarColor = White,
+                                        nextFunc = { nextExercise() },
+                                        prevFunc = { previousExercise() },
+                                        hasPrev = currentCycleIndex > 0 || currentExerciseIndex > 0,
+                                        modifier = Modifier
+                                            .size(280.dp),
+                                        strokeWidth = 10.dp
+                                    )
+                                }
+                            }
+                        } else {
+                            //Nombre del ciclo
+                            Column(
+                                modifier = Modifier
+                                    .fillMaxHeight(),
+                                verticalArrangement = Arrangement.SpaceBetween,
+                            ) {
+                                Column(
+                                    modifier = Modifier.fillMaxHeight(),
+                                    horizontalAlignment = Alignment.CenterHorizontally,
+                                    verticalArrangement = Arrangement.SpaceEvenly
+                                ) {
+                                    Box {
+                                        Column(
+                                            modifier = Modifier,
+                                            horizontalAlignment = Alignment.CenterHorizontally
+                                        ) {
+                                            Text(
+                                                text = currentCycle?.name ?: "Cycle",
+                                                fontSize = 32.sp,
+                                                fontWeight = FontWeight(500),
+                                                color = White
+                                            )
+                                            Divider(
+                                                modifier = Modifier
+                                                    .fillMaxWidth()
+                                                    .padding(horizontal = 50.dp, vertical = 10.dp),
+                                                thickness = 4.dp,
+                                                color = Grey
+                                            )
+                                        }
+                                    }
+                                    LazyColumn(
+                                        modifier = Modifier
+                                            .size(500.dp),
+                                    ) {
+                                        val list =
+                                            uiState.cycleExercises[uiState.routineCycles!!.getOrNull(
+                                                currentCycleIndex
+                                            )?.id!!].orEmpty()
+                                        items(
+                                            count = list.size,
+                                            key = { index -> list[index].exercise.name!! }
+                                        ) { index ->
+                                            Row(
+                                                modifier = Modifier
+                                                    .fillMaxWidth()
+                                                    .padding(16.dp),
+                                                horizontalArrangement = Arrangement.SpaceAround
+                                            ) {
+                                                Text(
+                                                    text = list[index].exercise.name!!
+                                                )
+                                                Text(
+                                                    text = "reps" + list[index].repetitions
+                                                )
+                                                Text(
+                                                    text = "time" + list[index].duration
+                                                )
+                                            }
+                                        }
+                                    }
+                                    Row(
+                                        modifier = Modifier
+                                            .fillMaxWidth(),
+                                        horizontalArrangement = Arrangement.SpaceEvenly
+                                    ) {
+                                        fun nextC() {
+                                            if (currentCycleIndex + 1 == uiState.routineCycles!!.size) {
+                                                onNavigateToHome()
+                                            } else {
+                                                currentCycleIndex++
+                                            }
+                                        }
+                                        Button(
+                                            onClick = { if (currentCycleIndex > 0) currentCycleIndex-- },
+                                            colors = ButtonDefaults.buttonColors(FOrange),
+                                            shape = RoundedCornerShape(35.dp)
+                                        ) {
+                                            Icon(
+                                                tint = Color.White,
+                                                imageVector = Icons.Filled.PlayArrow,
+                                                contentDescription = "Start"
+                                            )
+                                        }
+
+                                        Button(
+                                            onClick = { nextC() },
+                                            colors = ButtonDefaults.buttonColors(FOrange),
+                                            shape = RoundedCornerShape(35.dp)
+                                        ) {
+                                            Icon(
+                                                tint = Color.White,
+                                                imageVector = Icons.Filled.KeyboardArrowRight,
+                                                contentDescription = "Next"
+                                            )
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                 } else {
-                    //Nombre del ciclo
-                    Column(
-                        modifier = Modifier
-                            .fillMaxHeight(),
-                        verticalArrangement = Arrangement.SpaceBetween,
-                    ) {
-                        Column(
-                            modifier = Modifier.fillMaxHeight(),
-                            horizontalAlignment = Alignment.CenterHorizontally,
-                            verticalArrangement = Arrangement.SpaceEvenly
-                        ) {
-                            Box{
-                                Column(
-                                    modifier = Modifier,
-                                    horizontalAlignment = Alignment.CenterHorizontally
-                                ) {
-                                    Text(
-                                        text = currentCycle?.name ?: "Cycle",
-                                        fontSize = 32.sp,
-                                        fontWeight = FontWeight(500)
-                                    )
-                                    Divider(
-                                        modifier = Modifier
-                                            .fillMaxWidth()
-                                            .padding(horizontal = 50.dp, vertical = 10.dp),
-                                        thickness = 4.dp,
-                                        color = Grey
-                                    )
-                                }
-                            }
-                            LazyColumn(
-                                modifier = Modifier
-                                    .size(500.dp),
-                            ) {
-                                val list = uiState.cycleExercises[uiState.routineCycles!!.getOrNull(currentCycleIndex)?.id!!].orEmpty()
-                                items(
-                                    count = list.size,
-                                    key = { index -> list[index].exercise.name!! }
-                                ) { index ->
-                                    Row(
-                                        modifier = Modifier
-                                            .fillMaxWidth()
-                                            .padding(16.dp),
-                                        horizontalArrangement = Arrangement.SpaceAround
-                                    ) {
-                                        Text(
-                                            text = list[index].exercise.name!!
-                                        )
-                                        Text(
-                                            text = "reps" + list[index].repetitions
-                                        )
-                                        Text(
-                                            text = "time" + list[index].duration
-                                        )
-                                    }
-                                }
-                            }
-                            Row(
-                                modifier = Modifier
-                                    .fillMaxWidth(),
-                                horizontalArrangement = Arrangement.SpaceEvenly
-                            ) {
-                                fun nextC(){
-                                    if (currentCycleIndex+1==uiState.routineCycles!!.size){
-                                        onNavigateToHome()
-                                    } else {
-                                        currentCycleIndex++
-                                    }
-                                }
-                                Button(
-                                    onClick = { if (currentCycleIndex>0) currentCycleIndex--},
-                                    colors = ButtonDefaults.buttonColors(FOrange),
-                                    shape = RoundedCornerShape(35.dp)
-                                ) {
-                                    Text(
-                                        text = "previous",
-                                        color = Color.White
-                                    )
-                                }
-
-                                Button(
-                                    onClick = { nextC() },
-                                    colors = ButtonDefaults.buttonColors(FOrange),
-                                    shape = RoundedCornerShape(35.dp)
-                                ) {
-                                    Text(
-                                        text = "next",
-                                        color = Color.White
-                                    )
-                                }
-                            }
-                        }
-                    }
+                    Text(
+                        text = stringResource(R.string.loading_message),
+                        color = White
+                    )
                 }
             }
-
-        } else {
-            Text(text = stringResource(R.string.loading_message))
         }
     }
 }
