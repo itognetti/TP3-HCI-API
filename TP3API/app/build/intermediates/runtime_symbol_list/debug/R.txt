@@ -207,6 +207,7 @@ int mipmap ic_launcher_round 0x7f080002
 int string Myroutines 0x7f090000
 int string StartRoutine 0x7f090001
 int string aboutus 0x7f090002
+int string advanced_mode 0x7f09003e
 int string androidx_startup 0x7f090003
 int string app_name 0x7f090004
 int string call_notification_answer_action 0x7f090005

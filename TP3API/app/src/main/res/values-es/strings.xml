@@ -35,5 +35,6 @@
     <string name="category">Categoría</string>
     <string name="difficulty">Dificultad</string>
     <string name="score">Puntuación</string>
+    <string name="advanced_mode">Modo avanzado</string>
 
 </resources>

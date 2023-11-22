@@ -3,15 +3,12 @@ package ar.edu.itba.example.api.ui.components
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowForward
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.List
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.PlayArrow
-import androidx.compose.material3.Button
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -39,7 +36,6 @@ import kotlin.math.sin
 @Composable
 fun Timer(
     totalTime: Long,
-    handleColor: Color,
     inactiveBarColor: Color,
     activeBarColor: Color,
     modifier: Modifier = Modifier,
@@ -48,7 +44,7 @@ fun Timer(
     hasPrev: Boolean,
     initialValue: Float = 1f,
     strokeWidth: Dp = 5.dp
-    ) {
+) {
     var size by remember {
         mutableStateOf(IntSize.Zero)
     }

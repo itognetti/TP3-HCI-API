@@ -23,6 +23,7 @@ mipmap ic_launcher_round
 string Myroutines
 string StartRoutine
 string aboutus
+string advanced_mode
 string app_name
 string category
 string cycle_details

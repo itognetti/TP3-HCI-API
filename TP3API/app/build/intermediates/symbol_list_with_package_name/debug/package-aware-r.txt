@@ -208,6 +208,7 @@ mipmap ic_launcher_round
 string Myroutines
 string StartRoutine
 string aboutus
+string advanced_mode
 string androidx_startup
 string app_name
 string call_notification_answer_action

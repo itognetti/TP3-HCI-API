@@ -1,6 +1,5 @@
 package ar.edu.itba.example.api.ui.execution
 
-import android.preference.PreferenceManager
 import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -24,6 +23,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Icon
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -40,6 +40,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.R
@@ -71,8 +72,7 @@ fun ExecutionScreen(
     var finishedThreads by remember { mutableIntStateOf(0) }
     val mutex = Mutex()
 
-    val preferences = PreferenceManager.getDefaultSharedPreferences(LocalContext.current)
-    val advancedModeEnabled by remember { mutableStateOf(preferences.getBoolean("advanced_exec_enabled",false)) }
+    var advancedModeEnabled by remember { mutableStateOf(false) }
 
     fun nextCycle() {
         if (currentCycleIndex + 1 >= uiState.routineCycles.orEmpty().size) {
@@ -187,11 +187,6 @@ fun ExecutionScreen(
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.logo),
-                contentDescription = null,
-                modifier = Modifier.size(70.dp)
-            )
 
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
@@ -218,6 +213,19 @@ fun ExecutionScreen(
                                     .size(35.dp)
                                     .clickable { onNavigateBack() },
                                 tint = White
+                            )
+                        }
+
+                        Row {
+                            Text(
+                                text = stringResource(R.string.advanced_mode),
+                                color = White,
+                                textAlign = TextAlign.Center
+                            )
+                            Switch(
+                                checked = advancedModeEnabled,
+                                onCheckedChange = { advancedModeEnabled = it },
+                                modifier = Modifier.padding(bottom = 10.dp)
                             )
                         }
 
@@ -288,14 +296,13 @@ fun ExecutionScreen(
                                         )
                                             ?.get(currentExerciseIndex)?.duration?.times(1000L)
                                             ?: 0,
-                                        handleColor = FOrange,
                                         inactiveBarColor = Grey,
                                         activeBarColor = White,
+                                        modifier = Modifier
+                                            .size(280.dp),
                                         nextFunc = { nextExercise() },
                                         prevFunc = { previousExercise() },
                                         hasPrev = currentCycleIndex > 0 || currentExerciseIndex > 0,
-                                        modifier = Modifier
-                                            .size(280.dp),
                                         strokeWidth = 10.dp
                                     )
                                 }
