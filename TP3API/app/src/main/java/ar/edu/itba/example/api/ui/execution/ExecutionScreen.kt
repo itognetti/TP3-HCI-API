@@ -74,7 +74,6 @@ fun ExecutionScreen(
     val preferences = PreferenceManager.getDefaultSharedPreferences(LocalContext.current)
     val advancedModeEnabled by remember { mutableStateOf(preferences.getBoolean("advanced_exec_enabled",false)) }
 
-    //var allExercises by remember { mutableStateOf( HashMap<Int, List<CycleContent>?>() ) }
     fun nextCycle() {
         if (currentCycleIndex + 1 >= uiState.routineCycles.orEmpty().size) {
             onNavigateToHome()

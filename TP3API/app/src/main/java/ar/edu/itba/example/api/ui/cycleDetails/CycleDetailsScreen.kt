@@ -22,6 +22,7 @@ import ar.edu.itba.example.api.ui.components.EmptyState
 import ar.edu.itba.example.api.ui.components.ExerciseEntry
 import kotlinx.coroutines.launch
 import ar.edu.itba.example.api.R
+import ar.edu.itba.example.api.ui.theme.White
 import ar.edu.itba.example.api.util.getViewModelFactory
 
 @Composable
@@ -61,21 +62,17 @@ fun CycleDetailsScreen(
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(top = 16.dp),
+                .padding(top = 65.dp),
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.logo),
-                contentDescription = null,
-                modifier = Modifier.size(70.dp)
-            )
 
             Column {
                 //Titulo
                 Text(
                     text = stringResource(R.string.cycle_details),
                     fontSize = 22.sp,
+                    color = White,
                     fontWeight = FontWeight(500),
                     modifier = Modifier.padding(horizontal = 15.dp, vertical = 20.dp),
                 )

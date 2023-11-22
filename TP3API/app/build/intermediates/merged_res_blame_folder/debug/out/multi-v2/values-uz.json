@@ -4,7 +4,6 @@
             "outputFile": "ar.edu.itba.example.api.app-mergeDebugResources-48:/values-uz/values-uz.xml",
             "map": [
                 {
-<<<<<<< Updated upstream
                     "source": "/Users/axelcastro/.gradle/caches/transforms-3/ee64e97561dea54bff65e93822e94c1c/transformed/ui-release/res/values-uz/values-uz.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
@@ -23,9 +22,6 @@
                 },
                 {
                     "source": "/Users/axelcastro/.gradle/caches/transforms-3/95307028250a3d1c2707ec3c5d80d07c/transformed/material3-1.0.0/res/values-uz/values-uz.xml",
-=======
-                    "source": "C:\\Users\\L\\.gradle\\caches\\transforms-3\\95307028250a3d1c2707ec3c5d80d07c\\transformed\\material3-1.0.0\\res\\values-uz\\values-uz.xml",
->>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
@@ -42,28 +38,7 @@
                     }
                 },
                 {
-<<<<<<< Updated upstream
                     "source": "/Users/axelcastro/.gradle/caches/transforms-3/e060ddb424a06ecfb8e75da3d70f4c48/transformed/core-1.12.0/res/values-uz/values-uz.xml",
-=======
-                    "source": "C:\\Users\\L\\.gradle\\caches\\transforms-3\\e060ddb424a06ecfb8e75da3d70f4c48\\transformed\\core-1.12.0\\res\\values-uz\\values-uz.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,157,259,360,460,568,672,791",
-                        "endColumns": "101,101,100,99,107,103,118,100",
-                        "endOffsets": "152,254,355,455,563,667,786,887"
-                    },
-                    "to": {
-                        "startLines": "2,3,4,5,6,7,8,26",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,207,309,410,510,618,722,2288",
-                        "endColumns": "101,101,100,99,107,103,118,100",
-                        "endOffsets": "202,304,405,505,613,717,836,2384"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\L\\.gradle\\caches\\transforms-3\\ee64e97561dea54bff65e93822e94c1c\\transformed\\ui-release\\res\\values-uz\\values-uz.xml",
->>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

@@ -68,8 +68,8 @@ class MainActivity : ComponentActivity() {
                         Column(
                             modifier = Modifier
                                 .fillMaxSize()
-                                .padding(bottom = paddingValues.calculateBottomPadding()
-                                )
+                                .padding(bottom = paddingValues.calculateBottomPadding())
+                                .padding(top = 10.dp)
                         ) {
                             AppNavGraph(navController = navController, orderBy)
                         }

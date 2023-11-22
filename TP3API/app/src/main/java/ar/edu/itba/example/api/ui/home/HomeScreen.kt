@@ -98,12 +98,6 @@ fun HomeScreen(
                 verticalArrangement = Arrangement.Top,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Image(
-                    painter = painterResource(id = R.drawable.logo),
-                    contentDescription = null,
-                    modifier = Modifier.size(70.dp)
-                )
-
                 if (uiState.isFetching) {
                     Column(
                         modifier = Modifier.fillMaxSize(),

@@ -4,28 +4,7 @@
             "outputFile": "ar.edu.itba.example.api.app-mergeDebugResources-48:/values-lo/values-lo.xml",
             "map": [
                 {
-<<<<<<< Updated upstream
                     "source": "/Users/axelcastro/.gradle/caches/transforms-3/ee64e97561dea54bff65e93822e94c1c/transformed/ui-release/res/values-lo/values-lo.xml",
-=======
-                    "source": "C:\\Users\\L\\.gradle\\caches\\transforms-3\\95307028250a3d1c2707ec3c5d80d07c\\transformed\\material3-1.0.0\\res\\values-lo\\values-lo.xml",
-                    "from": {
-                        "startLines": "2,3,4",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "55,132,208",
-                        "endColumns": "76,75,77",
-                        "endOffsets": "127,203,281"
-                    },
-                    "to": {
-                        "startLines": "11,14,16",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "978,1262,1427",
-                        "endColumns": "76,75,77",
-                        "endOffsets": "1050,1333,1500"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\L\\.gradle\\caches\\transforms-3\\ee64e97561dea54bff65e93822e94c1c\\transformed\\ui-release\\res\\values-lo\\values-lo.xml",
->>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -42,24 +21,20 @@
                     }
                 },
                 {
-<<<<<<< Updated upstream
                     "source": "/Users/axelcastro/.gradle/caches/transforms-3/95307028250a3d1c2707ec3c5d80d07c/transformed/material3-1.0.0/res/values-lo/values-lo.xml",
-=======
-                    "source": "C:\\Users\\L\\.gradle\\caches\\transforms-3\\e060ddb424a06ecfb8e75da3d70f4c48\\transformed\\core-1.12.0\\res\\values-lo\\values-lo.xml",
->>>>>>> Stashed changes
                     "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,151,254,353,451,552,650,761",
-                        "endColumns": "95,102,98,97,100,97,110,100",
-                        "endOffsets": "146,249,348,446,547,645,756,857"
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,132,208",
+                        "endColumns": "76,75,77",
+                        "endOffsets": "127,203,281"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,26",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,201,304,403,501,602,700,2222",
-                        "endColumns": "95,102,98,97,100,97,110,100",
-                        "endOffsets": "196,299,398,496,597,695,806,2318"
+                        "startLines": "11,14,16",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "978,1262,1427",
+                        "endColumns": "76,75,77",
+                        "endOffsets": "1050,1333,1500"
                     }
                 },
                 {
