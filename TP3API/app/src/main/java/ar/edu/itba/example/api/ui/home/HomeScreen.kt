@@ -1,6 +1,7 @@
 package ar.edu.itba.example.api.ui.home
 
 import android.widget.Toast
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -22,6 +23,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.repeatOnLifecycle
 import ar.edu.itba.example.api.R
 import ar.edu.itba.example.api.ui.components.RoutineCardList
+import ar.edu.itba.example.api.ui.theme.FOrange
+import ar.edu.itba.example.api.ui.theme.White
 import ar.edu.itba.example.api.util.getViewModelFactory
 import com.google.accompanist.swiperefresh.SwipeRefresh
 import com.google.accompanist.swiperefresh.rememberSwipeRefreshState
@@ -75,7 +78,9 @@ fun HomeScreen(
         state = rememberSwipeRefreshState(uiState.isFetching),
         onRefresh = {viewModel.getRoutines(orderBy)}
     ) {
-        Column {
+        Column(
+            modifier = Modifier.background(White)
+        ) {
             Text(
                 text = stringResource(R.string.routines),
                 fontWeight = FontWeight.Bold,
