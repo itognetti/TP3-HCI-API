@@ -66,16 +66,22 @@ fun ExerciseEntry (
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
+            Spacer(modifier = Modifier.width(12.dp))
+
             Text(
                 text = title,
                 fontSize = 22.sp,
                 color = White
             )
+            Spacer(modifier = Modifier.width(12.dp))
+
             Text(
                 text = if (reps>0) "$reps reps." else "-",
                 fontSize = 18.sp,
                 color = White
             )
+            Spacer(modifier = Modifier.width(12.dp))
+
             Text(
                 text =  if (time>0) "$time secs." else "-",
                 fontSize = 18.sp,

@@ -72,6 +72,7 @@ fun ExploreScreen(
         if (finished) {
             Box(
                 modifier = Modifier
+                    .padding(top=43.dp)
                     .fillMaxSize()
             ) {
                 Image(

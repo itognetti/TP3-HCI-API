@@ -1,9 +1,20 @@
 package ar.edu.itba.example.api.ui.components
 
 import androidx.compose.foundation.Canvas
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowForward
+import androidx.compose.material.icons.filled.Close
+import androidx.compose.material.icons.filled.List
+import androidx.compose.material.icons.filled.Menu
+import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -19,6 +30,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import ar.edu.itba.example.api.ui.theme.FOrange
 import kotlinx.coroutines.delay
 import kotlin.math.PI
 import kotlin.math.cos
@@ -122,18 +134,25 @@ fun Timer(
             }
         }
         Row(
-            horizontalArrangement = Arrangement.SpaceAround,
+            //horizontalArrangement = Arrangement.SpaceAround,
+            //modifier = Modifier
+              //  .fillMaxWidth()
             modifier = Modifier
                 .fillMaxWidth()
+                .background(MaterialTheme.colorScheme.background),
+                //.align(Alignment.BottomCenter),
+            horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Button(
+            IconButton(
                 enabled = hasPrev,
                 onClick = { prevFunc() },
-                shape = RoundedCornerShape(35.dp)
+                //shape = RoundedCornerShape(35.dp)
             ) {
-                Text(text = "previous", color = Color.White)
+                //Text(text = "previous", color = Color.White)
+                Icon(Icons.Default.ArrowBack, contentDescription = "Listar", tint = FOrange)
+
             }
-            Button(
+            IconButton(
                 enabled = value != 0F,
                 onClick = {
                     if (currentTime <= 0L) {
@@ -143,8 +162,17 @@ fun Timer(
                         isTimerRunning = !isTimerRunning
                     }
                 },
-                shape = RoundedCornerShape(35.dp)
-            ) {
+                //shape = RoundedCornerShape(35.dp)
+            ){
+                val icon = if (isTimerRunning) {
+                    Icons.Default.Menu
+                } else {
+                    Icons.Default.PlayArrow
+                }
+                Icon(icon, contentDescription = "Pausar", tint = FOrange)
+            }
+            /*
+            {
                 Text(
                     text = if (isTimerRunning && currentTime >= 0L) "pause"
                     else if (!isTimerRunning && currentTime >= 0L) "start"
@@ -152,11 +180,18 @@ fun Timer(
                     color = Color.White
                 )
             }
-            Button(
+
+             */
+            IconButton(
                 onClick = { nextFunc() },
-                shape = RoundedCornerShape(35.dp)
+                //shape = RoundedCornerShape(35.dp)
             ) {
-                Text(text = "next", color = Color.White)
+                //Text(text = "next", color = Color.White)
+                Icon(Icons.Default.ArrowForward, contentDescription = "Flecha hacia adelante", tint = FOrange)
+
+            }
+            IconButton(onClick = { /* Manejar acción de siguiente */ }) {
+                Icon(Icons.Default.List, contentDescription = "Listar", tint = FOrange)
             }
         }
     }

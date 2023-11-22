@@ -4,6 +4,7 @@
             "outputFile": "ar.edu.itba.example.api.app-mergeDebugResources-48:/values-my/values-my.xml",
             "map": [
                 {
+<<<<<<< Updated upstream
                     "source": "/Users/axelcastro/.gradle/caches/transforms-3/e060ddb424a06ecfb8e75da3d70f4c48/transformed/core-1.12.0/res/values-my/values-my.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -39,6 +40,9 @@
                 },
                 {
                     "source": "/Users/axelcastro/.gradle/caches/transforms-3/ee64e97561dea54bff65e93822e94c1c/transformed/ui-release/res/values-my/values-my.xml",
+=======
+                    "source": "C:\\Users\\L\\.gradle\\caches\\transforms-3\\ee64e97561dea54bff65e93822e94c1c\\transformed\\ui-release\\res\\values-my\\values-my.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -53,6 +57,43 @@
                         "endColumns": "93,87,103,103,82,83,98,88,81,65,66,86,85,74,80,65,125",
                         "endOffsets": "936,1024,1208,1312,1472,1634,1733,1822,1904,1970,2037,2124,2210,2285,2467,2533,2659"
                     }
+<<<<<<< Updated upstream
+=======
+                },
+                {
+                    "source": "C:\\Users\\L\\.gradle\\caches\\transforms-3\\95307028250a3d1c2707ec3c5d80d07c\\transformed\\material3-1.0.0\\res\\values-my\\values-my.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,135,212",
+                        "endColumns": "79,76,77",
+                        "endOffsets": "130,207,285"
+                    },
+                    "to": {
+                        "startLines": "11,14,16",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "1029,1317,1477",
+                        "endColumns": "79,76,77",
+                        "endOffsets": "1104,1389,1550"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\L\\.gradle\\caches\\transforms-3\\e060ddb424a06ecfb8e75da3d70f4c48\\transformed\\core-1.12.0\\res\\values-my\\values-my.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,158,262,365,467,572,678,797",
+                        "endColumns": "102,103,102,101,104,105,118,100",
+                        "endOffsets": "153,257,360,462,567,673,792,893"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,26",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,208,312,415,517,622,728,2290",
+                        "endColumns": "102,103,102,101,104,105,118,100",
+                        "endOffsets": "203,307,410,512,617,723,842,2386"
+                    }
+>>>>>>> Stashed changes
                 }
             ]
         }

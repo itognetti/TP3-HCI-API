@@ -83,6 +83,7 @@ fun HomeScreen(
         Box(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(top=43.dp)
         ) {
             Image(
                 painter = painterResource(id = R.drawable.background),

@@ -4,7 +4,28 @@
             "outputFile": "ar.edu.itba.example.api.app-mergeDebugResources-48:/values-es/values-es.xml",
             "map": [
                 {
+<<<<<<< Updated upstream
                     "source": "/Users/axelcastro/.gradle/caches/transforms-3/ee64e97561dea54bff65e93822e94c1c/transformed/ui-release/res/values-es/values-es.xml",
+=======
+                    "source": "C:\\Users\\L\\Documents\\GitHub\\TP3-HCI-API\\TP3API\\app\\src\\main\\res\\values-es\\strings.xml",
+                    "from": {
+                        "startLines": "21,22,19,1,34,29,33,28,35,31,30,13,2,14,7,5,9,24,16,15,17,18,25,32,4,11,27,36,6,3,10,20,12",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "1090,1142,906,17,1719,1448,1679,1402,1767,1569,1512,576,62,623,319,213,375,1202,727,671,786,841,1270,1628,162,470,1356,1818,272,110,425,958,520",
+                        "endColumns": "50,56,50,43,46,62,38,44,49,57,55,45,46,46,52,57,48,66,57,54,53,63,82,49,49,48,44,44,45,50,43,130,54",
+                        "endOffsets": "1136,1194,952,56,1761,1506,1713,1442,1812,1622,1563,617,104,665,367,266,419,1264,780,721,835,900,1348,1673,207,514,1396,1858,313,156,464,1084,570"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,13,17,18,21,23,25,26,28,29,32,33,34,35,36,37,38,39,40,42,46,47,50,51,52,53,54,56,57,62",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,156,213,264,1040,1343,1406,1646,1774,1913,1971,2105,2151,2370,2417,2470,2528,2577,2644,2702,2757,2811,2967,3280,3330,3557,3606,3651,3696,3742,3870,3914,4419",
+                        "endColumns": "50,56,50,43,46,62,38,44,49,57,55,45,46,46,52,57,48,66,57,54,53,63,82,49,49,48,44,44,45,50,43,130,54",
+                        "endOffsets": "151,208,259,303,1082,1401,1440,1686,1819,1966,2022,2146,2193,2412,2465,2523,2572,2639,2697,2752,2806,2870,3045,3325,3375,3601,3646,3691,3737,3788,3909,4040,4469"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\L\\.gradle\\caches\\transforms-3\\ee64e97561dea54bff65e93822e94c1c\\transformed\\ui-release\\res\\values-es\\values-es.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -21,7 +42,11 @@
                     }
                 },
                 {
+<<<<<<< Updated upstream
                     "source": "/Users/axelcastro/.gradle/caches/transforms-3/e060ddb424a06ecfb8e75da3d70f4c48/transformed/core-1.12.0/res/values-es/values-es.xml",
+=======
+                    "source": "C:\\Users\\L\\.gradle\\caches\\transforms-3\\e060ddb424a06ecfb8e75da3d70f4c48\\transformed\\core-1.12.0\\res\\values-es\\values-es.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -38,6 +63,7 @@
                     }
                 },
                 {
+<<<<<<< Updated upstream
                     "source": "/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/src/main/res/values-es/strings.xml",
                     "from": {
                         "startLines": "21,22,19,1,34,29,33,28,35,31,30,13,2,14,7,5,9,24,16,15,17,18,25,32,4,11,27,36,6,3,10,20,12",
@@ -56,6 +82,9 @@
                 },
                 {
                     "source": "/Users/axelcastro/.gradle/caches/transforms-3/95307028250a3d1c2707ec3c5d80d07c/transformed/material3-1.0.0/res/values-es/values-es.xml",
+=======
+                    "source": "C:\\Users\\L\\.gradle\\caches\\transforms-3\\95307028250a3d1c2707ec3c5d80d07c\\transformed\\material3-1.0.0\\res\\values-es\\values-es.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",

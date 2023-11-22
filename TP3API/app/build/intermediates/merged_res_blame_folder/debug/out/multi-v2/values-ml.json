@@ -4,6 +4,7 @@
             "outputFile": "ar.edu.itba.example.api.app-mergeDebugResources-48:/values-ml/values-ml.xml",
             "map": [
                 {
+<<<<<<< Updated upstream
                     "source": "/Users/axelcastro/.gradle/caches/transforms-3/e060ddb424a06ecfb8e75da3d70f4c48/transformed/core-1.12.0/res/values-ml/values-ml.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
@@ -22,6 +23,9 @@
                 },
                 {
                     "source": "/Users/axelcastro/.gradle/caches/transforms-3/ee64e97561dea54bff65e93822e94c1c/transformed/ui-release/res/values-ml/values-ml.xml",
+=======
+                    "source": "C:\\Users\\L\\.gradle\\caches\\transforms-3\\ee64e97561dea54bff65e93822e94c1c\\transformed\\ui-release\\res\\values-ml\\values-ml.xml",
+>>>>>>> Stashed changes
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -38,7 +42,28 @@
                     }
                 },
                 {
+<<<<<<< Updated upstream
                     "source": "/Users/axelcastro/.gradle/caches/transforms-3/95307028250a3d1c2707ec3c5d80d07c/transformed/material3-1.0.0/res/values-ml/values-ml.xml",
+=======
+                    "source": "C:\\Users\\L\\.gradle\\caches\\transforms-3\\e060ddb424a06ecfb8e75da3d70f4c48\\transformed\\core-1.12.0\\res\\values-ml\\values-ml.xml",
+>>>>>>> Stashed changes
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,135,207",
+                        "endColumns": "79,71,81",
+                        "endOffsets": "130,202,284"
+                    },
+                    "to": {
+                        "startLines": "11,14,16",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "1024,1307,1469",
+                        "endColumns": "79,71,81",
+                        "endOffsets": "1099,1374,1546"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\L\\.gradle\\caches\\transforms-3\\95307028250a3d1c2707ec3c5d80d07c\\transformed\\material3-1.0.0\\res\\values-ml\\values-ml.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",
