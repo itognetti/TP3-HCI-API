@@ -56,12 +56,14 @@ fun TopBar(
     val home = stringResource(R.string.home_screen)
     val explore = stringResource(R.string.search_screen)
     val details = stringResource(R.string.routine_details)
+    val profile = stringResource(R.string.profile_screen)
 
     val topBarMap by remember {
         mutableStateOf(hashMapOf(
             "home" to TopBarInfo(home, hasBackArrow = false, hasOrderBy = true),
             "explore" to TopBarInfo(explore, hasBackArrow = false, hasOrderBy = true),
-            "details" to TopBarInfo(details, hasBackArrow = true, hasOrderBy = false)
+            "details" to TopBarInfo(details, hasBackArrow = true, hasOrderBy = false),
+            "profile" to TopBarInfo(profile, hasBackArrow = false, hasOrderBy = false)
         ))
     }
 

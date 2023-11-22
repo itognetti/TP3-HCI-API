@@ -115,7 +115,6 @@ fun HomeScreen(
                         onNavigateToRoutineDetails = onNavigateToRoutineDetails,
                         onNavigateToExecution = onNavigateToExecution
                     )
-
                     Spacer(modifier = Modifier.size(20.dp))
                 }
             }

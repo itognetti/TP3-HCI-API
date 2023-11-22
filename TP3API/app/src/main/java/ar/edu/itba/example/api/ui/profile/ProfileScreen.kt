@@ -82,11 +82,6 @@ fun ProfileScreen(
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.logo),
-                contentDescription = null,
-                modifier = Modifier.size(70.dp)
-            )
 
             val widthInDp = LocalConfiguration.current.screenWidthDp.dp
 
@@ -99,15 +94,6 @@ fun ProfileScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Column {
-                        Text(
-                            text = stringResource(id = R.string.profile_screen),
-                            color = FOrange,
-                            fontSize = 24.sp,
-                            textAlign = TextAlign.Center,
-                            fontWeight = FontWeight.Black,
-                            modifier = Modifier
-                                .align(Alignment.CenterHorizontally)
-                        )
                         Icon(
                             imageVector = Icons.Filled.AccountCircle,
                             contentDescription = null,
@@ -140,8 +126,6 @@ fun ProfileScreen(
                             }
                         }
                     }
-
-                    Spacer(modifier = Modifier.width(130.dp))
 
                     if (viewModel.uiState.isAuthenticated) {
                         Column {
@@ -192,12 +176,6 @@ fun ProfileScreen(
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    Text(
-                        text = stringResource(id = R.string.profile_screen),
-                        color = FOrange,
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.Black,
-                    )
 
                     Icon(
                         imageVector = Icons.Filled.AccountCircle,
@@ -212,14 +190,15 @@ fun ProfileScreen(
 
                     if (viewModel.uiState.isAuthenticated) {
 
-                        Column {
+                        Column(horizontalAlignment = Alignment.Start) {
                             uiState.currentUser?.let {
                                 Text(
                                     text = stringResource(id = R.string.login_mail) + ": " + it.email,
                                     color = White,
                                     fontSize = 24.sp,
                                     fontWeight = FontWeight.Bold,
-                                    textAlign = TextAlign.Center
+                                    textAlign = TextAlign.Center,
+                                    modifier = Modifier.padding(6.dp)
                                 )
                             }
                             uiState.currentUser?.let {
@@ -228,7 +207,8 @@ fun ProfileScreen(
                                     color = White,
                                     fontSize = 24.sp,
                                     fontWeight = FontWeight.Bold,
-                                    textAlign = TextAlign.Center
+                                    textAlign = TextAlign.Center,
+                                    modifier = Modifier.padding(6.dp)
                                 )
                             }
                             uiState.currentUser?.let {
@@ -237,17 +217,21 @@ fun ProfileScreen(
                                     color = White,
                                     fontSize = 24.sp,
                                     fontWeight = FontWeight.Bold,
-                                    textAlign = TextAlign.Center
+                                    textAlign = TextAlign.Center,
+                                    modifier = Modifier.padding(6.dp)
                                 )
                             }
-                            uiState.currentUser?.let {
-                                Text(
-                                    text = stringResource(id = R.string.last_name) + ": " + it.lastName,
-                                    color = White,
-                                    fontSize = 24.sp,
-                                    fontWeight = FontWeight.Bold,
-                                    textAlign = TextAlign.Center
-                                )
+                            uiState.currentUser?.lastName?.let {lastName ->
+                                if (lastName.isNotEmpty()) {
+                                    Text(
+                                        text = stringResource(id = R.string.last_name) + ": $lastName",
+                                        color = White,
+                                        fontSize = 24.sp,
+                                        fontWeight = FontWeight.Bold,
+                                        textAlign = TextAlign.Center,
+                                        modifier = Modifier.padding(6.dp)
+                                    )
+                                }
                             }
                         }
                     }

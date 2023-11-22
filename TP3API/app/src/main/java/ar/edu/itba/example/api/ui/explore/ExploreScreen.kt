@@ -43,6 +43,8 @@ fun ExploreScreen(
 
     val uiState = viewModel.uiState
 
+    val toastError = Toast.makeText(LocalContext.current, uiState.error?.message ?: "", Toast.LENGTH_SHORT)
+
     LaunchedEffect(key1 = Unit) {
         launch {
             if (uiState.canGetAllRoutines) {
@@ -53,8 +55,6 @@ fun ExploreScreen(
             }
         }
     }
-
-    val toastError = Toast.makeText(LocalContext.current, uiState.error?.message ?: "", Toast.LENGTH_SHORT)
 
     LaunchedEffect(key1 = uiState.error){
         launch {
@@ -114,15 +114,3 @@ fun ExploreScreen(
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
