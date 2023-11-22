@@ -10,7 +10,7 @@
     <string name="category">Category</string>
     <string name="cycle_details">Cycle exercises</string>
     <string name="date">Date</string>
-    <string name="details">Details</string>
+    <string name="details">Routine cycles</string>
     <string name="difficulty">Difficulty</string>
     <string name="empty_cycle">No exercises</string>
     <string name="empty_routine">No routines</string>
@@ -29,6 +29,7 @@
     <string name="order_by">Order by</string>
     <string name="profile_screen">Profile</string>
     <string name="register">Register</string>
+    <string name="routine_details">Routine details</string>
     <string name="routines">Routines</string>
     <string name="score">Score</string>
     <string name="search_bar">Search</string>

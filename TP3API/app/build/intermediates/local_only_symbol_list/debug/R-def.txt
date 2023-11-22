@@ -47,6 +47,7 @@ string no_routines
 string order_by
 string profile_screen
 string register
+string routine_details
 string routines
 string score
 string search_bar

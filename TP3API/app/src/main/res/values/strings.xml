@@ -26,7 +26,8 @@
     <string name="no_routines">No routines available to show :(</string>
 
     <string name="routines">Routines</string>
-    <string name="details">Details</string>
+    <string name="routine_details">Routine details</string>
+    <string name="details">Routine cycles</string>
     <string name="cycle_details">Cycle exercises</string>
     <string name="empty_routine">No routines</string>
     <string name="empty_cycle">No exercises</string>

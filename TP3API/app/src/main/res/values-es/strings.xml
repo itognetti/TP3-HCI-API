@@ -26,7 +26,8 @@
     <string name="no_routines">No hay rutinas dispoinbles para mostrar :(</string>
 
     <string name="routines">Rutinas</string>
-    <string name="details">Detalles</string>
+    <string name="routine_details">Detalle de rutina</string>
+    <string name="details">Ciclos de rutina</string>
     <string name="cycle_details">Ejercicios del ciclo</string>
     <string name="empty_routine">No hay ciclos</string>
     <string name="empty_cycle">No hay ejercicios</string>

@@ -256,6 +256,7 @@ string profile_screen
 string range_end
 string range_start
 string register
+string routine_details
 string routines
 string score
 string search_bar

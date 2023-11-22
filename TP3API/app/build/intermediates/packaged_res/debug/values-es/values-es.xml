@@ -8,7 +8,7 @@
     <string name="category">Categoría</string>
     <string name="cycle_details">Ejercicios del ciclo</string>
     <string name="date">Fecha</string>
-    <string name="details">Detalles</string>
+    <string name="details">Ciclos de rutina</string>
     <string name="difficulty">Dificultad</string>
     <string name="empty_cycle">No hay ejercicios</string>
     <string name="empty_routine">No hay ciclos</string>
@@ -27,6 +27,7 @@
     <string name="order_by">Ordernar por</string>
     <string name="profile_screen">Perfil</string>
     <string name="register">Registrarse</string>
+    <string name="routine_details">Detalle de rutina</string>
     <string name="routines">Rutinas</string>
     <string name="score">Puntuación</string>
     <string name="search_bar">Buscar</string>
