@@ -23,7 +23,6 @@ import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.ui.theme.FOrange
@@ -39,7 +38,7 @@ fun RoutineCard(
 ) {
     val sendIntent: Intent = Intent().apply {
         action = Intent.ACTION_SEND
-        putExtra(Intent.EXTRA_TEXT, "https://finspo.com/" + id.toString())
+        putExtra(Intent.EXTRA_TEXT, "https://www.finspo.com/details/$id")
         type = "text/plain"
     }
     val shareIntent = Intent.createChooser(sendIntent, null)
@@ -92,7 +91,6 @@ fun RoutineCard(
                     fontSize = 24.sp,
                 )
             }
-
 
             Row(
                 modifier = Modifier.fillMaxWidth(),

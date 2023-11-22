@@ -27,10 +27,8 @@
             android:theme="@style/Theme.Api">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -38,7 +36,7 @@
                 <data android:scheme="http"/>
                 <data android:scheme="https"/>
                 <data android:host="www.finspo.com"/>
-                <data android:pathPrefix="/other"/>
+                <data android:pathPrefix="/details"/>
             </intent-filter>
         </activity>
     </application>

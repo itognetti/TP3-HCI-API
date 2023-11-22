@@ -58,9 +58,9 @@ fun AppNavGraph(navController: NavHostController = rememberNavController(),
             ),
             deepLinks = listOf(
                 navDeepLink {
-                    uriPattern =  "$uri/{routineId}"},
+                    uriPattern =  "$uri/details/{routineId}"},
                 navDeepLink {
-                    uriPattern = "$secureUri/{routineId}"}
+                    uriPattern = "$secureUri/details/{routineId}"}
             )
         ){
             DetailsScreen(

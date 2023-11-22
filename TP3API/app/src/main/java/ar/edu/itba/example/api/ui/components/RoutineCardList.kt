@@ -30,7 +30,7 @@ fun RoutineCardList(
             contentAlignment = Alignment.Center,
             modifier = Modifier.fillMaxSize()
                 ){
-            EmptyState(text = stringResource(id = R.string.empty_routine), imgVector = Icons.Default.Build)
+            EmptyState(text = stringResource(id = R.string.no_routines), imgVector = Icons.Default.Build)
         }
     } else {
         LazyVerticalGrid(

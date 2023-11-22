@@ -1,21 +1,4 @@
-<<<<<<< Updated upstream
-#Wed Nov 22 10:18:19 ART 2023
-base.0=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
-base.1=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex
-base.10=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\7\\classes.dex
-base.11=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\8\\classes.dex
-base.12=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\9\\classes.dex
-base.13=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes2.dex
-base.2=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\10\\classes.dex
-base.3=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\12\\classes.dex
-base.4=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\14\\classes.dex
-base.5=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\15\\classes.dex
-base.6=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\1\\classes.dex
-base.7=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\3\\classes.dex
-base.8=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\4\\classes.dex
-base.9=C\:\\Users\\Ian\\Desktop\\Facultad\\TP3-HCI-API\\TP3API\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\5\\classes.dex
-=======
-#Tue Nov 21 21:26:12 ART 2023
+#Wed Nov 22 13:10:13 ART 2023
 base.0=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeExtDexDebug/classes.dex
 base.1=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex
 base.10=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/7/classes.dex
@@ -30,18 +13,17 @@ base.6=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/
 base.7=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/3/classes.dex
 base.8=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/4/classes.dex
 base.9=/Users/axelcastro/Desktop/HCI/TP3-HCI-API/TP3API/app/build/intermediates/dex/debug/mergeProjectDexDebug/5/classes.dex
->>>>>>> Stashed changes
 path.0=classes.dex
 path.1=0/classes.dex
 path.10=7/classes.dex
 path.11=8/classes.dex
 path.12=9/classes.dex
 path.13=classes2.dex
-path.2=10/classes.dex
-path.3=12/classes.dex
-path.4=14/classes.dex
-path.5=15/classes.dex
-path.6=1/classes.dex
+path.2=1/classes.dex
+path.3=10/classes.dex
+path.4=12/classes.dex
+path.5=14/classes.dex
+path.6=15/classes.dex
 path.7=3/classes.dex
 path.8=4/classes.dex
 path.9=5/classes.dex

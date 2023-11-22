@@ -28,7 +28,7 @@
     <string name="routines">Routines</string>
     <string name="details">Details</string>
     <string name="cycle_details">Cycle exercises</string>
-    <string name="empty_routine">No cycles</string>
+    <string name="empty_routine">No routines</string>
     <string name="empty_cycle">No exercises</string>
 
     <string name="order_by">Order by</string>
