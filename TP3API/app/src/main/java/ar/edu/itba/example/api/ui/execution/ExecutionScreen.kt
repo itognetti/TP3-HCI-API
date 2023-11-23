@@ -72,8 +72,8 @@ fun ExecutionScreen(
     val uiState = viewModel.uiState
     var currentCycleIndex by remember { mutableIntStateOf(0) }
     var currentExerciseIndex by remember { mutableIntStateOf(0) }
-    var boca by remember { mutableStateOf(false) }
-    var rivar by remember { mutableStateOf(false) }
+    var finishedCycles by remember { mutableStateOf(false) }
+    var finished by remember { mutableStateOf(false) }
     var finishedThreads by remember { mutableIntStateOf(0) }
     val mutex = Mutex()
 
@@ -128,21 +128,20 @@ fun ExecutionScreen(
         }
     }
 
-    val msg = stringResource(id = R.string.empty_cycle)
 
     LaunchedEffect(key1 = Unit) {
         launch {
             if (uiState.canGetData) {
                 viewModel.getRoutineCycles(routineId.toInt()).invokeOnCompletion {
-                    boca = true
+                    finishedCycles = true
                 }
             }
         }
     }
 
-    LaunchedEffect(key1 = boca) {
+    LaunchedEffect(key1 = finishedCycles) {
         launch {
-            if (boca) {
+            if (finishedCycles) {
                 uiState.routineCycles?.forEach {
                     viewModel.getCycleExercises(it.id!!)
                     mutex.withLock {
@@ -156,7 +155,7 @@ fun ExecutionScreen(
     LaunchedEffect(key1 = finishedThreads) {
         launch {
             if (finishedThreads == uiState.routineCycles?.size) {
-                rivar = true
+                finished = true
             }
         }
     }
@@ -171,7 +170,6 @@ fun ExecutionScreen(
         }
     }
 
-    val cycles = uiState.routineCycles
     val currentCycle = uiState.routineCycles?.getOrNull(currentCycleIndex)
 
 
@@ -200,7 +198,7 @@ fun ExecutionScreen(
                     .fillMaxHeight(),
                 verticalArrangement = Arrangement.SpaceBetween
             ) {
-                if (rivar) {
+                if (finished) {
                     Column(
                         horizontalAlignment = Alignment.CenterHorizontally,
                     ) {

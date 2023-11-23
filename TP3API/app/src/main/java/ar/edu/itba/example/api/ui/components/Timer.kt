@@ -15,7 +15,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
@@ -29,9 +28,6 @@ import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.ui.theme.FOrange
 import ar.edu.itba.example.api.ui.theme.White
 import kotlinx.coroutines.delay
-import kotlin.math.PI
-import kotlin.math.cos
-import kotlin.math.sin
 
 @Composable
 fun Timer(
@@ -63,10 +59,10 @@ fun Timer(
     LaunchedEffect(key1 = totalTime){
         currentTime = totalTime
         isTimerRunning = false
-        if(totalTime != 0L)
-            value = currentTime / totalTime.toFloat()
+        value = if(totalTime != 0L)
+            currentTime / totalTime.toFloat()
         else
-            value = 0F
+            0F
     }
 
     LaunchedEffect(key1 = currentTime, key2 = isTimerRunning) {
@@ -106,11 +102,6 @@ fun Timer(
                     size = Size(size.width.toFloat(), size.height.toFloat()),
                     style = Stroke(strokeWidth.toPx(), cap = StrokeCap.Round)
                 )
-                val center = Offset(size.width / 2f, size.height / 2f)
-                val beta = (250f * value + 145f) * (PI / 180f).toFloat()
-                val r = size.width / 2f
-                val a = cos(beta) * r
-                val b = sin(beta) * r
             }
             Row(
                 verticalAlignment = Alignment.CenterVertically

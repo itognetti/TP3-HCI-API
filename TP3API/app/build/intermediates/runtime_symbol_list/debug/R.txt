@@ -84,7 +84,6 @@ int drawable ic_call_decline_low 0x7f04000c
 int drawable ic_launcher_background 0x7f04000d
 int drawable ic_launcher_foreground 0x7f04000e
 int drawable loginregisterscreen 0x7f04000f
-int drawable loginscreen 0x7f040010
 int drawable logo 0x7f040011
 int drawable logotext 0x7f040012
 int drawable nosotros 0x7f040013
@@ -101,8 +100,6 @@ int drawable notification_template_icon_bg 0x7f04001d
 int drawable notification_template_icon_low_bg 0x7f04001e
 int drawable notification_tile_bg 0x7f04001f
 int drawable notify_panel_notification_icon_bg 0x7f040020
-int drawable register 0x7f040021
-int drawable sentado 0x7f040022
 int id accessibility_action_clickable_span 0x7f050000
 int id accessibility_custom_action_0 0x7f050001
 int id accessibility_custom_action_1 0x7f050002
