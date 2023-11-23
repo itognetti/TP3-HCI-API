@@ -28,7 +28,6 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import ar.edu.itba.example.api.R
-import ar.edu.itba.example.api.ui.theme.FOrange
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.graphics.Color
@@ -89,7 +88,7 @@ fun ProfileScreen(
                 Row(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(top=5.dp),
+                        .padding(top = 5.dp),
                     horizontalArrangement = Arrangement.Center,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
@@ -126,6 +125,8 @@ fun ProfileScreen(
                             }
                         }
                     }
+
+                    Spacer(modifier = Modifier.width(64.dp))
 
                     if (viewModel.uiState.isAuthenticated) {
                         Column {

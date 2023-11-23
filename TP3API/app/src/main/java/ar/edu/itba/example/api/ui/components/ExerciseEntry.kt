@@ -4,7 +4,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.DateRange
+import androidx.compose.material.icons.filled.Alarm
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
@@ -48,7 +48,7 @@ fun ExerciseEntry (
             Spacer(modifier = Modifier.width(100.dp))
 
             Icon(
-                imageVector = Icons.Default.DateRange,
+                imageVector = Icons.Default.Alarm,
                 contentDescription = null,
                 tint = White,
                 modifier = Modifier

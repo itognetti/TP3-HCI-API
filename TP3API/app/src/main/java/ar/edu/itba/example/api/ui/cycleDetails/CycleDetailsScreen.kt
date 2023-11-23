@@ -5,7 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -66,10 +66,7 @@ fun CycleDetailsScreen(
             verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-
-
             Column {
-                //Titulo
                 Text(
                     text = stringResource(R.string.cycle_details),
                     fontSize = 22.sp,
@@ -94,7 +91,7 @@ fun CycleDetailsScreen(
                     if (list.isEmpty()) {
                         EmptyState(
                             text = stringResource(R.string.empty_cycle),
-                            imgVector = Icons.Default.Build
+                            imgVector = Icons.Default.Warning
                         )
                     } else {
                         LazyColumn(

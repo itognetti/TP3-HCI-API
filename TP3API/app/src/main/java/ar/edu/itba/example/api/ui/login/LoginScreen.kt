@@ -186,8 +186,6 @@ fun LoginScreen(
                         }
                     }
                 }
-
-
             }
 
         }else{
@@ -230,7 +228,7 @@ fun LoginScreen(
 
                     Spacer(modifier = Modifier.height(16.dp))
 
-                    // espacio para el usuario
+                    // Espacio para el usuario
                     TextField(
                         value = username,
                         onValueChange = { username = it },
@@ -247,7 +245,7 @@ fun LoginScreen(
                         value = password,
                         onValueChange = { password = it },
                         label = { Text(text = stringResource(id = R.string.login_password)) },
-                        visualTransformation = PasswordVisualTransformation(), //esta linea y la de abajo son para que no se vea la contraseña
+                        visualTransformation = PasswordVisualTransformation(),
                         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
                         modifier = Modifier
                             .fillMaxWidth()

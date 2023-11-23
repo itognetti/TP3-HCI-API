@@ -1,138 +1,138 @@
 [
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_gym4.png.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/drawable/gym4.png"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-xhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/xml_data_extraction_rules.xml.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/xml/data_extraction_rules.xml"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_register.png.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/drawable/register.png"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/drawable_loginscreen.png.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/drawable/loginscreen.png"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-xhdpi_ic_launcher_foreground.webp.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-xhdpi/ic_launcher_foreground.webp"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_logotext.png.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/drawable/logotext.png"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/xml_backup_rules.xml.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/xml/backup_rules.xml"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_gym2.png.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/drawable/gym2.png"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/drawable_gym2.png.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/drawable/gym2.png"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/drawable_gym1.png.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/drawable/gym1.png"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-xxhdpi/ic_launcher_foreground.webp"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/drawable_gym4.png.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/drawable/gym4.png"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/xml_data_extraction_rules.xml.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-hdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_background.PNG.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/drawable/background.PNG"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/drawable_nosotros.png.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/drawable/nosotros.png"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/xml_backup_rules.xml.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/xml/backup_rules.xml"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-xxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-xxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_nosotros.png.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/drawable/nosotros.png"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-mdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/drawable_loginregisterscreen.jpeg.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/drawable/loginregisterscreen.jpeg"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_loginregisterscreen.jpeg.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/drawable/loginregisterscreen.jpeg"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_gym5.png.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/drawable/gym5.png"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/drawable_logo.png.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/drawable/logo.png"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_ic_launcher_background.xml.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/drawable/ic_launcher_background.xml"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_sentado.png.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/drawable/sentado.png"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/drawable/ic_launcher_foreground.xml"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_gym1.png.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/drawable/gym1.png"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/drawable_background.PNG.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/drawable/background.PNG"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-mdpi_ic_launcher_foreground.webp.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-mdpi/ic_launcher_foreground.webp"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/drawable_gym3.png.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/drawable/gym3.png"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/drawable_sentado.png.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/drawable/sentado.png"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_loginscreen.png.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/drawable/loginscreen.png"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/drawable_logotext.png.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/drawable/logotext.png"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_logo.png.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/drawable/logo.png"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/drawable_ic_launcher_background.xml.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-hdpi_ic_launcher_foreground.webp.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-hdpi/ic_launcher_foreground.webp"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/drawable_register.png.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/drawable/register.png"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/drawable_gym5.png.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/drawable/gym5.png"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/drawable_gym3.png.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/drawable/gym3.png"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "ar.edu.itba.example.api.app-merged_res-50:/mipmap-xxxhdpi_ic_launcher_foreground.webp.flat",
-        "source": "ar.edu.itba.example.api.app-main-52:/mipmap-xxxhdpi/ic_launcher_foreground.webp"
+        "merged": "ar.edu.itba.example.api.app-merged_res-51:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "ar.edu.itba.example.api.app-main-53:/drawable/ic_launcher_foreground.xml"
     }
 ]

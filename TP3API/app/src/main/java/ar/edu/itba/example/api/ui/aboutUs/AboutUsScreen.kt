@@ -41,13 +41,11 @@ fun AboutUsScreen(onNavigateToLogin: () -> Unit) {
             modifier = Modifier.fillMaxSize()
         )
 
-        // Botón de Información (en la esquina superior derecha)
         Box(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(8.dp)
         ) {
-            // Botón de Información
             IconButton(
                 onClick = {
                     onNavigateToLogin()

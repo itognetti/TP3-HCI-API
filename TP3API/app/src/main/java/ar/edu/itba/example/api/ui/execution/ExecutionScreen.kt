@@ -18,13 +18,11 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Alarm
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.DateRange
-import androidx.compose.material.icons.filled.KeyboardArrowRight
-import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Refresh
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -43,15 +41,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Transparent
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.font.FontWeight.Companion.Bold
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -298,14 +293,16 @@ fun ExecutionScreen(
                                 } else {
                                     numReps.toString()
                                 }
+
                                 Text(
                                     text = "Reps: $reps",
                                     color = White,
                                     fontSize = 30.sp,
                                     fontWeight = FontWeight(600),
                                     modifier = Modifier
-                                        .padding(top = 6.dp)
+                                           .padding(top = 6.dp)
                                 )
+
                                 Box(
                                     contentAlignment = Alignment.Center,
                                 ) {
@@ -390,7 +387,7 @@ fun ExecutionScreen(
                                                 Spacer(modifier = Modifier.width(100.dp))
 
                                                 Icon(
-                                                    imageVector = Icons.Default.DateRange,
+                                                    imageVector = Icons.Default.Alarm,
                                                     contentDescription = null,
                                                     tint = White,
                                                     modifier = Modifier

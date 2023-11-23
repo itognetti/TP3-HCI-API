@@ -7,10 +7,10 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.Category
 import androidx.compose.material.icons.filled.DateRange
-import androidx.compose.material.icons.filled.List
-import androidx.compose.material.icons.filled.MoreVert
+import androidx.compose.material.icons.filled.FilterList
+import androidx.compose.material.icons.filled.Sports
 import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
@@ -37,7 +37,6 @@ import ar.edu.itba.example.api.ui.main.MainViewModel
 import ar.edu.itba.example.api.ui.theme.Black
 import ar.edu.itba.example.api.ui.theme.White
 import ar.edu.itba.example.api.util.getViewModelFactory
-
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -91,7 +90,8 @@ fun TopBar(
                         Icon(
                             imageVector = Icons.Default.ArrowBack,
                             contentDescription = "back",
-                            tint = White)
+                            tint = White
+                        )
                     }
                 }
             },
@@ -109,7 +109,7 @@ fun TopBar(
                                 .padding(end = 6.dp)
                         )
                         Icon(
-                            imageVector = Icons.Default.List,
+                            imageVector = Icons.Default.FilterList,
                             contentDescription = "orderBy",
                             tint = White
                         )
@@ -140,7 +140,7 @@ fun TopBar(
                             onClick = { onOrderBy("difficulty"); showPopUp = false },
                             leadingIcon = {
                                 Icon(
-                                    imageVector = Icons.Default.Build,
+                                    imageVector = Icons.Default.Sports,
                                     contentDescription = "difficulty",
                                     tint = White
                                 )
@@ -166,7 +166,7 @@ fun TopBar(
                             onClick = { onOrderBy("category"); showPopUp = false },
                             leadingIcon = {
                                 Icon(
-                                    imageVector = Icons.Default.MoreVert,
+                                    imageVector = Icons.Default.Category,
                                     contentDescription = "category",
                                     tint = White
                                 )

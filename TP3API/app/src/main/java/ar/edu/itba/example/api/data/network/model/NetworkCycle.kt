@@ -3,7 +3,6 @@ package ar.edu.itba.example.api.data.network.model
 import ar.edu.itba.example.api.data.model.Cycle
 import com.google.gson.annotations.SerializedName
 
-
 class NetworkCycle (
 
     @SerializedName("id"          ) var id          : Int?    = null,

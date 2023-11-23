@@ -7,7 +7,7 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.rememberLazyGridState
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -30,7 +30,7 @@ fun RoutineCardList(
             contentAlignment = Alignment.Center,
             modifier = Modifier.fillMaxSize()
                 ){
-            EmptyState(text = stringResource(id = R.string.no_routines), imgVector = Icons.Default.Build)
+            EmptyState(text = stringResource(id = R.string.no_routines), imgVector = Icons.Default.Warning)
         }
     } else {
         LazyVerticalGrid(
@@ -56,5 +56,4 @@ fun RoutineCardList(
             }
         }
     }
-
 }

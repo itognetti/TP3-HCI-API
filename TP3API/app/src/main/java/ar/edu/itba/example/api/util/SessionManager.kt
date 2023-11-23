@@ -2,7 +2,6 @@ package ar.edu.itba.example.api.util
 
 import android.content.Context
 import android.content.SharedPreferences
-import ar.edu.itba.example.api.R
 
 class SessionManager(context: Context) {
     private var preferences: SharedPreferences =

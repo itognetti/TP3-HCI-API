@@ -31,6 +31,7 @@
     <string name="cycle_details">Ejercicios del ciclo</string>
     <string name="empty_routine">No hay ciclos</string>
     <string name="empty_cycle">No hay ejercicios</string>
+
     <string name="order_by">Ordernar por</string>
     <string name="date">Fecha</string>
     <string name="category">Categoría</string>

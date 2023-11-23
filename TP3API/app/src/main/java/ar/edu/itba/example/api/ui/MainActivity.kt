@@ -1,6 +1,5 @@
 package ar.edu.itba.example.api.ui
 
-
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -36,7 +35,6 @@ class MainActivity : ComponentActivity() {
                 val currentRoute = navBackStackEntry?.destination?.route
                 var orderBy by remember { mutableStateOf("date") }
 
-                // Determinar si se debe mostrar la BottomBar
                 val shouldShowBottomBar = currentRoute == Screen.HomeScreen.route
                         || currentRoute == Screen.ExploreScreen.route
                         || currentRoute == Screen.ProfileScreen.route

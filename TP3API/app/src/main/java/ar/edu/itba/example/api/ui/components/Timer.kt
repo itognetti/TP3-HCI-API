@@ -6,9 +6,8 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.ArrowForward
-import androidx.compose.material.icons.filled.List
-import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.Stop
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -82,7 +81,7 @@ fun Timer(
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.SpaceAround
-            ) {
+    ) {
         Box(
             contentAlignment = Alignment.Center,
             modifier = modifier
@@ -139,7 +138,9 @@ fun Timer(
             Spacer(modifier = Modifier.width(16.dp))
             IconButton(
                 enabled = hasPrev,
-                onClick = { prevFunc() },
+                onClick = { prevFunc()
+                    currentTime = totalTime
+                    isTimerRunning = true},
             ) {
                 Icon(
                     Icons.Default.ArrowBack,
@@ -160,7 +161,7 @@ fun Timer(
                 },
             ){
                 val icon = if (isTimerRunning) {
-                    Icons.Default.Menu
+                    Icons.Default.Stop
                 } else {
                     Icons.Default.PlayArrow
                 }
@@ -172,7 +173,9 @@ fun Timer(
                 )
             }
             IconButton(
-                onClick = { nextFunc() },
+                onClick = { nextFunc()
+                    currentTime = totalTime
+                    isTimerRunning = true },
             ) {
                 Icon(
                     Icons.Default.ArrowForward,
@@ -183,6 +186,5 @@ fun Timer(
             }
             Spacer(modifier = Modifier.width(16.dp))
         }
-
     }
 }

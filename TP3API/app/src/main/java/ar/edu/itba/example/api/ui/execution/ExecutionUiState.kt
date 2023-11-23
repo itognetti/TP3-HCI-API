@@ -5,7 +5,6 @@ import ar.edu.itba.example.api.data.model.CycleExercise
 import ar.edu.itba.example.api.data.model.Routine
 import ar.edu.itba.example.api.data.model.Error
 
-
 data class ExecutionUiState(
     val isAuthenticated: Boolean = false,
     val isFetching: Boolean = false,

@@ -5,7 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Build
+import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -68,7 +68,6 @@ fun DetailsScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-
             Column(modifier = Modifier.fillMaxHeight()) {
                 Text(
                     text = stringResource(R.string.details),
@@ -92,7 +91,7 @@ fun DetailsScreen(
                 } else {
                     val list = uiState.routineCycles.orEmpty()
                     if (list.isEmpty()) {
-                        EmptyState(text = stringResource(id = R.string.empty_routine), Icons.Default.Build)
+                        EmptyState(text = stringResource(id = R.string.empty_routine), Icons.Default.Warning)
                     } else {
                         LazyColumn(
                             verticalArrangement = Arrangement.SpaceEvenly,
